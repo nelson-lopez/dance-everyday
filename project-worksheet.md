@@ -57,12 +57,22 @@ Define the the React components and the architectural design of your app.
 
 
 
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| Backend | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Installing dependecies | H | 3hrs| 3.5hrs | 3.5hrs |
 | Config the Server | H | 3hrs| 2.5hrs | 2.5hrs |
 | Build Server | H | 3hrs| 2.5hrs | 2.5hrs |
 | Build Models | H | 3hrs| 2.5hrs | 2.5hrs |
+| Fill Seed Data | H | 3hrs| 2.5hrs | 2.5hrs |
+| Total | H | 6hrs| 5hrs | 5hrs |
+
+| Frontend | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Fill Seed Data | H | 3hrs| 2.5hrs | 2.5hrs |
+| Total | H | 6hrs| 5hrs | 5hrs |
+
+| Styler | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
 | Fill Seed Data | H | 3hrs| 2.5hrs | 2.5hrs |
 | Total | H | 6hrs| 5hrs | 5hrs |
 
