@@ -1,9 +1,8 @@
 # Project Overview for Dance Everyday!
 
-
 ## Project Description
 
-Dance Everyday is a website in which dance venues will display their events by dance, location, and time. 
+Dance Everyday is a website in which dance venues will display their events by dance, location, and time.
 
 ## Wireframes
 
@@ -16,6 +15,7 @@ and the design for mobile:
 ![](https://i.imgur.com/BYik3If.png)
 
 #### MVP
+
 - Build out the database to represent the relation between venue and events per menu.
 - Render 3 filter views of available events in the city: by dance, by venue, by date.
 - Set up routes for the home, event list, edit, event, create.
@@ -42,42 +42,45 @@ Define the the React components and the architectural design of your app.
 ![](https://i.imgur.com/Tas9IlH.jpg)
 
 ## Functional Components
+
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
 
-| Component | Description | 
-| --- | :---: |  
-| App |  | 
-| Header |  | 
-| Home |  | 
-| Body |  | 
-| EventList |  | 
-| Event |  | 
-| SearchBar |  | 
-| DisplayCard |  | 
+| Component   | Description |
+| ----------- | :---------: |
+| App         |             |
+| Header      |             |
+| Home        |             |
+| Body        |             |
+| EventList   |             |
+| Event       |             |
+| SearchBar   |             |
+| DisplayCard |             |
 
+| Backend                | Priority | Estimated Time | Time Invetsted | Actual Time |
+| ---------------------- | :------: | :------------: | :------------: | :---------: |
+| Installing dependecies |    H     |      3hrs      |     3.5hrs     |   3.5hrs    |
+| Config the Server      |    H     |      3hrs      |     2.5hrs     |   2.5hrs    |
+| Build Server           |    H     |      3hrs      |     2.5hrs     |   2.5hrs    |
+| Build Models           |    H     |      3hrs      |     2.5hrs     |   2.5hrs    |
+| Fill Seed Data         |    H     |      3hrs      |     2.5hrs     |   2.5hrs    |
+| Total                  |    H     |      6hrs      |      5hrs      |    5hrs     |
 
+| Frontend                 | Priority | Estimated Time | Time Invetsted | Actual Time |
+| ------------------------ | :------: | :------------: | :------------: | :---------: |
+| Scaffolding Components   |    H     |      1hrs      |                |             |
+| Scaffolding Components   |    H     |      1hrs      |                |             |
+| Connect front-end to Api |    H     |      3hrs      |                |             |
+| Create Output cards      |    H     |      4hrs      |                |             |
+| Functioning SearchBar    |    H     |      6hrs      |                |             |
+| Total                    |    H     |      6hrs      |      5hrs      |    5hrs     |
 
-| Backend | Priority | Estimated Time | Time Invetsted | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| Installing dependecies | H | 3hrs| 3.5hrs | 3.5hrs |
-| Config the Server | H | 3hrs| 2.5hrs | 2.5hrs |
-| Build Server | H | 3hrs| 2.5hrs | 2.5hrs |
-| Build Models | H | 3hrs| 2.5hrs | 2.5hrs |
-| Fill Seed Data | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
-
-| Frontend | Priority | Estimated Time | Time Invetsted | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| Fill Seed Data | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
-
-| Styler | Priority | Estimated Time | Time Invetsted | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| Fill Seed Data | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
-
+| Styler         | Priority | Estimated Time | Time Invetsted | Actual Time |
+| -------------- | :------: | :------------: | :------------: | :---------: |
+| Fill Seed Data |    H     |      3hrs      |     2.5hrs     |   2.5hrs    |
+| Total          |    H     |      6hrs      |      5hrs      |    5hrs     |
 
 ## Additional Libraries
+
 React-router, axios
 
 ## Code Snippet
