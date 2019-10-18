@@ -1,9 +1,9 @@
-# Project Overview
+# Project Overview for Dance Everyday!
 
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+Dance Everyday is a website in which dance venues will display their events by dance, location, and time. 
 
 ## Wireframes
 
@@ -15,19 +15,17 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 Paste a snippet from your API here that shows the shape of the data
 ```
 
-### MVP/PostMVP - 5min
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
-
-#### MVP EXAMPLE
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
-- Save their choices in firebase
+#### MVP
+- Build out the database to represent the relation between venue and events per menu.
+- Render 3 filter views of available events in the city: by dance, by venue, by date.
+- 
+- 
 
 #### PostMVP EXAMPLE
 
-- Add user auth
+- Add user auth with favorites and add venue
+- Friend Finder
+- Food near venue
 
 ## ERD Diagram
 
@@ -62,15 +60,13 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project. 
+React-router, axios
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
-
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+function Nothing(Written) {
+	return( something soon... )
 }
 ```
 
