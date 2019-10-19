@@ -63,12 +63,12 @@ Define the the React components and the architectural design of your app.
 
 | ( **Jaabel** ) Backend Engineer                | Priority | Estimated Time | Time Invetsted | Actual Time |
 | ---------------------- | :------: | :------------: | :------------: | :---------: |
-| Installing dependecies |    H     |      3hrs      |          |       |
+| Installing dependencies |    H     |      3hrs      |          |       |
 | Config the Server      |    H     |      3hrs      |          |       |
 | Build Server           |    H     |      3hrs      |          |       |
 | Build Models           |    H     |      3hrs      |          |       |
 | Fill Seed Data         |    H     |      3hrs      |          |       |
-| Total                  |    H     |      6hrs      |          |       |
+| Total                  |    H     |      15hrs      |          |       |
 
 ---
 ---
@@ -77,22 +77,30 @@ Define the the React components and the architectural design of your app.
 
 | ( **Nelson** ) Frontend Engineer                 | Priority | Estimated Time | Time Invetsted | Actual Time |
 | ------------------------ | :------: | :------------: | :------------: | :---------: |
-| Scaffolding Components   |    H     |      1hrs      |                |             |
+| Fill Seed Data         |    H     |      3hrs      |          |       |
 | Scaffolding Components   |    H     |      1hrs      |                |             |
 | Connect front-end to Api |    H     |      3hrs      |                |             |
 | Create Output cards      |    H     |      4hrs      |                |             |
 | Functioning SearchBar    |    H     |      6hrs      |                |             |
-| Total                    |    H     |      6hrs      |            |         |
+| Total                    |    H     |      17hrs      |            |         |
 
 ---
 ---
 ---
 
 
-| ( **Anna** ) Frontend/Styler        | Priority | Estimated Time | Time Invetsted | Actual Time |
+| ( **Anna** ) Frontend Engineer & Styler        | Priority | Estimated Time | Time Invetsted | Actual Time |
 | -------------- | :------: | :------------: | :------------: | :---------: |
 | Fill Seed Data |    H     |      3hrs      |          |       |
-| Total          |    H     |      6hrs      |          |       |
+| Header |    H     |      3hrs      |          |       |
+| Navigation Bar |    H     |      3hrs      |          |       |
+| About |    H     |      3hrs      |          |       |
+| Footer |    H     |      1hrs      |          |       |
+| Output cards |    H     |      4hrs      |          |       |
+| Search bar styling |    H     |      1hrs      |          |       |
+| Media queries |    H     |      4hrs      |          |       |
+| Finishing touches |    H     |      3hrs      |          |       |
+| Total          |    H     |      25hrs      |          |       |
 
 ## Additional Libraries
 
