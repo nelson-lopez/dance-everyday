@@ -1,9 +1,10 @@
-# Project Overview for Dance Everyday!
+# Dance Everyday!
 
+![gif](https://media.giphy.com/media/Ymhz7H7Ye0gX3xuk59/giphy.gif)
 
 ## Project Description
 
-Dance Everyday is a website in which dance venues will display their events by dance, location, and time. 
+Dance Everyday is a website in which dance venues will display their events by dance, location, and time.
 
 ## Wireframes
 
@@ -41,40 +42,52 @@ Define the the React components and the architectural design of your app.
 
 ![](https://i.imgur.com/Tas9IlH.jpg)
 
-## Functional Components
-##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
-
-| Component | Description | 
-| --- | :---: |  
-| App |  | 
-| Header |  | 
-| Home |  | 
-| Body |  | 
-| EventList |  | 
-| Event |  | 
-| SearchBar |  | 
-| DisplayCard |  | 
+## Components List
 
 
+| Component | 
+| --- | 
+| App | 
+| Header | 
+| Home | 
+| Body | 
+| EventList | 
+| Event | 
+| SearchBar | 
+| DisplayCard | 
 
-| Backend | Priority | Estimated Time | Time Invetsted | Actual Time |
+---
+---
+---
+
+| ( **Jaabel** ) Backend Engineer | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Installing dependecies | H | 3hrs| 3.5hrs | 3.5hrs |
-| Config the Server | H | 3hrs| 2.5hrs | 2.5hrs |
-| Build Server | H | 3hrs| 2.5hrs | 2.5hrs |
-| Build Models | H | 3hrs| 2.5hrs | 2.5hrs |
-| Fill Seed Data | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Installing dependecies | H | 3hrs|  |  |
+| Config the Server | H | 3hrs|  |  |
+| Build Server | H | 3hrs|  |  |
+| Build Models | H | 3hrs|  |  |
+| Fill Seed Data | H | 3hrs|  |  |
+| Migrate and Seed Models | H | 3hrs|  |  |
+|  | H | 3hrs|  |  |
+| Total | H | 6hrs|  |  |
 
-| Frontend | Priority | Estimated Time | Time Invetsted | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| Fill Seed Data | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+---
+---
+---
 
-| Styler | Priority | Estimated Time | Time Invetsted | Actual Time |
+| ( **Nelson** ) Frontend Engineer | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Fill Seed Data | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Fill Seed Data | H | 3hrs|  |  |
+| Total | H | 6hrs|  |  |
+
+---
+---
+---
+
+| ( **Anna** ) Frontend/Styler | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Fill Seed Data | H | 3hrs |  |  |
+| Total | H | 6hrs |  |  |
 
 
 ## Additional Libraries
