@@ -37,7 +37,7 @@ Diagram of the Database:
 
 ## React Component Hierarchy
 
-Define the the React components and the architectural design of your app.
+![](https://imgur.com/a/MtS2Gc6.jpg)
 
 ## Priority Matrix
 
@@ -45,54 +45,60 @@ Define the the React components and the architectural design of your app.
 
 ## Components List
 
-
-| Component | 
-| --- | 
-| App | 
-| Header | 
-| Home | 
-| Body | 
-| EventList | 
-| Event | 
-| SearchBar | 
-| DisplayCard | 
-
----
----
----
-
-| ( **Jaabel** ) Backend Engineer                | Priority | Estimated Time | Time Invetsted | Actual Time |
-| ---------------------- | :------: | :------------: | :------------: | :---------: |
-| Installing dependecies |    H     |      3hrs      |          |       |
-| Config the Server      |    H     |      3hrs      |          |       |
-| Build Server           |    H     |      3hrs      |          |       |
-| Build Models           |    H     |      3hrs      |          |       |
-| Fill Seed Data         |    H     |      3hrs      |          |       |
-| Total                  |    H     |      6hrs      |          |       |
+| Component   |
+| ----------- |
+| App         |
+| Header      |
+| Home        |
+| Body        |
+| EventList   |
+| Event       |
+| SearchBar   |
+| DisplayCard |
 
 ---
----
----
-
-
-| ( **Nelson** ) Frontend Engineer                 | Priority | Estimated Time | Time Invetsted | Actual Time |
-| ------------------------ | :------: | :------------: | :------------: | :---------: |
-| Scaffolding Components   |    H     |      1hrs      |                |             |
-| Scaffolding Components   |    H     |      1hrs      |                |             |
-| Connect front-end to Api |    H     |      3hrs      |                |             |
-| Create Output cards      |    H     |      4hrs      |                |             |
-| Functioning SearchBar    |    H     |      6hrs      |                |             |
-| Total                    |    H     |      6hrs      |            |         |
 
 ---
----
+
 ---
 
+| ( **Jaabel** ) Backend Engineer | Priority | Estimated Time | Time Invetsted | Actual Time |
+| ------------------------------- | :------: | :------------: | :------------: | :---------: |
+| Installing dependecies          |    H     |      3hrs      |                |             |
+| Config the Server               |    H     |      3hrs      |                |             |
+| Build Server                    |    H     |      3hrs      |                |             |
+| Build Models                    |    H     |      3hrs      |                |             |
+| Fill Seed Data                  |    H     |      3hrs      |                |             |
+| Total                           |    H     |      6hrs      |                |             |
 
-| ( **Anna** ) Frontend/Styler        | Priority | Estimated Time | Time Invetsted | Actual Time |
-| -------------- | :------: | :------------: | :------------: | :---------: |
-| Fill Seed Data |    H     |      3hrs      |          |       |
-| Total          |    H     |      6hrs      |          |       |
+---
+
+---
+
+---
+
+| ( **Nelson** ) Frontend Engineer | Priority | Estimated Time | Time Invetsted | Actual Time |
+| -------------------------------- | :------: | :------------: | :------------: | :---------: |
+| Fill Seed Data                   |    H     |      1hrs      |                |             |
+| Scaffolding Components           |    H     |      1hrs      |                |             |
+| Connect front-end to Api         |    H     |      3hrs      |                |             |
+| Create Output cards              |    H     |      4hrs      |                |             |
+| Functioning SearchBar            |    H     |      8hrs      |                |             |
+| Add editing re-rendering         |    H     |      6hrs      |                |             |
+| Add deletion re-rendering        |    H     |      3hrs      |                |             |
+| Add creating re-rendering        |    H     |      4hrs      |                |             |
+| Total                            |    H     |     30hrs      |                |             |
+
+---
+
+---
+
+---
+
+| ( **Anna** ) Frontend/Styler | Priority | Estimated Time | Time Invetsted | Actual Time |
+| ---------------------------- | :------: | :------------: | :------------: | :---------: |
+| Fill Seed Data               |    H     |      3hrs      |                |             |
+| Total                        |    H     |      6hrs      |                |             |
 
 ## Additional Libraries
 
