@@ -65,11 +65,16 @@ Diagram of the Database:
 
 | ( **Jaabel** ) Backend Engineer                | Priority | Estimated Time | Time Invetsted | Actual Time |
 | ---------------------- | :------: | :------------: | :------------: | :---------: |
-| Installing dependencies |    H     |      3hrs      |          |       |
-| Config the Server      |    H     |      3hrs      |          |       |
-| Build Server           |    H     |      3hrs      |          |       |
-| Build Models           |    H     |      3hrs      |          |       |
+| Setup files |    H     |      1hrs      |          |       |
+| Setup models      |    H     |      1hrs      |          |       |
+| Create Database           |    H     |      1hrs      |          |       |
+| Create Tables           |    H     |      1hrs      |          |       |
+| Create and fill seed data           |    H     |      3hrs      |          |       |
 | Fill Seed Data         |    H     |      3hrs      |          |       |
+| Migrate / Test / debug        |    H     |      3hrs      |          |       |
+| Create routes        |    H     |      3hrs      |          |       |
+| Test routes / debug        |    H     |      3hrs      |          |       |
+| Create api Docs        |    H     |      6hrs      |          |       |
 | Total                  |    H     |      15hrs      |          |       |
 
 
