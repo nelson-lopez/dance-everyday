@@ -33,7 +33,7 @@ and the design for mobile:
 
 Diagram of the Database:
 
-![](https://i.imgur.com/rHMbifN.jpg)
+![](https://i.imgur.com/kGkkfvv.jpg)
 
 ## React Component Hierarchy
 
