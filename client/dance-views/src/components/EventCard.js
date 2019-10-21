@@ -7,6 +7,11 @@ const EventCard = () => {
     <div>
       event card placeholder
       <DisplayCard />
+      <DisplayCard />
+      <DisplayCard />
+      <DisplayCard />
+      <DisplayCard />
+      <DisplayCard />
       <EditCard />
     </div>
   );
