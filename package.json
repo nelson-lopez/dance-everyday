@@ -1,0 +1,54 @@
+{
+  "name": "dance-everyday",
+  "version": "1.0.0",
+  "description": "Dance Everyday is a website in which dance venues will display their events by dance, location, and time.With Dance Everyday organizers will be able to create,modify and list all dance events.",
+  "main": "commands-init.js",
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/iJaabel/Dance-Everyday.git"
+  },
+  "keywords": [
+    "Dance",
+    "Everyday",
+    "Zouk",
+    "West",
+    "Coast",
+    "Swing",
+    "Lambada",
+    "Events"
+  ],
+  "author": "Jaabel Lopez && Nelson Lopez && Anna Moser",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "babel-watch": "^7.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "pg": "^7.12.1",
+    "sequelize": "^5.21.1"
+  },
+  "scripts": {
+    "start": "npm run server",
+    "babel-server": "babel-node ./server.js",
+    "server": "babel-watch ./server.js",
+    "resetdb": "babel-node ./resetDb.js",
+    "seed": "babel-node ./seed.js"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+}
