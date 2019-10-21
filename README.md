@@ -78,25 +78,6 @@ Diagram of the Database:
 | Total                           |    H     |     25hrs      |                |             |
 
 
----
-
----
-
----
-
-
-| ( **Nelson** ) Frontend Engineer | Priority | Estimated Time | Time Invetsted | Actual Time |
-|----------------------------------|:--------:|:--------------:|:--------------:|:-----------:|
-| Fill Seed Data                   |    H     |      1hrs      |                |             |
-| Scaffolding Components           |    H     |      1hrs      |                |             |
-| Connect front-end to Api         |    H     |      3hrs      |                |             |
-| Create Output cards              |    H     |      4hrs      |                |             |
-| Functioning SearchBar            |    H     |      8hrs      |                |             |
-| Add editing re-rendering         |    H     |      6hrs      |                |             |
-| Add deletion re-rendering        |    H     |      3hrs      |                |             |
-| Add creating re-rendering        |    H     |      4hrs      |                |             |
-| Total                            |    H     |     30hrs      |                |             |
-
 
 ---
 
@@ -104,19 +85,39 @@ Diagram of the Database:
 
 ---
 
+| ( **Nelson** ) Frontend Engineer | Priority | Estimated Time | Time Invested | Actual Time |
+| -------------------------------- | :------: | :------------: | :-----------: | :---------: |
+| Fill Seed Data                   |    H     |      1hrs      |               |             |
+| Scaffolding Components           |    H     |      1hrs      |               |             |
+| Connect front-end to Api         |    H     |      3hrs      |               |             |
+| Create Output cards              |    H     |      4hrs      |               |             |
+| Functioning SearchBar            |    H     |      8hrs      |               |             |
+| Add editing re-rendering         |    H     |      6hrs      |               |             |
+| Add deletion re-rendering        |    H     |      3hrs      |               |             |
+| Add creating re-rendering        |    H     |      4hrs      |               |             |
+| Total                            |    H     |     30hrs      |               |             |
 
-| ( **Anna** ) Frontend Engineer & Styler | Priority | Estimated Time | Time Invetsted | Actual Time |
-|-----------------------------------------|:--------:|:--------------:|:--------------:|:-----------:|
-| Fill Seed Data                          |    H     |      3hrs      |                |             |
-| Header                                  |    H     |      3hrs      |                |             |
-| Navigation Bar                          |    H     |      3hrs      |                |             |
-| About                                   |    H     |      3hrs      |                |             |
-| Footer                                  |    H     |      1hrs      |                |             |
-| Output cards                            |    H     |      4hrs      |                |             |
-| Search bar styling                      |    H     |      1hrs      |                |             |
-| Media queries                           |    H     |      4hrs      |                |             |
-| Finishing touches                       |    H     |      3hrs      |                |             |
-| Total                                   |    H     |     25hrs      |                |             |
+---
+
+---
+
+---
+
+
+
+| ( **Anna** ) Frontend Engineer & Styler        | Priority | Estimated Time | Time Invetsted | Actual Time |
+| -------------- | :------: | :------------: | :------------: | :---------: |
+| Fill Seed Data |    H     |      3hrs      |          |       |
+| Header |    H     |      4hrs      |          |       |
+| Navigation Bar |    H     |      3hrs      |          |       |
+| About |    H     |      3hrs      |          |       |
+| Footer |    H     |      1hrs      |          |       |
+| Output cards |    H     |      5hrs      |          |       |
+| Search bar styles |    H     |      1hrs      |          |       |
+| Media queries |    H     |      4hrs      |          |       |
+| Finishing touches |    H     |      6hrs      |          |       |
+| Total          |    H     |      30hrs      |          |       |
+
 
 
 
