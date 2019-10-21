@@ -42,7 +42,7 @@ Diagram of the Database:
 
 ## Priority Matrix
 
-![](https://i.imgur.com/Tas9IlH.jpg)
+![](https://i.imgur.com/BvQ42ur.jpg)
 
 ## Components List
 
