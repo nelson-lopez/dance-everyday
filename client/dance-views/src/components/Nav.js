@@ -7,7 +7,6 @@ const Nav = () => {
       <ul>
         <li>Events</li>
         <li>
-          {' '}
           <CreateEvent />
         </li>
         <li>About</li>

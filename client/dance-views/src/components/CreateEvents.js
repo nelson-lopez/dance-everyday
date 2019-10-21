@@ -4,7 +4,8 @@ const CreateEvents = () => {
   const [currentInfo, setCurrentInfo] = useState('');
 
   const handleOnInput = e => {
-    setCurrentInfo(e.target.input);
+    setCurrentInfo(e.target.value);
+    console.log(currentInfo);
   };
 
   return (
