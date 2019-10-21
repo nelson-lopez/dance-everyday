@@ -46,15 +46,22 @@ Diagram of the Database:
 
 ## Components List
 
-| Component    |
-| ------------ |
-| App          | Houses all component routes and feeds the Home component initial fetch data |
-| Home         | Home houses a Nav component and renders on initial load through the '/' route as well as rendering a searchbar and event results list |
-| EventResults | Event results consumes inital fetch data as well search data and rerenders on fetch. Also serves as a styling container for EventList |
-| EventList    | Conditionally renders event cards based on the props provided from EventList as well as rerenders on Create Event |
-| EventCard    | Conditionally renders based on wether or not the edit button is clicked. Displays information from events such as location, time, and style. As well as provides an edit and delete button |
-| SearchBar    | Fetches a new list based on search filters by dance and by venue |
-| About/Footer | Displays dummy data about the contributors of this project as well as contact information |
+| Component                                                                                                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| App                                                                                                                                                                                        |
+| Houses all component routes and feeds the Home component initial fetch data                                                                                                                |
+| Home                                                                                                                                                                                       |
+| Home houses a Nav component and renders on initial load through the '/' route as well as rendering a searchbar and event results list                                                      |
+| EventResults                                                                                                                                                                               |
+| Event results consumes inital fetch data as well search data and rerenders on fetch. Also serves as a styling container for EventList                                                      |
+| EventList                                                                                                                                                                                  |
+| Conditionally renders event cards based on the props provided from EventList as well as rerenders on Create Event                                                                          |
+| EventCard                                                                                                                                                                                  |
+| Conditionally renders based on wether or not the edit button is clicked. Displays information from events such as location, time, and style. As well as provides an edit and delete button |
+| SearchBar                                                                                                                                                                                  |
+| Fetches a new list based on search filters by dance and by venue                                                                                                                           |
+| About/Footer                                                                                                                                                                               |
+| Displays dummy data about the contributors of this project as well as contact information                                                                                                  |
 
 ---
 
