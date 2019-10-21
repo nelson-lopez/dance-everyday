@@ -4,7 +4,7 @@ import EventList from './EventList';
 const EventResults = () => {
   return (
     <div>
-      event results placeholder
+      Event results :
       <EventList />
     </div>
   );

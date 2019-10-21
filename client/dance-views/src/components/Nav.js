@@ -4,8 +4,14 @@ import CreateEvent from './CreateEvents';
 const Nav = () => {
   return (
     <div>
-      Nav placeholder
-      <CreateEvent />
+      <ul>
+        <li>Events</li>
+        <li>
+          {' '}
+          <CreateEvent />
+        </li>
+        <li>About</li>
+      </ul>
     </div>
   );
 };
