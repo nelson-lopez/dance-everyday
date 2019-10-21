@@ -2,16 +2,16 @@ import React from 'react';
 import DisplayCard from './DisplayCard';
 import EditCard from './EditCard';
 
-const EventCard = () => {
+const EventCard = ({ date, description }) => {
   return (
     <div>
-      event card placeholder
-      <DisplayCard />
-      <DisplayCard />
-      <DisplayCard />
-      <DisplayCard />
-      <DisplayCard />
-      <DisplayCard />
+      <DisplayCard date={date} description={description} />
+      <DisplayCard date={date} description={description} />
+      <DisplayCard date={date} description={description} />
+      <DisplayCard date={date} description={description} />
+      <DisplayCard date={date} description={description} />
+      <DisplayCard date={date} description={description} />
+
       <EditCard />
     </div>
   );
