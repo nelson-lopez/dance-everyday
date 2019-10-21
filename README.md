@@ -74,8 +74,9 @@ Diagram of the Database:
 | Migrate / Test / debug          |    H     |      3hrs      |                |             |
 | Create routes                   |    H     |      3hrs      |                |             |
 | Test routes / debug             |    H     |      3hrs      |                |             |
-| Create api Docs/Support Teamates                 |    H     |      6hrs      |                |             |
-| Total                           |    H     |     25hrs      |                |             |
+| Create api Docs                 |    H     |      6hrs      |                |             |
+| Providing Support to Frontend   |    H     |      5hrs      |                |             |
+| Total                           |    H     |     30hrs      |                |             |
 
 
 
@@ -86,7 +87,7 @@ Diagram of the Database:
 ---
 
 | ( **Nelson** ) Frontend Engineer | Priority | Estimated Time | Time Invested | Actual Time |
-| -------------------------------- | :------: | :------------: | :-----------: | :---------: |
+|----------------------------------|:--------:|:--------------:|:-------------:|:-----------:|
 | Fill Seed Data                   |    H     |      1hrs      |               |             |
 | Scaffolding Components           |    H     |      1hrs      |               |             |
 | Connect front-end to Api         |    H     |      3hrs      |               |             |
@@ -105,18 +106,18 @@ Diagram of the Database:
 
 
 
-| ( **Anna** ) Frontend Engineer & Styler        | Priority | Estimated Time | Time Invetsted | Actual Time |
-| -------------- | :------: | :------------: | :------------: | :---------: |
-| Fill Seed Data |    H     |      3hrs      |          |       |
-| Header |    H     |      4hrs      |          |       |
-| Navigation Bar |    H     |      3hrs      |          |       |
-| About |    H     |      3hrs      |          |       |
-| Footer |    H     |      1hrs      |          |       |
-| Output cards |    H     |      5hrs      |          |       |
-| Search bar styles |    H     |      1hrs      |          |       |
-| Media queries |    H     |      4hrs      |          |       |
-| Finishing touches |    H     |      6hrs      |          |       |
-| Total          |    H     |      30hrs      |          |       |
+| ( **Anna** ) Frontend Engineer & Styler | Priority | Estimated Time | Time Invetsted | Actual Time |
+|-----------------------------------------|:--------:|:--------------:|:--------------:|:-----------:|
+| Fill Seed Data                          |    H     |      3hrs      |                |             |
+| Header                                  |    H     |      4hrs      |                |             |
+| Navigation Bar                          |    H     |      3hrs      |                |             |
+| About                                   |    H     |      3hrs      |                |             |
+| Footer                                  |    H     |      1hrs      |                |             |
+| Output cards                            |    H     |      5hrs      |                |             |
+| Search bar styles                       |    H     |      1hrs      |                |             |
+| Media queries                           |    H     |      4hrs      |                |             |
+| Finishing touches                       |    H     |      6hrs      |                |             |
+| Total                                   |    H     |     30hrs      |                |             |
 
 
 
