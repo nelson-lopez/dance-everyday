@@ -37,7 +37,7 @@ Diagram of the Database:
 
 ## React Component Hierarchy
 
-![](https://imgur.com/a/MtS2Gc6.jpg)
+![](https://i.imgur.com/a/MtS2Gc6.png)
 
 ## Priority Matrix
 
@@ -75,27 +75,8 @@ Diagram of the Database:
 | Create routes        |    H     |      3hrs      |          |       |
 | Test routes / debug        |    H     |      3hrs      |          |       |
 | Create api Docs        |    H     |      6hrs      |          |       |
-| Total                  |    H     |      15hrs      |          |       |
+| Total                  |    H     |      25hrs      |          |       |
 
-
----
-
----
-
----
-
-
-| ( **Nelson** ) Frontend Engineer | Priority | Estimated Time | Time Invetsted | Actual Time |
-| -------------------------------- | :------: | :------------: | :------------: | :---------: |
-| Fill Seed Data                   |    H     |      1hrs      |                |             |
-| Scaffolding Components           |    H     |      1hrs      |                |             |
-| Connect front-end to Api         |    H     |      3hrs      |                |             |
-| Create Output cards              |    H     |      4hrs      |                |             |
-| Functioning SearchBar            |    H     |      8hrs      |                |             |
-| Add editing re-rendering         |    H     |      6hrs      |                |             |
-| Add deletion re-rendering        |    H     |      3hrs      |                |             |
-| Add creating re-rendering        |    H     |      4hrs      |                |             |
-| Total                            |    H     |     30hrs      |                |             |
 
 
 ---
@@ -103,6 +84,25 @@ Diagram of the Database:
 ---
 
 ---
+
+| ( **Nelson** ) Frontend Engineer | Priority | Estimated Time | Time Invested | Actual Time |
+| -------------------------------- | :------: | :------------: | :-----------: | :---------: |
+| Fill Seed Data                   |    H     |      1hrs      |               |             |
+| Scaffolding Components           |    H     |      1hrs      |               |             |
+| Connect front-end to Api         |    H     |      3hrs      |               |             |
+| Create Output cards              |    H     |      4hrs      |               |             |
+| Functioning SearchBar            |    H     |      8hrs      |               |             |
+| Add editing re-rendering         |    H     |      6hrs      |               |             |
+| Add deletion re-rendering        |    H     |      3hrs      |               |             |
+| Add creating re-rendering        |    H     |      4hrs      |               |             |
+| Total                            |    H     |     30hrs      |               |             |
+
+---
+
+---
+
+---
+
 
 
 | ( **Anna** ) Frontend Engineer & Styler        | Priority | Estimated Time | Time Invetsted | Actual Time |
@@ -117,6 +117,7 @@ Diagram of the Database:
 | Media queries |    H     |      4hrs      |          |       |
 | Finishing touches |    H     |      6hrs      |          |       |
 | Total          |    H     |      30hrs      |          |       |
+
 
 
 
