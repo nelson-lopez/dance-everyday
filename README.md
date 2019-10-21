@@ -4,7 +4,7 @@
 
 ## Project Description
 
-Dance Everyday is a website in which dance venues will display their events by dance, location, and time.
+Dance Everyday is a website in which dance venues will display their events by dance, location, and time.With Dance Everyday organizers will be able to create,modify and list all dance events.
 
 ## Wireframes
 
@@ -19,7 +19,7 @@ and the design for mobile:
 #### MVP
 
 - Build out the database to represent the relation between venue and events per menu.
-- Render 3 filter views of available events in the city: by dance, by venue, by date.
+- Render 2 filter views of available events in the city: by dance, by venue.
 - Set up routes for the home, event list, edit, event, create.
 - Mobile first design
 
@@ -28,6 +28,7 @@ and the design for mobile:
 - Add user auth with favorites and add venue
 - Friend Finder
 - Food near venue
+- Add another filter view for dance style
 
 ## ERD Diagram
 
@@ -37,7 +38,7 @@ Diagram of the Database:
 
 ## React Component Hierarchy
 
-![](https://i.imgur.com/a/MtS2Gc6.png)
+![](https://i.imgur.com/xjFxnEs.png)
 
 ## Priority Matrix
 
@@ -62,14 +63,20 @@ Diagram of the Database:
 
 ---
 
-| ( **Jaabel** ) Backend Engineer | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| Installing dependencies         |    H     |      3hrs      |               |             |
-| Config the Server               |    H     |      3hrs      |               |             |
-| Build Server                    |    H     |      3hrs      |               |             |
-| Build Models                    |    H     |      3hrs      |               |             |
-| Fill Seed Data                  |    H     |      3hrs      |               |             |
-| Total                           |    H     |     15hrs      |               |             |
+| ( **Jaabel** ) Backend Engineer | Priority | Estimated Time | Time Invetsted | Actual Time |
+| ------------------------------- | :------: | :------------: | :------------: | :---------: |
+| Setup files                     |    H     |      1hrs      |                |             |
+| Setup models                    |    H     |      1hrs      |                |             |
+| Create Database                 |    H     |      1hrs      |                |             |
+| Create Tables                   |    H     |      1hrs      |                |             |
+| Create and fill seed data       |    H     |      3hrs      |                |             |
+| Fill Seed Data                  |    H     |      3hrs      |                |             |
+| Migrate / Test / debug          |    H     |      3hrs      |                |             |
+| Create routes                   |    H     |      3hrs      |                |             |
+| Test routes / debug             |    H     |      3hrs      |                |             |
+| Create api Docs                 |    H     |      6hrs      |                |             |
+| Providing Support to Frontend   |    H     |      5hrs      |                |             |
+| Total                           |    H     |     30hrs      |                |             |
 
 ---
 
@@ -95,18 +102,18 @@ Diagram of the Database:
 
 ---
 
-| ( **Anna** ) Frontend Engineer & Styler | Priority | Estimated Time | Time Invested | Actual Time |
-| --------------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| Fill Seed Data                          |    H     |      3hrs      |               |             |
-| Header                                  |    H     |      3hrs      |               |             |
-| Navigation Bar                          |    H     |      3hrs      |               |             |
-| About                                   |    H     |      3hrs      |               |             |
-| Footer                                  |    H     |      1hrs      |               |             |
-| Output cards                            |    H     |      4hrs      |               |             |
-| Search bar styling                      |    H     |      1hrs      |               |             |
-| Media queries                           |    H     |      4hrs      |               |             |
-| Finishing touches                       |    H     |      3hrs      |               |             |
-| Total                                   |    H     |     25hrs      |               |             |
+| ( **Anna** ) Frontend Engineer & Styler | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --------------------------------------- | :------: | :------------: | :------------: | :---------: |
+| Fill Seed Data                          |    H     |      3hrs      |                |             |
+| Header                                  |    H     |      4hrs      |                |             |
+| Navigation Bar                          |    H     |      3hrs      |                |             |
+| About                                   |    H     |      3hrs      |                |             |
+| Footer                                  |    H     |      1hrs      |                |             |
+| Output cards                            |    H     |      5hrs      |                |             |
+| Search bar styles                       |    H     |      1hrs      |                |             |
+| Media queries                           |    H     |      4hrs      |                |             |
+| Finishing touches                       |    H     |      6hrs      |                |             |
+| Total                                   |    H     |     30hrs      |                |             |
 
 ## Additional Libraries
 
