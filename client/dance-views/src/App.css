@@ -39,6 +39,7 @@ body {
   opacity: 1;
   margin: 16px 0 0 0;
   text-align: center;
+  box-shadow: 5px 5px 5px 0px gray;
 }
 
 .nav li {
@@ -48,6 +49,7 @@ body {
   font-size: 18px;
 
 }
+
 
 
 
