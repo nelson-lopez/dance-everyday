@@ -1,15 +1,59 @@
+body {
+  margin: 0px;
+}
+
 .header {
-    background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg');
-    color: white;
-    padding: 400px 0 0 0;
+    background-image: url('https://cdn.pixabay.com/photo/2016/11/10/07/43/tango-1813691_1280.jpg'); 
+    padding: 500px 0 0 0;
     opacity: 1;
+    display: block;
+    background-size: cover;
+    background-position: center;
     }
+
+.header ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/* NAV LINK HOVER */
+.nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav a:hover{
+  color: black;
+}
+
+.nav-link:hover {
+  background-color: #F9C889;
+  color: black;
+}
+
+.nav ul {
+  padding: 20px;
+  background: black;
+  opacity: 1;
+  margin: 16px 0 0 0;
+  text-align: center;
+}
+
+.nav li {
+  display: inline;
+  padding: 0px 25px 0px 25px;
+  font-weight: bold;
+  font-size: 18px;
+
+}
 
 
 
     
 
-Smartphones (portrait and landscape) -----------
+/* Smartphones (portrait and landscape) ----------- */
 
 @media only screen 
   and (min-device-width: 320px) 
@@ -18,9 +62,19 @@ Smartphones (portrait and landscape) -----------
   and (orientation: portrait) {
 
     .header {
-        background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg');
-        }
-
-
+      /* background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg'); */
+      /* background-image: url('https://www.dance.nyc/images/users/13092/MarcandKirievent_image.jpg'); */
+      background-image: url('https://cdn.pixabay.com/photo/2016/11/10/07/43/tango-1813691_1280.jpg');
+      color: white;
+      padding: 400px 0 0 0;
+      opacity: 1;
+      background-size: cover;
+      }
 
   }
+
+
+  /* Background images */
+    /* background-image: url('https://image.shutterstock.com/image-photo/shot-young-woman-dancing-nightclub-600w-763642693.jpg');   */
+  /* background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg'); */
+    /* background-image: url('https://www.dance.nyc/images/users/13092/MarcandKirievent_image.jpg'); */

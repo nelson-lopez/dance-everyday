@@ -3,18 +3,26 @@ import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
-    <div>
+    <div className="nav">
       <ul>
-        <Link to="/">Home</Link>
         <li>
-          <Link to="/create-event">Create Event</Link>
+        <div className="nav-link">
+          <Link to="/">Home</Link>
+        </div>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <div className="nav-link">
+            <Link to="/create-event">Create Event</Link>
+          </div>
+        </li>
+        <li>
+          <div className="nav-link">
+            <Link to="/about">About</Link>
+          </div>
         </li>
       </ul>
     </div>
   );
-};
+}
 
 export default Nav;

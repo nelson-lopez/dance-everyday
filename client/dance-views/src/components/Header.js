@@ -1,9 +1,12 @@
 import React from 'react';
+import Nav from './Nav'
 
 function Header() {
   return (
     <div className="header">
-      <h1> This is the header</h1>
+      <Nav/>
+      {/* <h1> This is the header</h1> */}
+
     </div>
   );
 }

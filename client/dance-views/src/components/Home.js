@@ -9,8 +9,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      home placeholder
-      <Nav />
+      {/* <Nav /> */}
       <SearchBar />
       <EventResults />
       <Footer />
