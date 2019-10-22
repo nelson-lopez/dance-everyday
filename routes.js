@@ -62,12 +62,6 @@ const updateEvent = async (
   }
 };
 
-<<<<<<< HEAD
-export const eventRouter = Router();
-eventRouter.get('/events', getAllEvents);
-eventRouter.get('/events/:id', getEventById);
-eventRouter.put('/events/:id', updateEvent);
-=======
 const deleteEvent = async (
     /**@type {express.Request} */ req,
     /**@type {express.Response} */ res) => {
@@ -86,4 +80,3 @@ eventRouter.get("/events", getAllEvents)
 eventRouter.get("/events/:id", getEventById)
 eventRouter.put("/events/:id", updateEvent)
 eventRouter.delete("/events/:id", deleteEvent)
->>>>>>> 9ee89007f48969a7dbc6c75193b2334c9fbb447c
