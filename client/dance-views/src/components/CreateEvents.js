@@ -4,7 +4,8 @@ import Nav from './Nav';
 const CreateEvents = ({ handleOnCreate }) => {
   const [currentInfo, setCurrentInfo] = useState({
     name: 'Event name',
-    description: 'Describe your event'
+    description: 'Describe your event',
+    date: '1/1/2019'
   });
 
   const handleOnInput = e => {
@@ -31,6 +32,12 @@ const CreateEvents = ({ handleOnCreate }) => {
             type="text"
             name="name"
             placeholder={currentInfo.name}
+            onChange={handleOnInput}
+          />
+          <input
+            type="text"
+            name="date"
+            placeholder={currentInfo.date}
             onChange={handleOnInput}
           />
           <input
