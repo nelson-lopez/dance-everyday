@@ -25,10 +25,10 @@ const EventList = () => {
         {eventInfo.map((obj, index) => {
           return (
             <EventCard
-              name={obj.event_name}
+              name={obj.name}
               key={obj.id}
-              date={obj.event_date}
-              description={obj.event_description}
+              date={obj.date}
+              description={obj.description}
               id={obj.id}
               handleDelete={handleDelete}
             />

@@ -13,12 +13,12 @@ const sequelize = new Sequelize({
 
 Organizer.init(
     {
-        organizer_name: DataTypes.STRING,
+        name: DataTypes.STRING,
         company: DataTypes.STRING,
-        event_id: {
-            type: DataTypes.INTEGER,
-            foreignKey: true
-        }
+        // event_id: {
+        //     type: DataTypes.INTEGER,
+        //     foreignKey: true
+        // }
     },
     {
         freezeTableName: true,
@@ -29,11 +29,11 @@ Organizer.init(
 
 Event.init(
     {
-        event_name: DataTypes.STRING,
-        event_date: DataTypes.STRING,
-        event_description: DataTypes.STRING,
-        venue_id: DataTypes.INTEGER,
-        ref_dance_style_id: DataTypes.INTEGER
+        name: DataTypes.STRING,
+        date: DataTypes.STRING,
+        description: DataTypes.STRING,
+        // venue_id: DataTypes.INTEGER,
+        // ref_dance_style_id: DataTypes.INTEGER
     },
     {
         freezeTableName: true,
@@ -44,9 +44,9 @@ Event.init(
 
 Venue.init(
     {
-        venue_name: DataTypes.STRING,
-        venue_location: DataTypes.STRING,
-        venue_contact: DataTypes.STRING
+        name: DataTypes.STRING,
+        location: DataTypes.STRING,
+        contact: DataTypes.STRING
     },
     {
         freezeTableName: true,
@@ -67,9 +67,9 @@ Ref_Dance_Style.init(
     }
 );
 
-// Organizer.hasMany(Event)
-Event.hasOne(Organizer, { foreignKey: "event_id", targetKey: "id" })
-Event.belongsTo(Organizer)
+Organizer.hasMany(Event)
+Ref_Dance_Style.hasMany(Event)
+Venue.hasMany(Event)
+Event.hasOne(Organizer)
 Event.hasMany(Ref_Dance_Style)
-Venue.belongsTo(Event)
-Ref_Dance_Style.belongsTo(Event)
+Event.hasOne(Venue)
