@@ -12,9 +12,9 @@ app.use(cors())
 app.use("/api", eventRouter)
 
 app.get("/test", (req,res) => {
-    return res.header(200).send({greetings: "You are successfully at the Dance Everyday API"})
+    return res.header(200).send({greetings: "You are successfully connected to the Dance Everyday API"})
 })
 
 app.listen(PORT)
 
-console.log('hand-rolled express server listing on Port ::', PORT)
+console.log('Express server listing on Port :: ', PORT)
