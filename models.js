@@ -14,7 +14,8 @@ const sequelize = new Sequelize({
 Organizer.init(
   {
     organizer_name: DataTypes.STRING,
-    company: DataTypes.STRING
+    company: DataTypes.STRING,
+    event_id: DataTypes.INTEGER
   },
   {
     freezeTableName: true,
@@ -27,7 +28,9 @@ Event.init(
   {
     event_name: DataTypes.STRING,
     event_date: DataTypes.STRING,
-    event_description: DataTypes.STRING
+    event_description: DataTypes.STRING,
+    venue_id: DataTypes.INTEGER,
+    ref_dance_style_id: DataTypes.INTEGER
   },
   {
     freezeTableName: true,

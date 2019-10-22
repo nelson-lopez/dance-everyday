@@ -6,7 +6,7 @@ const EventList = () => {
   const [eventInfo, setEventInfo] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:9876/api/event').then(res => {
+    axios.get('http://localhost:9876/api/events').then(res => {
       setEventInfo(res.data.events.slice(0, 12));
     });
   }, []);
