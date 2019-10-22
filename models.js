@@ -24,7 +24,7 @@ Organizer.init(
 Event.init(
     {
         event_name: DataTypes.STRING,
-        event_Date: DataTypes.STRING,
+        event_date: DataTypes.STRING,
         event_description: DataTypes.STRING
     },
     {
