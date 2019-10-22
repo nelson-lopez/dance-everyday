@@ -9,6 +9,7 @@ export default function EditCard({ date, description, handleFlip }) {
   const handleOnChange = e => {
     const element = e.target;
     const { name, value } = element;
+    ///Grab current element values on change and feed them to current state while spreading previous state
     setFormData(prevState => ({
       ...prevState,
       [name]: value
@@ -18,7 +19,8 @@ export default function EditCard({ date, description, handleFlip }) {
   };
 
   const handleOnSubmit = () => {
-    handleFlip();
+    /// Lift up state through submit
+    handleFlip(formData.date, formData.description);
   };
 
   return (
