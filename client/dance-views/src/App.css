@@ -19,8 +19,18 @@ body {
 }
 
 /* NAV LINK HOVER */
+.nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav a:hover{
+  color: black;
+}
+
 .nav-link:hover {
-  background-color: white;
+  background-color: #F9C889;
+  color: black;
 }
 
 .nav ul {
@@ -39,10 +49,7 @@ body {
 
 }
 
-.nav a {
-  color: #fff;
-  text-decoration: none;
-}
+
 
     
 
