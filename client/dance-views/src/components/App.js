@@ -10,8 +10,10 @@ const App = () => {
   React.createContext(newEvent);
 
   const handleOnCreate = value => {
-    console.log(value);
+    setNewEvent(value);
   };
+
+  console.log(newEvent);
 
   return (
     <div>
