@@ -5,16 +5,24 @@ const Nav = () => {
   return (
     <div className="nav">
       <ul>
-        <Link to="/">Home</Link>
         <li>
-          <Link to="/create-event">Create Event</Link>
+        <div className="link-1">
+          <Link to="/">Home</Link>
+        </div>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <div className="link-2">
+            <Link to="/create-event">Create Event</Link>
+          </div>
+        </li>
+        <li>
+          <div className="link-3">
+            <Link to="/about">About</Link>
+          </div>
         </li>
       </ul>
     </div>
   );
-};
+}
 
 export default Nav;
