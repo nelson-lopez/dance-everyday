@@ -72,10 +72,10 @@ const deleteEvent = async (
     /**@type {express.Request} */ req,
     /**@type {express.Response} */ res) => {
         let id = req.params.id
-        try{
-            const destroy = await Event.destroy(req.body, { where: { id: id } })
+        try {
+            const destroy = await Event.destroy({ where: { id: id } })
             if (destroy) {
-                return res.jason(`The deed has been done`)
+                return res.json(`The deed has been done \n event id:${id} destroyed >===> (˵¯͒࿄¯͒˵)`)
             }
         } catch (error) { return res.status(500).send(error.message) }
         
