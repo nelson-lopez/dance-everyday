@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Nav from './Nav';
 
 const CreateEvents = () => {
   const [currentInfo, setCurrentInfo] = useState({
@@ -17,6 +18,7 @@ const CreateEvents = () => {
 
   return (
     <div>
+      <Nav />
       <form>
         <label>
           Create new event:
