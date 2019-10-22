@@ -37,8 +37,10 @@
     "babel-server": "babel-node ./server.js",
     "server": "babel-watch ./server.js",
     "resetdb": "babel-node ./resetDb.js",
-    "seed": "babel-node ./seed.js"
-  },
+    "seed": "babel-node ./seed.js",
+    "createdevdb": "createdb -U postgres -W ",
+    "rebuild-database": "npm run resetdb && npm run seed"
+},
   "babel": {
     "presets": [
       [

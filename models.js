@@ -1,65 +1,57 @@
 import { Model, DataTypes, Sequelize } from 'sequelize'
+export class Organizer extends Model { }
+export class Event extends Model { }
+export class Venue extends Model { }
+export class Ref_Dance_Style extends Model { }
 
 const sequelize = new Sequelize(
     {
         database: "dance_everyday_db",
         dialect: "postgres"
-    }
-)
-
-export class Organizer extends Model {}
+    })
 
 Organizer.init(
-    {   
-        Organizer_Name : DataTypes.STRING,
-        Company: DataTypes.STRING
+    {
+        organizer_name: DataTypes.STRING,
+        company: DataTypes.STRING
     },
     {
         freezeTableName: true,
         tableName: "Organizer",
         sequelize
-    }
-)
-
-export class Event extends Model {}
+    })
 
 Event.init(
     {
-        Event_Date: DataTypes.STRING,
-        Event_Description: DataTypes.STRING
+        event_name: DataTypes.STRING,
+        event_Date: DataTypes.STRING,
+        event_description: DataTypes.STRING
     },
     {
         freezeTableName: true,
         tableName: "Event",
         sequelize
-    }
-)
-
-export class Venue extends Model {}
+    })
 
 Venue.init(
     {
-        Venue_Name: DataTypes.STRING,
-        Venue_Location: DataTypes.STRING,
-        Venue_Contact: DataTypes.STRING
+        venue_name: DataTypes.STRING,
+        venue_location: DataTypes.STRING,
+        venue_contact: DataTypes.STRING
     },
     {
         freezeTableName: true,
         tableName: "Venue",
         sequelize
-    }
-)
-
-export class Ref_Dance_Style extends Model {}
+    })
 
 Ref_Dance_Style.init(
     {
-        Dance_Style: DataTypes.STRING,
-        Dance_Style_Description: DataTypes.STRING
+        dance_style: DataTypes.STRING,
+        dance_style_description: DataTypes.STRING
     },
     {
         freezeTableName: true,
         tableName: "Ref_Dance_Style",
         sequelize
-    }
-)
+    })
