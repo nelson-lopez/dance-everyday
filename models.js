@@ -5,8 +5,8 @@ export class Venue extends Model { }
 export class Ref_Dance_Style extends Model { }
 
 const sequelize = new Sequelize({
-    username: 'postgres',
-    password: 'dap',
+    // username: 'postgres',
+    // password: 'dap',
     database: 'dance_everyday_db',
     dialect: 'postgres'
 });
