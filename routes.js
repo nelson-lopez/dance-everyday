@@ -50,4 +50,4 @@ const updateEvent = async (
 export const eventRouter = Router()
 eventRouter.get("/events", getAllEvents)
 eventRouter.get("/events/:id", getEventById)
-eventRouter.get("/events/:id/edit", updateEvent)
+eventRouter.post("/events/:id", updateEvent)
