@@ -7,14 +7,10 @@ const Nav = () => {
       <ul>
         <Link to="/">Home</Link>
         <li>
-<<<<<<< HEAD
-          <CreateEvent />
-=======
           <Link to="/create-event">Create Event</Link>
         </li>
         <li>
           <Link to="/about">About</Link>
->>>>>>> 29ec0cd24ed008c7d6120236b94dcf09d405553a
         </li>
       </ul>
     </div>

@@ -1,26 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import EventCard from './EventCard';
 
 const EventList = () => {
-  const [eventInfo, setEventInfo] = useState({
-    date: '11/21/2019',
-    description:
-      'Event discription:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra vel turpis nunc eget lorem dolor'
-  });
-  const [count, setCount] = useState([1, 2, 3, 4, 5, 6]);
-  return (
-    <div>
-      event list placeholders
-      {count.map(() => {
-        return (
-          <EventCard
-            date={eventInfo.date}
-            description={eventInfo.description}
-          />
-        );
-      })}
-    </div>
-  );
+  const [eventInfo, setEventInfo] = useState(null);
+
+  useEffect(() => {
+    axios.get('http://localhost:9876/api/event').then(res => {
+      setEventInfo(res.data.events.slice(0, 12));
+    });
+  }, []);
+  console.log(eventInfo);
+
+  const handleDelete = id => {
+    console.log('deleted', id);
+  };
+  if (eventInfo) {
+    return (
+      <div>
+        {eventInfo.map((obj, index) => {
+          return (
+            <EventCard
+              name={obj.event_name}
+              key={obj.id}
+              date={obj.event_date}
+              description={obj.event_description}
+              id={obj.id}
+              handleDelete={handleDelete}
+            />
+          );
+        })}
+      </div>
+    );
+  } else return <div>Loading..</div>;
 };
 
 export default EventList;
