@@ -1,16 +1,18 @@
 import React from 'react';
 import CreateEvent from './CreateEvents';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
     <div>
       <ul>
-        <li>Events</li>
+        <Link to="/">Home</Link>
         <li>
-          {' '}
           <CreateEvent />
         </li>
-        <li>About</li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
       </ul>
     </div>
   );
