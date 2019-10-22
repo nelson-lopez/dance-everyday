@@ -84,7 +84,11 @@ const danceStyleData = [
     }
 ]
 
-
+const venueData = [
+    {
+        
+    }
+]
 
 const seedAll = () => {
     eventData.forEach(async event => await Event.create(event))

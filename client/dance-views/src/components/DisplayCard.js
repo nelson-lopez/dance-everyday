@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import EditCard from './EditCard';
 
-const DisplayCard = ({ date, description, handleDelete, id }) => {
+const DisplayCard = ({ date, description, handleDelete, id, name }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [cardState, setCardState] = useState({
     date: date,
-    description: description
+    description: description,
+    name: name,
+    id: id
   });
 
   const handleOnEdit = () => {
@@ -29,7 +31,7 @@ const DisplayCard = ({ date, description, handleDelete, id }) => {
   if (!isClicked)
     return (
       <div>
-        <h2>Event Card</h2>
+        <h2>{cardState.name}</h2>
         <h2>{cardState.date}</h2>
         <p>{cardState.description}</p>
         <button onClick={handleOnEdit}>Edit</button>

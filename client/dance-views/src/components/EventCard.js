@@ -1,7 +1,7 @@
 import React from 'react';
 import DisplayCard from './DisplayCard';
 
-const EventCard = ({ date, description, handleDelete, id }) => {
+const EventCard = ({ date, description, handleDelete, id, name }) => {
   return (
     <div>
       <DisplayCard
@@ -9,6 +9,7 @@ const EventCard = ({ date, description, handleDelete, id }) => {
         description={description}
         id={id}
         handleDelete={handleDelete}
+        name={name}
       />
     </div>
   );

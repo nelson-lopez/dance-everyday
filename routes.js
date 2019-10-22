@@ -13,5 +13,17 @@ const getAllEvents = async (
         }
     }
 
+const getEventById = async (
+    /**@type {express.Request} */ req,
+    /**@type {express.Response} */ res) => {
+        try{
+            const event = await Event.findByPk(req.params.id)
+            return res.json(event)
+        }catch (error) {
+            return res.status(500).send(error.message)
+        }
+    } 
+
 export const eventRouter = Router()
-eventRouter.get("/event", getAllEvents)
+eventRouter.get("/events", getAllEvents)
+eventRouter.get("/events/:id", getEventById)
