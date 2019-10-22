@@ -63,3 +63,7 @@ Ref_Dance_Style.init(
     sequelize
   }
 );
+
+Event.belongsTo(Organizer)
+Organizer.hasMany(Event)
+Venue.belongsTo(Event)
