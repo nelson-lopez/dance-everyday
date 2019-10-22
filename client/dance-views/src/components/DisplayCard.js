@@ -8,6 +8,10 @@ const DisplayCard = ({ date, description }) => {
     setIsClicked(!isClicked);
     console.log(isClicked);
   };
+
+  const handleFlip = () => {
+    setIsClicked(!isClicked);
+  };
   if (!isClicked)
     return (
       <div>
@@ -17,7 +21,10 @@ const DisplayCard = ({ date, description }) => {
         <button onClick={handleOnEdit}>Edit</button>
       </div>
     );
-  else return <EditCard date={date} description={description} />;
+  else
+    return (
+      <EditCard date={date} description={description} handleFlip={handleFlip} />
+    );
 };
 
 export default DisplayCard;

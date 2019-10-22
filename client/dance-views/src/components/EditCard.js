@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function EditCard({ date, description }) {
+export default function EditCard({ date, description, handleFlip }) {
   const [formData, setFormData] = useState({
     date: date,
     description: description
@@ -15,6 +15,10 @@ export default function EditCard({ date, description }) {
     }));
 
     console.log(formData);
+  };
+
+  const handleOnSubmit = () => {
+    handleFlip();
   };
 
   return (
@@ -35,7 +39,7 @@ export default function EditCard({ date, description }) {
             onChange={handleOnChange}
           />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" onClick={handleOnSubmit} />
       </form>
     </div>
   );
