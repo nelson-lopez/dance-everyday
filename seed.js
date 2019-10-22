@@ -80,7 +80,7 @@ const organizerData = [
 const danceStyleData = [
     {
         "dance_style": "Zouk",
-        "dance_style_description": ""
+        "dance_style_description": "Brazilian Zouk is a partner dance which began in Brazil during the early 1990s. Brazilian Zouk evolved from the partner dance known as the Lambada. As the Lambada music genre went out of fashion, Lambada dancers turned to Caribbean Zouk (from the francophone, Caribbean Islands) as their music of choice. It was this transition that birthed the dance known as Brazilian Zouk. The term Brazilian Zouk was adopted in order to distinguish the dance style from the musical genre Caribbean Zouk. Nowadays the term Zouk is commonly used to refer to the Brazilian Zouk dance style. The most characteristic feature of Brazilian Zouk is the follower's upper body movements which are led out of axis by intricate leading and following techniques. Other features include body isolations, tilted turns and more recently counter-balance techniques. Brazilian Zouk is a dance with well defined basic steps and rhythmic patterns. The representation of these steps and rhythmic patterns varies depending on the substyle of Zouk. The overall plasticity of the movements and the range of musical genres it is danced to, make Brazilian Zouk a partner dance that caters to creativity and improvisation. Over time, Zouk dancers have experimented and incorporated other styles of music into Zouk, such as R'n'B, Pop, Hip Hop and Contemporary (amongst others)."
     }
 ]
 
@@ -94,7 +94,7 @@ const seedAll = () => {
     eventData.forEach(async event => await Event.create(event))
     organizerData.forEach(async account => await Organizer.create(account))
     danceStyleData.forEach(async style => await Ref_Dance_Style.create(style))
-
+    
 }
 
 seedAll()
