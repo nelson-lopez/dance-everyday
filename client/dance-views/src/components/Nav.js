@@ -1,5 +1,4 @@
 import React from 'react';
-import CreateEvent from './CreateEvents';
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
@@ -8,7 +7,7 @@ const Nav = () => {
       <ul>
         <Link to="/">Home</Link>
         <li>
-          <CreateEvent />
+          <Link to="/create-event">Create Event</Link>
         </li>
         <li>
           <Link to="/about">About</Link>

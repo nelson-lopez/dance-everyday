@@ -14,7 +14,7 @@ const DisplayCard = ({ date, description }) => {
   };
 
   const handleFlip = (date, description) => {
-    /// Set state causing rerender on edit submittion
+    /// Set state causing rerender on edit submission
     setCardState(prevState => ({
       ...prevState,
       date: date,
