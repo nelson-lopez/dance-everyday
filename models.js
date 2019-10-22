@@ -24,16 +24,17 @@ Organizer.init(
 );
 
 Event.init(
-    {
-        event_name: DataTypes.STRING,
-        event_date: DataTypes.STRING,
-        event_description: DataTypes.STRING
-    },
-    {
-        freezeTableName: true,
-        tableName: "Event",
-        sequelize
-    })
+  {
+    event_name: DataTypes.STRING,
+    event_date: DataTypes.STRING,
+    event_description: DataTypes.STRING
+  },
+  {
+    freezeTableName: true,
+    tableName: 'Event',
+    sequelize
+  }
+);
 
 Venue.init(
   {
