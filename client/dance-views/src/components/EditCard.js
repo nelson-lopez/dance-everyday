@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
-export default function EditCard({ date, description, handleFlip }) {
+export default function EditCard({ name, date, description, handleFlip, id }) {
   const [formData, setFormData] = useState({
     date: date,
-    description: description
+    description: description,
+    name: name,
+    id: id
   });
 
   const handleOnChange = e => {
@@ -20,7 +22,7 @@ export default function EditCard({ date, description, handleFlip }) {
 
   const handleOnSubmit = () => {
     /// Lift up state through submit
-    handleFlip(formData.date, formData.description);
+    handleFlip(formData.date, formData.description, formData.name, formData.id);
   };
 
   return (
@@ -28,6 +30,12 @@ export default function EditCard({ date, description, handleFlip }) {
       <form>
         <label>
           Edit new card:
+          <input
+            type="text"
+            name="name"
+            placeholder={name}
+            onChange={handleOnChange}
+          />
           <input
             type="text"
             name="date"

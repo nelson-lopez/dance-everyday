@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import EditCard from './EditCard';
+import axios from 'axios';
 
 const DisplayCard = ({ date, description, handleDelete, id, name }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -15,22 +16,39 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
     console.log(isClicked);
   };
 
-  const handleFlip = (date, description) => {
+  const handleFlip = (date, description, name, id) => {
     /// Set state causing rerender on edit submission
     setCardState(prevState => ({
       ...prevState,
+      name: name,
       date: date,
       description: description
     }));
     setIsClicked(!isClicked);
+
+    axios
+      .put(`http://localhost:9876/api/events/${id}`, {
+        event_name: name,
+        event_date: date,
+        event_discription: description
+      })
+      .then(res => console.log(res));
   };
+
   const handleOnDelete = () => {
     handleDelete(id);
   };
+
   //// Conditionally render if edit has been clicked or not
   if (!isClicked)
     return (
-      <div>
+      <div className = "card">
+        <img
+        src={
+          'https://images.pexels.com/photos/270837/pexels-photo-270837.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+        }
+        alt="test"
+      />
         <h2>{cardState.name}</h2>
         <h2>{cardState.date}</h2>
         <p>{cardState.description}</p>
@@ -42,7 +60,9 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
     return (
       <EditCard
         date={cardState.date}
+        name={cardState.name}
         description={cardState.description}
+        id={cardState.id}
         handleFlip={handleFlip}
       />
     );
