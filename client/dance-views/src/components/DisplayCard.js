@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import EditCard from './EditCard';
 
-const DisplayCard = ({ date, description }) => {
+const DisplayCard = ({ date, description, handleDelete, id }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [cardState, setCardState] = useState({
     date: date,
@@ -22,6 +22,9 @@ const DisplayCard = ({ date, description }) => {
     }));
     setIsClicked(!isClicked);
   };
+  const handleOnDelete = () => {
+    handleDelete(id);
+  };
   //// Conditionally render if edit has been clicked or not
   if (!isClicked)
     return (
@@ -30,6 +33,7 @@ const DisplayCard = ({ date, description }) => {
         <h2>{cardState.date}</h2>
         <p>{cardState.description}</p>
         <button onClick={handleOnEdit}>Edit</button>
+        <button onClick={handleOnDelete}>Delete</button>
       </div>
     );
   else

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Nav from './Nav';
 
-const CreateEvents = () => {
+const CreateEvents = ({ handleOnCreate }) => {
   const [currentInfo, setCurrentInfo] = useState({
     name: 'Event name',
     description: 'Describe your event'
@@ -14,6 +14,11 @@ const CreateEvents = () => {
       ...prevState,
       [name]: value
     }));
+  };
+
+  const onSubmit = e => {
+    e.preventDefault();
+    handleOnCreate(currentInfo);
   };
 
   return (
@@ -35,7 +40,7 @@ const CreateEvents = () => {
             onChange={handleOnInput}
           />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" onClick={onSubmit} />
       </form>
     </div>
   );
