@@ -30,7 +30,13 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
   //// Conditionally render if edit has been clicked or not
   if (!isClicked)
     return (
-      <div>
+      <div className = "card">
+        <img
+        src={
+          'https://images.pexels.com/photos/270837/pexels-photo-270837.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+        }
+        alt="test"
+      />
         <h2>{cardState.name}</h2>
         <h2>{cardState.date}</h2>
         <p>{cardState.description}</p>
