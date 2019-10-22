@@ -2,21 +2,9 @@ import express from 'express';
 import { Router } from 'express';
 import { Organizer, Event, Ref_Dance_Style, Venue } from './models';
 
-//-------- Gets all  -------
+//-------- Gets all events -------
 
 const getAllEvents = async (
-<<<<<<< HEAD
-  /**@type {express.Request} */ req,
-  /**@type {express.Response} */ res
-) => {
-  try {
-    const events = await Event.findAll();
-    return res.status(200).json({ events });
-  } catch (error) {
-    return res.status(500).send(error.message);
-  }
-};
-=======
     /**@type {express.Request} */ req,
     /**@type {express.Response} */ res) => {
         try {
@@ -26,9 +14,8 @@ const getAllEvents = async (
             return res.status(500).send(error.message)
         }
     }
->>>>>>> 9ee89007f48969a7dbc6c75193b2334c9fbb447c
 
-//------- Gets by Primary Keys ------
+//------- Gets event by Primary Keys ------
 
 const getEventById = async (
   /**@type {express.Request} */ req,
@@ -42,7 +29,7 @@ const getEventById = async (
   }
 };
 
-//-------- Updates entries ---------
+//-------- Updates event ---------
 
 const updateEvent = async (
   /**@type {express.Request} */ req,
@@ -60,14 +47,10 @@ const updateEvent = async (
   } catch (error) {
     return res.status(500).send(error.message);
   }
-};
+}
 
-<<<<<<< HEAD
-export const eventRouter = Router();
-eventRouter.get('/events', getAllEvents);
-eventRouter.get('/events/:id', getEventById);
-eventRouter.put('/events/:id', updateEvent);
-=======
+//-------- Deletes event by id ---------
+
 const deleteEvent = async (
     /**@type {express.Request} */ req,
     /**@type {express.Response} */ res) => {
@@ -77,8 +60,18 @@ const deleteEvent = async (
             if (destroy !== 0) {
                 return res.json(`The deed has been done \n event id:${id} destroyed >===> (˵¯͒࿄¯͒˵)`)
             }
-        } catch (error) { return res.status(500).send(error.message) }
-        
+        } catch (error) { return res.status(500).send(error.message) }  
+    }
+
+//-------- Creates event ---------
+
+const createEvent = async (
+    /**@type {express.Request} */ req,
+    /**@type {express.Response} */ res) => {
+        try{
+            const newEvent = await Event.create(req.body)
+            return res.json(newEvent)
+        } catch (error) { return res.status(500).send(error.message) }  
     }
 
 export const eventRouter = Router()
@@ -86,4 +79,4 @@ eventRouter.get("/events", getAllEvents)
 eventRouter.get("/events/:id", getEventById)
 eventRouter.put("/events/:id", updateEvent)
 eventRouter.delete("/events/:id", deleteEvent)
->>>>>>> 9ee89007f48969a7dbc6c75193b2334c9fbb447c
+eventRouter.post("/events", createEvent)
