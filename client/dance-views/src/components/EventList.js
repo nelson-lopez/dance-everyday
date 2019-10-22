@@ -17,7 +17,7 @@ const EventList = () => {
   };
   if (eventInfo) {
     return (
-      <div>
+      <div className="flex-container">
         {eventInfo.map((obj, index) => {
           return (
             <EventCard
