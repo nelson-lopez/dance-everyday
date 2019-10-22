@@ -94,7 +94,7 @@ const seedAll = () => {
     eventData.forEach(async event => await Event.create(event))
     organizerData.forEach(async account => await Organizer.create(account))
     danceStyleData.forEach(async style => await Ref_Dance_Style.create(style))
-
+    
 }
 
 seedAll()
