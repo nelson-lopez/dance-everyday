@@ -6,17 +6,17 @@ const Nav = () => {
     <div className="nav">
       <ul>
         <li>
-        <div className="link-1">
+        <div className="nav-link">
           <Link to="/">Home</Link>
         </div>
         </li>
         <li>
-          <div className="link-2">
+          <div className="nav-link">
             <Link to="/create-event">Create Event</Link>
           </div>
         </li>
         <li>
-          <div className="link-3">
+          <div className="nav-link">
             <Link to="/about">About</Link>
           </div>
         </li>
