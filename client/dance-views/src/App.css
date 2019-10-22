@@ -1,5 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
 body {
   margin: 0px;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: white;
+  background-image: url('https://cdn.pixabay.com/photo/2016/10/17/14/31/background-1747781_1280.jpg');
 }
 
 .header {
@@ -46,20 +50,23 @@ body {
   display: inline;
   padding: 0px 25px 0px 25px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
 
 }
 
 /* CARD STYLE */
 .card {
-  height: 350px;
+  height: 400px;
   width: 250px;
-  border: rgb(106, 106, 106) 0.5px solid;
-  box-shadow: 5px 5px 5px 0px gray;
+  border: rgb(106, 106, 106) 0.1px solid;
+  box-shadow: 2px 2px 2px 0px gray;
   margin: 15px;
   text-align: center;
   border-radius: 0px 0px 0px 20px;
   padding: 0px;
+  color: dark-gray;
+  background-color: #d1a080;
+  opacity: 0.85;
 }
 
 .card img {
