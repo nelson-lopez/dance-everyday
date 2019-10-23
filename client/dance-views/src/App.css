@@ -48,13 +48,13 @@ body {
 }
 
 .nav a:hover{
-  color: black;
+  color: #d6ac91;
 }
 
-.nav-link:hover {
+/* .nav-link:hover {
   background-color: #F9C889;
   color: black;
-}
+} */
 
 .nav ul {
   padding: 20px;
@@ -69,7 +69,7 @@ body {
   display: inline;
   padding: 0px 25px 0px 25px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
 
 }
 
