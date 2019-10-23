@@ -33,7 +33,7 @@ export default function EditCard({ name, date, description, handleFlip, id }) {
   ]);
 
   return (
-    <div>
+    <div className="edit-form">
       <form>
         <label>
           Edit new card:
