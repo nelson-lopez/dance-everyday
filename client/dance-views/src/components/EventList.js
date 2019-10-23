@@ -8,7 +8,7 @@ const EventList = ({ newEvent }) => {
 
   useEffect(() => {
     axios.get('http://localhost:9876/api/events').then(res => {
-      setEventInfo(res.data.events);
+      setEventInfo(res.data.fetched);
     });
   }, []);
 
@@ -22,7 +22,7 @@ const EventList = ({ newEvent }) => {
         })
         .then(res => console.log(res));
       axios.get('http://localhost:9876/api/events').then(res => {
-        setEventInfo(res.data.events);
+        setEventInfo(res.data.fetched);
       });
     }
   }, [newEvent]);
