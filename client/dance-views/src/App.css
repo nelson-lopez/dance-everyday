@@ -65,6 +65,12 @@ body {
 }
 
 /* NAV LINK HOVER */
+.nav {
+  z-index: 998;
+  position: sticky;
+  top: 0em;
+}
+
 .nav a {
   color: #fff;
   text-decoration: none;
@@ -74,28 +80,21 @@ body {
   color: #d6ac91;
 }
 
-/* .nav-link:hover {
-  background-color: #F9C889;
-  color: black;
-} */
-
 .nav ul {
   padding: 20px;
   background: black;
   opacity: 1;
-  margin: 16px 0 0 0;
+  margin: 0;
   text-align: center;
   box-shadow: 5px 5px 5px 0px gray;
 }
 
 .nav li {
-  display: inline;
+  display: inline-block;
   padding: 0px 25px 0px 25px;
   font-weight: bold;
   font-size: 22px;
-
 }
-
 
 /* SEARCHBAR STYLE */
 .search-bar {
@@ -105,7 +104,9 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   box-shadow: 2px 2px 2px 0px gray;
-  
+  z-index: 998;
+  position: sticky;
+  top: 3em;
 }
 
 #form-input {

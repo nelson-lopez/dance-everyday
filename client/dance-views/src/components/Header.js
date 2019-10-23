@@ -4,7 +4,7 @@ import Nav from './Nav'
 function Header() {
   return (
     <div className="header">
-      <Nav/>
+      {/* <Nav/> */}
       <h1> Dance Every Day</h1>
       <h2>Discover and share New York's most exciting dance events!</h2>
 
