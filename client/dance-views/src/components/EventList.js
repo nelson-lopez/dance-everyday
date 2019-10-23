@@ -2,15 +2,31 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import EventCard from './EventCard';
 
-const EventList = () => {
+const EventList = ({ newEvent }) => {
   const [eventInfo, setEventInfo] = useState(null);
+
+  console.log(newEvent);
 
   useEffect(() => {
     axios.get('http://localhost:9876/api/events').then(res => {
-      setEventInfo(res.data.events.slice(0, 12));
+      setEventInfo(res.data.events);
     });
   }, []);
-  console.log(eventInfo);
+
+  useEffect(() => {
+    if (newEvent) {
+      axios
+        .post('http://localhost:9876/api/events', {
+          name: newEvent.name,
+          date: newEvent.date,
+          description: newEvent.description
+        })
+        .then(res => console.log(res));
+      axios.get('http://localhost:9876/api/events').then(res => {
+        setEventInfo(res.data.events);
+      });
+    }
+  }, [newEvent]);
 
   const handleDelete = id => {
     console.log('deleted', id);
