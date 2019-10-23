@@ -77,14 +77,43 @@ body {
 
 /* SEARCHBAR STYLE */
 .search-bar {
-  background-color: white;
-  font-size: 25px;
+  background-color: #7D7B74;
+  font-size: 22px;
   text-align: center;
-  padding: 20px 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
   box-shadow: 2px 2px 2px 0px gray;
 }
 
+#form-input {
+  background-color: white;
+  font-size: 22px;
+  width: 230px;
+}
 
+#form-submit {
+  background-color: white;
+  font-size: 22px;
+  margin: 0 0px 0 25px;
+}
+
+#form-submit:hover {
+  background-color: #d6ac91;
+  font-size: 22px;
+  margin: 0 0px 0 25px;
+}
+
+input {
+  font-size: 18px;
+  border: 1px solid gray;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* box-shadow: 10px 10px 5px 0px rgba(237,237,237,1); */
+}
+
+h4 {
+  color: white;
+}
 
 /* CARD STYLE */
 .card {
