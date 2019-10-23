@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Searchbar = () => {
+const Searchbar = ({ handleOnSubmit }) => {
   const [formInput, setInput] = useState('');
   const [display, setDisplay] = useState(false);
 
@@ -12,6 +12,12 @@ const Searchbar = () => {
   const handleOnDisplay = () => {
     setDisplay(!display);
   };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    handleOnSubmit(formInput);
+  };
+
   return (
     <div>
       <button onClick={handleOnDisplay}>Search by type</button>
@@ -30,7 +36,7 @@ const Searchbar = () => {
           Search Event:
           <input type="text" name="name" onChange={handleOnInput} />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" onClick={handleSubmit} />
       </form>
     </div>
   );
