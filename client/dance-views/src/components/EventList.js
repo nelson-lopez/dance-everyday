@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import apiDelete from './api/apiDelete';
 import axios from 'axios';
 import EventCard from './EventCard';
 
@@ -27,9 +28,7 @@ const EventList = ({ newEvent }) => {
   }, [newEvent]);
 
   const handleDelete = id => {
-    axios
-      .delete(`http://localhost:9876/api/events/${id}`)
-      .then(res => console.log(res));
+    apiDelete(id);
     setEventInfo(eventInfo.filter(obj => obj.id !== id));
   };
 

@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
+import apiPut from './api/apiPut';
 import EditCard from './EditCard';
-import axios from 'axios';
 
 const DisplayCard = ({ date, description, handleDelete, id, name }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -25,14 +25,7 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
       description: description
     }));
     setIsClicked(!isClicked);
-
-    axios
-      .put(`http://localhost:9876/api/events/${id}`, {
-        name: name,
-        date: date,
-        discription: description
-      })
-      .then(res => console.log(res));
+    apiPut(id, name, date, description);
   };
 
   const handleOnDelete = useCallback(() => {
