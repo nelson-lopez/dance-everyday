@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import apiPut from './api/apiPut';
 import EditCard from './EditCard';
-import axios from 'axios';
 
 const DisplayCard = ({ date, description, handleDelete, id, name }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -25,30 +25,23 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
       description: description
     }));
     setIsClicked(!isClicked);
-
-    axios
-      .put(`http://localhost:9876/api/events/${id}`, {
-        event_name: name,
-        event_date: date,
-        event_discription: description
-      })
-      .then(res => console.log(res));
+    apiPut(id, name, date, description);
   };
 
-  const handleOnDelete = () => {
+  const handleOnDelete = useCallback(() => {
     handleDelete(id);
-  };
+  }, [handleDelete, id]);
 
   //// Conditionally render if edit has been clicked or not
   if (!isClicked)
     return (
-      <div className = "card">
+      <div className="card">
         <img
-        src={
-          'https://images.pexels.com/photos/270837/pexels-photo-270837.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-        }
-        alt="test"
-      />
+          src={
+            'https://images.pexels.com/photos/270837/pexels-photo-270837.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+          }
+          alt="test"
+        />
         <h2>{cardState.name}</h2>
         <h2>{cardState.date}</h2>
         <p>{cardState.description}</p>

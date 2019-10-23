@@ -1,24 +1,41 @@
 import React, { useState, useEffect } from 'react';
+import apiDelete from './api/apiDelete';
 import axios from 'axios';
 import EventCard from './EventCard';
 
-const EventList = () => {
+const EventList = ({ newEvent }) => {
   const [eventInfo, setEventInfo] = useState(null);
 
   useEffect(() => {
     axios.get('http://localhost:9876/api/events').then(res => {
-      setEventInfo(res.data.events.slice(0, 12));
+      setEventInfo(res.data.events);
     });
   }, []);
-  console.log(eventInfo);
+
+  useEffect(() => {
+    if (newEvent) {
+      axios
+        .post('http://localhost:9876/api/events', {
+          name: newEvent.name,
+          date: newEvent.date,
+          description: newEvent.description
+        })
+        .then(res => console.log(res));
+      axios.get('http://localhost:9876/api/events').then(res => {
+        setEventInfo(res.data.events);
+      });
+    }
+  }, [newEvent]);
 
   const handleDelete = id => {
-    console.log('deleted', id);
+    apiDelete(id);
+    setEventInfo(eventInfo.filter(obj => obj.id !== id));
   };
+
   if (eventInfo) {
     return (
       <div className="flex-container">
-        {eventInfo.map((obj, index) => {
+        {eventInfo.map(obj => {
           return (
             <EventCard
               name={obj.name}

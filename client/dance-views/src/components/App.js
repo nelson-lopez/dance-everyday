@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './Home';
 import About from './About';
 import CreateEvent from './CreateEvents';
@@ -7,21 +7,33 @@ import '../App.css';
 
 const App = () => {
   const [newEvent, setNewEvent] = useState(null);
-  React.createContext(newEvent);
+  const [redirect, setRedirect] = useState(false);
 
   const handleOnCreate = value => {
-    console.log(value);
+    setNewEvent(prevState => ({
+      ...prevState,
+      name: value.name,
+      date: value.date,
+      description: value.description
+    }));
+    setRedirect(!redirect);
   };
+
+  useEffect(() => {
+    setRedirect(false);
+  }, [newEvent]);
 
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={() => <Home newEvent={newEvent} />} />
         <Route exact path="/about" component={About} />
         <Route
           exact
           path="/create-event"
-          component={() => <CreateEvent handleOnCreate={handleOnCreate} />}
+          component={() => (
+            <CreateEvent handleOnCreate={handleOnCreate} redirect={redirect} />
+          )}
         />
       </Switch>
     </div>

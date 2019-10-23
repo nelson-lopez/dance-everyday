@@ -1,17 +1,15 @@
 import React from 'react';
-import Nav from './Nav';
 import SearchBar from './Searchbar';
-import EventResults from './EventResults';
+import EventList from './EventList';
 import Footer from './Footer';
 import Header from './Header';
 
-const Home = () => {
+const Home = ({ newEvent }) => {
   return (
     <div>
       <Header />
-      {/* <Nav /> */}
       <SearchBar />
-      <EventResults />
+      <EventList newEvent={newEvent} />
       <Footer />
     </div>
   );
