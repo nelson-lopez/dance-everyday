@@ -20,30 +20,79 @@ const getAllEvents = async (
     /**@type {express.Request} */ req,
     /**@type {express.Response} */ res) => {
         try {
-            const events = await Event.findAll({ 
+            const fetched = await Event.findAll({ 
                 include: { model: Organizer },
                 order: [
                     ['id', 'DESC'],
                     ['name', 'ASC']
                 ] 
             })
-            return res.status(200).json({ events })
+            return res.status(200).json({ fetched })
         } catch (error) {
             return res.status(500).send(error.message)
         }
     }
+
+  const getAllOrganizers = async (
+    /**@type {express.Request} */ req,
+    /**@type {express.Response} */ res) => {
+        try {
+            const fetched = await Organizer.findAll({ 
+                include: { model: Event },
+                order: [
+                    ['id', 'DESC'],
+                    ['name', 'ASC']
+                ] 
+            })
+            return res.status(200).json({ fetched })
+        } catch (error) {
+            return res.status(500).send(error.message)
+        }
+    }
+    const getAllVenues = async (
+      /**@type {express.Request} */ req,
+      /**@type {express.Response} */ res) => {
+          try {
+              const fetched = await Venue.findAll({ 
+                  include: { model: Event },
+                  order: [
+                      ['id', 'DESC'],
+                      ['name', 'ASC']
+                  ] 
+              })
+              return res.status(200).json({ fetched })
+          } catch (error) {
+              return res.status(500).send(error.message)
+          }
+      }
+
+//==========================
 
 const getEventById = async (
   /**@type {express.Request} */ req,
   /**@type {express.Response} */ res
 ) => {
   try {
-    const event = await Event.findByPk(req.params.id);
-    return res.json(event);
+    const fetched = await Event.findByPk(req.params.id);
+    return res.json(fetched);
   } catch (error) {
     return res.status(500).send(error.message);
   }
-};
+}
+
+const getVenueById = async (
+  /**@type {express.Request} */ req,
+  /**@type {express.Response} */ res
+) => {
+  try {
+    const fetched = await Venue.findByPk(req.params.id);
+    return res.json(fetched);
+  } catch (error) {
+    return res.status(500).send(error.message);
+  }
+}
+
+
 
 //-------- Updates ---------
 
@@ -79,9 +128,13 @@ const deleteEvent = async (
         } catch (error) { return res.status(500).send(error.message) }  
     }
 
-export const eventRouter = Router()
-eventRouter.post("/events", createEvent)
-eventRouter.get("/events", getAllEvents)
-eventRouter.get("/events/:id", getEventById)
-eventRouter.put("/events/:id", updateEvent)
-eventRouter.delete("/events/:id", deleteEvent)
+export const superRouter = Router()
+superRouter.post("/events", createEvent)
+superRouter.get("/events", getAllEvents)
+superRouter.get("/events/:id", getEventById)
+superRouter.put("/events/:id", updateEvent)
+superRouter.delete("/events/:id", deleteEvent)
+
+superRouter.get("/venues", getAllVenues)
+
+superRouter.get("/organizers", getAllOrganizers)

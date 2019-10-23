@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import logger from 'morgan'
-import { eventRouter } from './routes'
+import { superRouter } from './routes'
 
 const app = express()
 const PORT = 9876
@@ -9,7 +9,7 @@ const PORT = 9876
 app.use(express.json())
 app.use(logger('dev'))
 app.use(cors())
-app.use("/api", eventRouter)
+app.use("/api", superRouter)
 app.get("/", (req, res) => {
     return res.header(200).send(
         {

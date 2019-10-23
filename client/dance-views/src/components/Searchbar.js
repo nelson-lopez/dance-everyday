@@ -19,7 +19,7 @@ const Searchbar = ({ handleOnSubmit }) => {
   };
 
   return (
-    <div>
+    <div className="search-bar">
       <button onClick={handleOnDisplay}>Search by type</button>
       {display ? (
         <div>
@@ -30,13 +30,22 @@ const Searchbar = ({ handleOnSubmit }) => {
       ) : (
         <div> </div>
       )}
-
       <form>
         <label>
-          Search Event:
-          <input type="text" name="name" onChange={handleOnInput} />
+          <input
+            type="text"
+            name="name"
+            onChange={handleOnInput}
+            id="form-input"
+            placeholder="Search dance events"
+          />
         </label>
-        <input type="submit" value="Submit" onClick={handleSubmit} />
+        <input
+          type="submit"
+          value="Submit"
+          onClick={handleSubmit}
+          id="form-submit"
+        />
       </form>
     </div>
   );
