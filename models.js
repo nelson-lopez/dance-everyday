@@ -14,12 +14,13 @@ const sequelize = new Sequelize({
 Organizer.init(
     {
         name: DataTypes.STRING,
-        company: DataTypes.STRING
+        company: DataTypes.STRING,
     },
     {
+        sequelize,
         freezeTableName: true,
         tableName: 'Organizer',
-        sequelize
+        modelName: 'organizer'
     }
 );
 
@@ -30,9 +31,10 @@ Event.init(
         description: DataTypes.STRING
     },
     {
+        sequelize,
         freezeTableName: true,
         tableName: 'Event',
-        sequelize
+        modelName: 'event'
     }
 );
 
@@ -43,9 +45,10 @@ Venue.init(
         contact: DataTypes.STRING
     },
     {
+        sequelize,
         freezeTableName: true,
         tableName: 'Venue',
-        sequelize
+        modelName: 'venue'
     }
 );
 
@@ -55,15 +58,16 @@ Ref_Dance_Style.init(
         dance_style_description: DataTypes.TEXT
     },
     {
+        sequelize,
         freezeTableName: true,
         tableName: 'Ref_Dance_Style',
-        sequelize
+        modelName: 'danceStyle'
     }
 );
 
 Organizer.hasMany(Event)
-Event.belongsTo(Organizer)
 Venue.hasMany(Event)
-Event.belongsTo(Venue)
-Event.hasMany(Ref_Dance_Style)
 Ref_Dance_Style.hasMany(Event)
+Event.hasMany(Ref_Dance_Style)
+Event.belongsTo(Organizer)
+Event.belongsTo(Venue)
