@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './Home';
 import About from './About';
 import CreateEvent from './CreateEvents';
@@ -7,13 +7,15 @@ import '../App.css';
 
 const App = () => {
   const [newEvent, setNewEvent] = useState(null);
-  React.createContext(newEvent);
+  const [redirect, setRedirect] = useState(false);
 
   const handleOnCreate = value => {
     setNewEvent(value);
+    setRedirect(!redirect);
   };
-
-  console.log(newEvent);
+  useEffect(() => {
+    setRedirect(false);
+  }, [newEvent]);
 
   return (
     <div>
@@ -23,7 +25,9 @@ const App = () => {
         <Route
           exact
           path="/create-event"
-          component={() => <CreateEvent handleOnCreate={handleOnCreate} />}
+          component={() => (
+            <CreateEvent handleOnCreate={handleOnCreate} redirect={redirect} />
+          )}
         />
       </Switch>
     </div>

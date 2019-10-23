@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import Nav from './Nav';
 
-const CreateEvents = ({ handleOnCreate }) => {
+const CreateEvents = ({ handleOnCreate, redirect }) => {
   const [currentInfo, setCurrentInfo] = useState({
     name: 'Event name',
     description: 'Describe your event',
     date: '1/1/2019'
   });
+
+  const onSubmit = e => {
+    e.preventDefault();
+    handleOnCreate(currentInfo);
+  };
 
   const handleOnInput = e => {
     const element = e.target;
@@ -16,15 +22,11 @@ const CreateEvents = ({ handleOnCreate }) => {
       [name]: value
     }));
   };
-
-  const onSubmit = e => {
-    e.preventDefault();
-    handleOnCreate(currentInfo);
-  };
-
+  if (redirect) return <Redirect to="/" />;
   return (
     <div>
       <Nav />
+
       <form>
         <label>
           Create new event:
