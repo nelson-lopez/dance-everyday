@@ -4,7 +4,8 @@ const eventData = [
     {
         "name": "Zouk and Kompa",
         "date": "11/1/2019",
-        "description": "Zouk & Kompa Night Each and Every Friday,Music By: DJ KC, DJ Esalar, DJ Marco, DJ Gino, 10 All Night, Ladies Free Till 1AM.8913 Glenwood Rd Brooklyn NY 11236"
+        "description": "Zouk & Kompa Night Each and Every Friday,Music By: DJ KC, DJ Esalar, DJ Marco, DJ Gino, 10 All Night, Ladies Free Till 1AM.8913 Glenwood Rd Brooklyn NY 11236",
+        "dance_style_id": "1"
     },
     {
         "name": "YoZouk",
@@ -86,7 +87,7 @@ const danceStyleData = [
 
 const venueData = [
     {
-        
+
     }
 ]
 
@@ -94,7 +95,6 @@ const seedAll = () => {
     eventData.forEach(async event => await Event.create(event))
     organizerData.forEach(async account => await Organizer.create(account))
     danceStyleData.forEach(async style => await Ref_Dance_Style.create(style))
-
+    // venueData.forEach(async venue => await Venue.create(venue))
 }
-
 seedAll()

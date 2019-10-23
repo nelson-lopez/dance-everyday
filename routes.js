@@ -2,20 +2,36 @@ import express from 'express';
 import { Router } from 'express';
 import { Organizer, Event, Ref_Dance_Style, Venue } from './models';
 
-//-------- Gets all events -------
+//-------- C.R.U.D --------
+//-------- Create ---------
+
+const createEvent = async (
+    /**@type {express.Request} */ req,
+    /**@type {express.Response} */ res) => {
+        try {
+            const newEvent = await Event.create(req.body)
+            return res.json(newEvent)
+        } catch (error) { return res.status(500).send(error.message) }  
+    }
+
+//-------- Read  -------
 
 const getAllEvents = async (
     /**@type {express.Request} */ req,
     /**@type {express.Response} */ res) => {
         try {
-            const events = await Event.findAll({ include: { model: Organizer } })
+            const events = await Event.findAll({ 
+                include: { model: Organizer },
+                order: [
+                    ['id', 'DESC'],
+                    ['name', 'ASC']
+                ] 
+            })
             return res.status(200).json({ events })
         } catch (error) {
             return res.status(500).send(error.message)
         }
     }
-
-//------- Gets event by Primary Keys ------
 
 const getEventById = async (
   /**@type {express.Request} */ req,
@@ -29,7 +45,7 @@ const getEventById = async (
   }
 };
 
-//-------- Updates event ---------
+//-------- Updates ---------
 
 const updateEvent = async (
   /**@type {express.Request} */ req,
@@ -49,7 +65,7 @@ const updateEvent = async (
   }
 }
 
-//-------- Deletes event by id ---------
+//-------- Deletes ---------
 
 const deleteEvent = async (
     /**@type {express.Request} */ req,
@@ -63,20 +79,9 @@ const deleteEvent = async (
         } catch (error) { return res.status(500).send(error.message) }  
     }
 
-//-------- Creates event ---------
-
-const createEvent = async (
-    /**@type {express.Request} */ req,
-    /**@type {express.Response} */ res) => {
-        try{
-            const newEvent = await Event.create(req.body)
-            return res.json(newEvent)
-        } catch (error) { return res.status(500).send(error.message) }  
-    }
-
 export const eventRouter = Router()
+eventRouter.post("/events", createEvent)
 eventRouter.get("/events", getAllEvents)
 eventRouter.get("/events/:id", getEventById)
 eventRouter.put("/events/:id", updateEvent)
 eventRouter.delete("/events/:id", deleteEvent)
-eventRouter.post("/events", createEvent)

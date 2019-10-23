@@ -5,8 +5,8 @@ export class Venue extends Model { }
 export class Ref_Dance_Style extends Model { }
 
 const sequelize = new Sequelize({
-    // username: 'postgres',
-    // password: 'dap',
+    username: 'postgres',
+    password: 'postgres',
     database: 'dance_everyday_db',
     dialect: 'postgres'
 });
@@ -15,10 +15,10 @@ Organizer.init(
     {
         name: DataTypes.STRING,
         company: DataTypes.STRING,
-        // event_id: {
-        //     type: DataTypes.INTEGER,
-        //     foreignKey: true
-        // }
+        event_id: {
+            type: DataTypes.INTEGER,
+            foreignKey: true
+        }
     },
     {
         freezeTableName: true,
@@ -32,8 +32,18 @@ Event.init(
         name: DataTypes.STRING,
         date: DataTypes.STRING,
         description: DataTypes.STRING,
-        // venue_id: DataTypes.INTEGER,
-        // ref_dance_style_id: DataTypes.INTEGER
+        venue_id: {
+            type: DataTypes.INTEGER,
+            foreignKey: true
+        },
+        ref_dance_style_id: {
+            type: DataTypes.INTEGER,
+            foreignKey: true
+        },
+        event_id: {
+            type: DataTypes.INTEGER,
+            foreignKey: true
+        }
     },
     {
         freezeTableName: true,
@@ -46,7 +56,11 @@ Venue.init(
     {
         name: DataTypes.STRING,
         location: DataTypes.STRING,
-        contact: DataTypes.STRING
+        contact: DataTypes.STRING,
+        event_id: {
+            type: DataTypes.INTEGER,
+            foreignKey: true
+        }
     },
     {
         freezeTableName: true,
@@ -67,9 +81,9 @@ Ref_Dance_Style.init(
     }
 );
 
-Organizer.hasMany(Event)
-Ref_Dance_Style.hasMany(Event)
-Venue.hasMany(Event)
-Event.hasOne(Organizer)
-Event.hasMany(Ref_Dance_Style)
-Event.hasOne(Venue)
+Event.hasOne(Organizer, { sourceKey: "id", foreignKey: "event_id", keyType: DataTypes.INTEGER })
+Event.belongsTo(Venue, { sourceKey: "id", foreignKey: "event_id", keyType: DataTypes.INTEGER })
+// Event.hasMany(Ref_Dance_Style, { sourceKey: "id", foreignKey: "event_id", keyType: DataTypes.INTEGER })
+Venue.hasMany(Event, { sourceKey: "id", foreignKey: "venue_id", keyType: DataTypes.INTEGER })
+Organizer.hasMany(Event, { sourceKey: "id", foreignKey: "event_id", keyType: DataTypes.INTEGER })
+Ref_Dance_Style.hasMany(Event, { sourceKey: "id", foreignKey: "dance_style_id", keyType: DataTypes.INTEGER })
