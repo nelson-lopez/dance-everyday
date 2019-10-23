@@ -15,6 +15,25 @@ body {
     background-position: center;
     }
 
+.header h1 {
+  background: black;
+  opacity: 0.7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 48px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  margin: 0 auto;
+  left: 10px;
+  right: 10px;
+  top: 23%;
+  text-align: center;
+}
+
 .header ul {
   display: flex;
   flex-direction: row;
@@ -29,13 +48,13 @@ body {
 }
 
 .nav a:hover{
-  color: black;
+  color: #d6ac91;
 }
 
-.nav-link:hover {
+/* .nav-link:hover {
   background-color: #F9C889;
   color: black;
-}
+} */
 
 .nav ul {
   padding: 20px;
@@ -50,7 +69,7 @@ body {
   display: inline;
   padding: 0px 25px 0px 25px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
 
 }
 
