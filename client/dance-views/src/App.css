@@ -171,8 +171,18 @@ h4 {
   justify-content: center;
 }
 
-
+/* FOOTER */
+.footer {
+  text-align: center;
+  font-size: 18px;
+  background-color: white;
+  padding: 1px 0;
+  box-shadow: 2px 2px 2px 2px gray;
+  position: sticky;
+  bottom: 0em;
+}
     
+
 
 /* Smartphones (portrait and landscape) ----------- */
 
