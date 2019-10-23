@@ -11,9 +11,9 @@ const Searchbar = () => {
     <div className="search-bar">
       <form>
         <label>
-          <input type="text" name="name" onChange={handleOnInput} id="form-input" placeholder="Search dance events" />
+          <input type="text" name="name" onChange={handleOnInput} id="form-input" placeholder="Search events" />
         </label>
-        <input type="submit" value="Submit" id="form-submit"/>
+        <input type="submit" value="Let's Dance" id="form-submit"/>
       </form>
     </div>
   );

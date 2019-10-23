@@ -112,21 +112,23 @@ body {
 #form-input {
   background-color: white;
   font-size: 22px;
-  width: 230px;
+  width: 350px;
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
 #form-submit {
   background-color: white;
   font-size: 22px;
-  margin: 0 0px 0 25px;
+  margin: 0 0px 0 5px;
+  padding: 0 20px;
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
 #form-submit:hover {
-  background-color: #d6ac91;
+  background-color: black;
+  color: #d6ac91;
   font-size: 22px;
-  margin: 0 0px 0 25px;
+  margin: 0 0px 0 5px;
 }
 
 input {
