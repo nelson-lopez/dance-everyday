@@ -8,7 +8,7 @@ const Searchbar = () => {
     console.log(formInput);
   };
   return (
-    <div>
+    <div className="search-bar">
       <form>
         <label>
           Search Event:
