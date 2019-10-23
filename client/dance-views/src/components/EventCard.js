@@ -2,6 +2,7 @@ import React from 'react';
 import DisplayCard from './DisplayCard';
 
 const EventCard = ({ date, description, handleDelete, id, name }) => {
+  console.log(name);
   return (
     <div>
       <DisplayCard

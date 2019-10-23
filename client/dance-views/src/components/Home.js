@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import filterByName from './helperfunctions/filterByName';
+import getFilteredObj from './helperfunctions/getFilteredObj';
 import SearchBar from './Searchbar';
 import EventList from './EventList';
 import Footer from './Footer';
@@ -16,9 +18,12 @@ const Home = ({ newEvent }) => {
 
   useEffect(() => {
     if (searchInput)
-      axios
-        .get('http://localhost:9876/api/events')
-        .then(res => setValue(res.data.events));
+      axios.get('http://localhost:9876/api/events').then(res => {
+        const response = res.data.data;
+        const filter = filterByName(response, searchInput);
+        const sanitzedData = getFilteredObj(response, filter);
+        setValue(sanitzedData);
+      });
   }, [searchInput]);
 
   console.log(searchInput);
@@ -29,8 +34,8 @@ const Home = ({ newEvent }) => {
     <div>
       <Header />
       <Nav />
-      <SearchBar />
-      <EventList newEvent={newEvent} />
+      <SearchBar handleOnSubmit={handleOnSubmit} />
+      <EventList newEvent={newEvent} newSearchList={searchValue} />
       <Footer />
     </div>
   );
