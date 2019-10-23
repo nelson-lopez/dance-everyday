@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className="header">
       <Nav/>
-      {/* <h1> This is the header</h1> */}
+      <h1> Dance Every Day</h1>
 
     </div>
   );
