@@ -3,11 +3,13 @@ import SearchBar from './Searchbar';
 import EventList from './EventList';
 import Footer from './Footer';
 import Header from './Header';
+import Nav from './Nav'
 
 const Home = ({ newEvent }) => {
   return (
     <div>
       <Header />
+      <Nav />
       <SearchBar />
       <EventList newEvent={newEvent} />
       <Footer />

@@ -8,13 +8,12 @@ const Searchbar = () => {
     console.log(formInput);
   };
   return (
-    <div>
+    <div className="search-bar">
       <form>
         <label>
-          Search Event:
-          <input type="text" name="name" onChange={handleOnInput} />
+          <input type="text" name="name" onChange={handleOnInput} id="form-input" placeholder="Search dance events" />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" id="form-submit"/>
       </form>
     </div>
   );
