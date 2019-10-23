@@ -11,22 +11,40 @@ import Nav from './Nav';
 const Home = ({ newEvent }) => {
   const [searchInput, setSearch] = useState(null);
   const [searchValue, setValue] = useState(null);
+  const [selected, setSelected] = useState(null);
 
   const handleOnSubmit = value => {
     setSearch(value);
   };
+  const handleOnSelect = value => {
+    setSelected(value);
+  };
 
   useEffect(() => {
     if (searchInput)
-      axios.get('http://localhost:9876/api/events').then(res => {
-        const response = res.data.data;
-        const filter = filterByName(response, searchInput);
-        const sanitzedData = getFilteredObj(response, filter);
-        setValue(sanitzedData);
-      });
+      axios
+        .get('http://localhost:9876/api/events')
+        .then(res => {
+          const response = res.data.data;
+          const filter = filterByName(response, searchInput);
+          const sanitzedData = getFilteredObj(response, filter);
+          setValue(sanitzedData);
+        })
+        .catch(err => console.log(err));
   }, [searchInput]);
 
-  console.log(searchInput);
+  useEffect(() => {
+    if (searchInput && selected) {
+      axios
+        .get(`http://localhost:9876/api/${selected}`)
+        .then(res => {
+          const result = res.data.data.filter(obj => obj.name === searchInput);
+          const { events } = result[0];
+          setValue(events);
+        })
+        .catch(err => console.log(err));
+    }
+  }, [searchInput, selected]);
 
   console.log(searchValue);
 
@@ -34,7 +52,10 @@ const Home = ({ newEvent }) => {
     <div>
       <Header />
       <Nav />
-      <SearchBar handleOnSubmit={handleOnSubmit} />
+      <SearchBar
+        handleOnSubmit={handleOnSubmit}
+        handleOnSelect={handleOnSelect}
+      />
       <EventList newEvent={newEvent} newSearchList={searchValue} />
       <Footer />
     </div>

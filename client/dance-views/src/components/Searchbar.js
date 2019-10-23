@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Searchbar = ({ handleOnSubmit }) => {
+const Searchbar = ({ handleOnSubmit, handleOnSelect }) => {
   const [formInput, setInput] = useState('');
   const [display, setDisplay] = useState(false);
 
@@ -18,14 +18,30 @@ const Searchbar = ({ handleOnSubmit }) => {
     handleOnSubmit(formInput);
   };
 
+  const handleSelect = e => {
+    const element = e.target;
+    const { name } = element;
+    handleOnSelect(name);
+    console.log(name);
+  };
+
   return (
     <div className="search-bar">
       <button onClick={handleOnDisplay}>Search by type</button>
       {display ? (
         <div>
-          <button> Dance </button>
-          <button> Organizer </button>
-          <button> Date </button>
+          <button name="organizers" onClick={handleSelect}>
+            {' '}
+            Organizers{' '}
+          </button>
+          <button name="venues" onClick={handleSelect}>
+            {' '}
+            Venue{' '}
+          </button>
+          <button name="date" onClick={handleSelect}>
+            {' '}
+            Date{' '}
+          </button>
         </div>
       ) : (
         <div> </div>

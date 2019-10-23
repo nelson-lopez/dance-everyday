@@ -12,7 +12,6 @@ const EventList = ({ newEvent, newSearchList }) => {
     });
   }, []);
 
-  console.log(newSearchList);
   useEffect(() => {
     if (newEvent) {
       axios
