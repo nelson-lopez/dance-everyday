@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 export default function EditCard({ name, date, description, handleFlip, id }) {
   const [formData, setFormData] = useState({
@@ -20,10 +20,17 @@ export default function EditCard({ name, date, description, handleFlip, id }) {
     console.log(formData);
   };
 
-  const handleOnSubmit = () => {
+  const handleOnSubmit = useCallback(() => {
     /// Lift up state through submit
+    /// Apply usecallback hook to avoid rerenders
     handleFlip(formData.date, formData.description, formData.name, formData.id);
-  };
+  }, [
+    formData.date,
+    formData.description,
+    formData.id,
+    formData.name,
+    handleFlip
+  ]);
 
   return (
     <div>

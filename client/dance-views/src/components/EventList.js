@@ -5,8 +5,6 @@ import EventCard from './EventCard';
 const EventList = ({ newEvent }) => {
   const [eventInfo, setEventInfo] = useState(null);
 
-  console.log(newEvent);
-
   useEffect(() => {
     axios.get('http://localhost:9876/api/events').then(res => {
       setEventInfo(res.data.events);
@@ -29,16 +27,16 @@ const EventList = ({ newEvent }) => {
   }, [newEvent]);
 
   const handleDelete = id => {
-    console.log('deleted', id);
     axios
       .delete(`http://localhost:9876/api/events/${id}`)
       .then(res => console.log(res));
     setEventInfo(eventInfo.filter(obj => obj.id !== id));
   };
+
   if (eventInfo) {
     return (
       <div className="flex-container">
-        {eventInfo.map((obj, index) => {
+        {eventInfo.map(obj => {
           return (
             <EventCard
               name={obj.name}

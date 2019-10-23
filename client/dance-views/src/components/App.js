@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Home from './Home';
 import About from './About';
 import CreateEvent from './CreateEvents';
-import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '../App.css';
 
@@ -19,21 +18,10 @@ const App = () => {
     }));
     setRedirect(!redirect);
   };
+
   useEffect(() => {
     setRedirect(false);
   }, [newEvent]);
-
-  // useEffect(() => {
-  //   if (newEvent !== null) {
-  //     axios
-  //       .post('http://localhost:9876/api/events', {
-  //         name: newEvent.name,
-  //         date: newEvent.date,
-  //         description: newEvent.description
-  //       })
-  //       .then(res => console.log(res));
-  //   }
-  // }, [newEvent]);
 
   return (
     <div>
