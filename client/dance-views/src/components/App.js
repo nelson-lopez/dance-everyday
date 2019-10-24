@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Home from './Home';
 import About from './About';
 import CreateEvent from './CreateEvents';
+import NotFound from './NotFound';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import '../App.css';
 
@@ -35,6 +36,9 @@ const App = () => {
             <CreateEvent handleOnCreate={handleOnCreate} redirect={redirect} />
           )}
         />
+        <Route>
+          <NotFound />
+        </Route>
       </Switch>
     </div>
   );

@@ -112,14 +112,11 @@ body {
 }
 
 .filter-image {
-  background: url('./styling-assets/menu-icon.jpg');
+  background: url('./styling-assets/menu-icon-2.jpg');
   background-size: cover;
   background-position: center;
   max-height: 34px;
   min-width: 40px;
-}
-
-.filter-button {
 }
 
 #form-input {
@@ -170,7 +167,6 @@ h4 {
   background-color: #d1a080;
   opacity: 0.85;
 }
-
 .card img {
   height: 120px;
   width: 249px;
