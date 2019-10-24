@@ -159,7 +159,7 @@ h4 {
 }
 
 .card img {
-  height: 100px;
+  height: 120px;
   width: 249px;
   border: #333 1px solid;
   position: center;
@@ -173,10 +173,27 @@ h4 {
   justify-content: center;
 }
 
+.front-buttons {
+  background-color: #36454f;
+  box-shadow: 0.5px 0.5px 0.5px 0px gray;
+  color: #d1a080;
+  border: rgb(106, 106, 106) 0.1px solid;
+  width: 124px;
+}
+
+.front-buttons:hover {
+  background-color: black;
+  box-shadow: 0.5px 0.5px 0.5px 0px gray;
+  color: #d1a080;
+  border: rgb(106, 106, 106) 0.1px solid;
+  width: 124px;
+}
+
 
 /* BACK OF CARD / EDIT FORM */
 .edit-form {
-  height: 275px;
+  padding-top: 80px;
+  height: 320px;
   width: 250px;
   border: rgb(106, 106, 106) 0.1px solid;
   box-shadow: 2px 2px 2px 0px gray;
@@ -186,21 +203,39 @@ h4 {
   color: dark-gray;
   background-color: #d1a080;
   opacity: 0.85;
-  padding-top: 125px;
   font-size: 22px;
   font-weight: bold;
 }
 
 #event-name {
- 
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 #event-date {
-
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 #event-desc {
+  text-align: left;
+  margin-bottom: 20px;
+}
 
+#edit-submit-button {
+  background-color: #36454f;
+  color: #d6ac91;
+  font-size: 18px;
+  margin: 0 0px 0 5px;
+  padding: 0 20px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#edit-submit-button:hover {
+  background-color: black;
+  color: #d6ac91;
+  font-size: 18px;
+  margin: 0 0px 0 5px;
 }
 
 

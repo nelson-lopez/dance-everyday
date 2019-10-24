@@ -42,11 +42,16 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
           }
           alt="test"
         />
+        <button className="front-buttons" onClick={handleOnEdit}>Edit</button>
+        <button className="front-buttons" onClick={handleOnDelete}>Delete</button>
+        
         <h2>{cardState.name}</h2>
         <h2>{cardState.date}</h2>
         <p>{cardState.description}</p>
-        <button onClick={handleOnEdit}>Edit</button>
-        <button onClick={handleOnDelete}>Delete</button>
+
+
+        {/* <button className="front-buttons" onClick={handleOnEdit}>Edit</button>
+        <button className="front-buttons" onClick={handleOnDelete}>Delete</button> */}
       </div>
     );
   else
