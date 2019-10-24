@@ -26,7 +26,6 @@ const CreateEvents = ({ handleOnCreate, redirect }) => {
   return (
     <div>
       <Nav />
-
       <form>
         <label>
           Create new event:
@@ -51,6 +50,7 @@ const CreateEvents = ({ handleOnCreate, redirect }) => {
         </label>
         <input type="submit" value="Submit" onClick={onSubmit} />
       </form>
+
     </div>
   );
 };

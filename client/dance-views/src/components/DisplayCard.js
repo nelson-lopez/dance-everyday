@@ -28,6 +28,10 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
     apiPut(id, name, date, description);
   };
 
+  const handleReturn = () => {
+    setIsClicked(!isClicked);
+  };
+
   const handleOnDelete = useCallback(() => {
     handleDelete(id);
   }, [handleDelete, id]);
@@ -42,11 +46,19 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
           }
           alt="test"
         />
+        <button className="front-buttons" onClick={handleOnEdit}>
+          Edit
+        </button>
+        <button className="front-buttons" onClick={handleOnDelete}>
+          Delete
+        </button>
+
         <h2>{cardState.name}</h2>
         <h2>{cardState.date}</h2>
         <p>{cardState.description}</p>
-        <button onClick={handleOnEdit}>Edit</button>
-        <button onClick={handleOnDelete}>Delete</button>
+
+        {/* <button className="front-buttons" onClick={handleOnEdit}>Edit</button>
+        <button className="front-buttons" onClick={handleOnDelete}>Delete</button> */}
       </div>
     );
   else
@@ -57,6 +69,7 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
         description={cardState.description}
         id={cardState.id}
         handleFlip={handleFlip}
+        handleReturn={handleReturn}
       />
     );
 };

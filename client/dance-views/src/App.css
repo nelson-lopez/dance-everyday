@@ -1,5 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap"); */
-@import url("https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Open+Sans+Condensed:300&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Open+Sans+Condensed:300&display=swap');
 
 body {
   margin: 0px;
@@ -10,13 +10,13 @@ body {
 }
 
 .header {
-    background-image: url('https://cdn.pixabay.com/photo/2016/11/10/07/43/tango-1813691_1280.jpg'); 
-    padding: 500px 0 0 0;
-    opacity: 1;
-    display: block;
-    background-size: cover;
-    background-position: center;
-    }
+  background-image: url('https://cdn.pixabay.com/photo/2016/11/10/07/43/tango-1813691_1280.jpg');
+  padding: 500px 0 0 0;
+  opacity: 1;
+  display: block;
+  background-size: cover;
+  background-position: center;
+}
 
 .header h1 {
   background: black;
@@ -76,7 +76,7 @@ body {
   text-decoration: none;
 }
 
-.nav a:hover{
+.nav a:hover {
   color: #d6ac91;
 }
 
@@ -98,7 +98,7 @@ body {
 
 /* SEARCHBAR STYLE */
 .search-bar {
-  background-color: #7D7B74;
+  background-color: #7d7b74;
   font-size: 22px;
   text-align: center;
   padding-top: 10px;
@@ -107,34 +107,49 @@ body {
   z-index: 998;
   position: sticky;
   top: 3em;
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-image {
+  background: url('./styling-assets/menu-icon.jpg');
+  background-size: cover;
+  background-position: center;
+  max-height: 34px;
+  min-width: 40px;
+}
+
+.filter-button {
 }
 
 #form-input {
   background-color: white;
   font-size: 22px;
-  width: 230px;
+  width: 350px;
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
 #form-submit {
   background-color: white;
   font-size: 22px;
-  margin: 0 0px 0 25px;
+  margin: 0 0px 0 5px;
+  padding: 0 20px;
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
 #form-submit:hover {
-  background-color: #d6ac91;
+  background-color: black;
+  color: #d6ac91;
   font-size: 22px;
-  margin: 0 0px 0 25px;
+  margin: 0 0px 0 5px;
 }
 
 input {
   font-size: 18px;
   border: 1px solid gray;
-    border-radius: 4px;
-    box-sizing: border-box;
-    /* box-shadow: 10px 10px 5px 0px rgba(237,237,237,1); */
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* box-shadow: 10px 10px 5px 0px rgba(237,237,237,1); */
 }
 
 h4 {
@@ -157,7 +172,7 @@ h4 {
 }
 
 .card img {
-  height: 100px;
+  height: 120px;
   width: 249px;
   border: #333 1px solid;
   position: center;
@@ -165,37 +180,102 @@ h4 {
   border-radius: 0px 0px;
 }
 
-.flex-container{
+.flex-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+.front-buttons {
+  background-color: #36454f;
+  box-shadow: 0.5px 0.5px 0.5px 0px gray;
+  color: #d1a080;
+  border: rgb(106, 106, 106) 0.1px solid;
+  width: 124px;
+}
 
-    
+.front-buttons:hover {
+  background-color: black;
+  box-shadow: 0.5px 0.5px 0.5px 0px gray;
+  color: #d1a080;
+  border: rgb(106, 106, 106) 0.1px solid;
+  width: 124px;
+}
+
+/* BACK OF CARD / EDIT FORM */
+.edit-form {
+  padding-top: 80px;
+  height: 320px;
+  width: 250px;
+  border: rgb(106, 106, 106) 0.1px solid;
+  box-shadow: 2px 2px 2px 0px gray;
+  margin: 15px;
+  text-align: center;
+  border-radius: 0px 0px 0px 20px;
+  color: dark-gray;
+  background-color: #d1a080;
+  opacity: 0.85;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#event-name {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+#event-date {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+#event-desc {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+#edit-submit-button {
+  background-color: #36454f;
+  color: #d6ac91;
+  font-size: 18px;
+  margin: 0 0px 0 5px;
+  padding: 0 20px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#edit-submit-button:hover {
+  background-color: black;
+  color: #d6ac91;
+  font-size: 18px;
+  margin: 0 0px 0 5px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  font-size: 18px;
+  background-color: white;
+  padding: 1px 0;
+  box-shadow: 2px 2px 2px 2px gray;
+  position: sticky;
+  bottom: 0em;
+}
 
 /* Smartphones (portrait and landscape) ----------- */
 
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
-
-    .header {
-      /* background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg'); */
-      /* background-image: url('https://www.dance.nyc/images/users/13092/MarcandKirievent_image.jpg'); */
-      background-image: url('https://cdn.pixabay.com/photo/2016/11/10/07/43/tango-1813691_1280.jpg');
-      color: white;
-      padding: 400px 0 0 0;
-      opacity: 1;
-      background-size: cover;
-      }
-
-  }
-
-
-  /* Background images */
-    /* background-image: url('https://image.shutterstock.com/image-photo/shot-young-woman-dancing-nightclub-600w-763642693.jpg');   */
-  /* background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg'); */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .header {
+    /* background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg'); */
     /* background-image: url('https://www.dance.nyc/images/users/13092/MarcandKirievent_image.jpg'); */
+    background-image: url('https://cdn.pixabay.com/photo/2016/11/10/07/43/tango-1813691_1280.jpg');
+    color: white;
+    padding: 400px 0 0 0;
+    opacity: 1;
+    background-size: cover;
+  }
+}
+
+/* Background images */
+/* background-image: url('https://image.shutterstock.com/image-photo/shot-young-woman-dancing-nightclub-600w-763642693.jpg');   */
+/* background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg'); */
+/* background-image: url('https://www.dance.nyc/images/users/13092/MarcandKirievent_image.jpg'); */
