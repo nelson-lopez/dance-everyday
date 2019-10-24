@@ -1,6 +1,13 @@
 import React, { useState, useCallback } from 'react';
 
-export default function EditCard({ name, date, description, handleFlip, id }) {
+export default function EditCard({
+  name,
+  date,
+  description,
+  handleFlip,
+  id,
+  handleReturn
+}) {
   const [formData, setFormData] = useState({
     date: date,
     description: description,
@@ -32,12 +39,16 @@ export default function EditCard({ name, date, description, handleFlip, id }) {
     handleFlip
   ]);
 
+  const handleOnReturn = () => {
+    handleReturn();
+  };
+
   return (
     <div className="edit-form">
       <form>
         <label>
           Edit new card:
-          <br/>
+          <br />
           <input
             id="event-name"
             type="text"
@@ -45,20 +56,19 @@ export default function EditCard({ name, date, description, handleFlip, id }) {
             defaultValue={name}
             onChange={handleOnChange}
           />
-          <br/>
+          <br />
           Date:
-          <br/>
+          <br />
           <input
             id="event-date"
             type="text"
             name="date"
             defaultValue={date}
             onChange={handleOnChange}
-
           />
-          <br/>
+          <br />
           Description:
-          <br/>
+          <br />
           <input
             id="event-desc"
             type="text"
@@ -67,8 +77,19 @@ export default function EditCard({ name, date, description, handleFlip, id }) {
             onChange={handleOnChange}
           />
         </label>
-         <br/>
-        <input id="edit-submit-button" type="submit" value="Update" onClick={handleOnSubmit} />
+        <br />
+        <input
+          id="edit-submit-button"
+          type="submit"
+          value="Update"
+          onClick={handleOnSubmit}
+        />
+        <input
+          id="edit-submit-button"
+          type="submit"
+          value="Back"
+          onClick={handleOnReturn}
+        />
       </form>
     </div>
   );
