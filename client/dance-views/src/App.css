@@ -159,7 +159,7 @@ h4 {
 }
 
 .card img {
-  height: 100px;
+  height: 120px;
   width: 249px;
   border: #333 1px solid;
   position: center;
@@ -171,6 +171,16 @@ h4 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.front-buttons {
+  background-color: #36454f;
+  box-shadow: 0.5px 0.5px 0.5px 0px gray;
+  color: #d1a080;
+  border: rgb(106, 106, 106) 0.1px solid;
+  margin: 1px;
+  width: 120px;
+  border-radius: 0px 0px 0px 5px;
 }
 
 
