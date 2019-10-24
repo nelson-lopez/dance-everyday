@@ -6,7 +6,6 @@ const Searchbar = ({ handleOnSubmit, handleOnSelect }) => {
 
   const handleOnInput = e => {
     setInput(e.target.value);
-    console.log(formInput);
   };
 
   const handleOnDisplay = () => {
@@ -22,12 +21,15 @@ const Searchbar = ({ handleOnSubmit, handleOnSelect }) => {
     const element = e.target;
     const { name } = element;
     handleOnSelect(name);
-    console.log(name);
   };
 
   return (
     <div className="search-bar">
-      <button onClick={handleOnDisplay}>Search by type</button>
+      <div className="filter-image">
+        {' '}
+        <button onClick={handleOnDisplay} className="filter-button"></button>
+      </div>
+
       {display ? (
         <div>
           <button name="organizers" onClick={handleSelect}>
