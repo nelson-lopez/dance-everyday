@@ -38,24 +38,32 @@ export default function EditCard({ name, date, description, handleFlip, id }) {
         <label>
           Edit new card:
           <input
+            id="event-name"
             type="text"
             name="name"
             placeholder={name}
             onChange={handleOnChange}
           />
+          <br/>
+          Date:
           <input
+            id="event-date"
             type="text"
             name="date"
             placeholder={date}
             onChange={handleOnChange}
           />
+          <br/>
+          Description:
           <input
+            id="event-desc"
             type="text"
             name="description"
             placeholder={description}
             onChange={handleOnChange}
           />
         </label>
+         <br/>
         <input type="submit" value="Submit" onClick={handleOnSubmit} />
       </form>
     </div>
