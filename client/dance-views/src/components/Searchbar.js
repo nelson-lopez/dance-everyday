@@ -25,17 +25,16 @@ const Searchbar = ({ handleOnSubmit, handleOnSelect }) => {
 
   return (
     <div className="search-bar">
-        <button onClick={handleOnDisplay} className="filter-button" name="Filter by">Filter by</button>
-   
+      <button onClick={handleOnDisplay} className="filter-button" name="Filter by">Filter by</button>
       {display ? (
         <div>
-          <button name="Organizers" onClick={handleSelect}>Organizers</button>
-          <button name="Venues" onClick={handleSelect}>Venue</button>
-          <button name="Date" onClick={handleSelect}>Date</button>
+          <button className="filter-by-options" name="Organizers" onClick={handleSelect}>Organizers</button>
+          <button className="filter-by-options" name="Venues" onClick={handleSelect}>Venue</button>
+          <button className="filter-by-options" name="Date" onClick={handleSelect}>Date</button>
         </div>
       ) : (
-        <div> </div>
-      )}
+          <div/>
+        )}
       <form>
         <label>
           <input
@@ -46,12 +45,8 @@ const Searchbar = ({ handleOnSubmit, handleOnSelect }) => {
             placeholder="Search dance events"
           />
         </label>
-        <input
-          type="submit"
-          value="Submit"
-          onClick={handleSubmit}
-          id="form-submit"
-        />
+        {/* Magnifying glass icon */}
+        <img src='https://cdn.pixabay.com/photo/2016/03/31/19/14/magnifying-glass-1294834_1280.png' id="mag" alt="search" onClick={handleSubmit} />
       </form>
     </div>
   );

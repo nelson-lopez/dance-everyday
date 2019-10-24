@@ -109,23 +109,51 @@ body {
   top: 3em;
   display: flex;
   flex-direction: row;
+  padding-left: 37%;
 }
 
 .filter-button {
-  background-color: white;
-  font-size: 22px;
-  margin: 0 0px 0 5px;
-  padding: 0 20px;
+  background-color: #333333;
+  color: #d6ac91;
+  font-size: 18px;
+  padding: 0 5px;
   font-family: 'Open Sans Condensed', sans-serif;
   border-radius: 4px;
+  margin-right:3px;
+  border-color: #7d7b74;
 }
 
 .filter-button:hover {
   background-color: black;
   color: #d6ac91;
-  font-size: 22px;
-  margin: 0 0px 0 5px;
+  font-size: 18px;
+  padding: 0 5px;
+  font-family: 'Open Sans Condensed', sans-serif;
   border-radius: 4px;
+  margin-right:3px;
+  border-color: #7d7b74;
+}
+
+.filter-by-options {
+  background-color: #333333;
+  color: #d6ac91;
+  font-size: 18px;
+  padding: 0 5px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border-radius: 4px;
+  margin-right:3px;
+  border-color: #7d7b74;
+}
+
+.filter-by-options:hover {
+  background-color: black;
+  color: #d6ac91;
+  font-size: 18px;
+  padding: 0 5px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border-radius: 4px;
+  margin-right:3px;
+  border-color: #7d7b74;
 }
 
 
@@ -151,6 +179,12 @@ body {
   font-size: 22px;
   margin: 0 0px 0 5px;
   border-radius: 4px;
+}
+
+#mag {
+  height: 25px;
+  width: 25px;
+  padding-left: 10px;
 }
 
 input {
