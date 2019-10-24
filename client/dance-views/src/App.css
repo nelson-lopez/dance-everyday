@@ -109,14 +109,14 @@ body {
   top: 3em;
   display: flex;
   flex-direction: row;
-  padding-left: 37%;
+  padding-left: 30%;
 }
 
 .filter-button {
   background-color: #333333;
   color: #d6ac91;
   font-size: 18px;
-  padding: 0 5px;
+  padding: 0 50px;
   font-family: 'Open Sans Condensed', sans-serif;
   border-radius: 4px;
   margin-right:3px;
@@ -127,7 +127,7 @@ body {
   background-color: black;
   color: #d6ac91;
   font-size: 18px;
-  padding: 0 5px;
+  padding: 0 50px;
   font-family: 'Open Sans Condensed', sans-serif;
   border-radius: 4px;
   margin-right:3px;
@@ -139,6 +139,16 @@ body {
   color: #d6ac91;
   font-size: 18px;
   padding: 0 5px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border-radius: 4px;
+  margin-right:3px;
+  border-color: #7d7b74;
+}
+
+.filter-by-options:target {
+  background-color: black;
+  color: #d6ac91;
+  font-size: 18px;
   font-family: 'Open Sans Condensed', sans-serif;
   border-radius: 4px;
   margin-right:3px;
