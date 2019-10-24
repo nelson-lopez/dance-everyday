@@ -111,13 +111,23 @@ body {
   flex-direction: row;
 }
 
-.filter-image {
-  background: url('./styling-assets/menu-icon-2.jpg');
-  background-size: cover;
-  background-position: center;
-  max-height: 34px;
-  min-width: 40px;
+.filter-button {
+  background-color: white;
+  font-size: 22px;
+  margin: 0 0px 0 5px;
+  padding: 0 20px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border-radius: 4px;
 }
+
+.filter-button:hover {
+  background-color: black;
+  color: #d6ac91;
+  font-size: 22px;
+  margin: 0 0px 0 5px;
+  border-radius: 4px;
+}
+
 
 #form-input {
   background-color: white;
@@ -132,6 +142,7 @@ body {
   margin: 0 0px 0 5px;
   padding: 0 20px;
   font-family: 'Open Sans Condensed', sans-serif;
+  border-radius: 4px;
 }
 
 #form-submit:hover {
@@ -139,6 +150,7 @@ body {
   color: #d6ac91;
   font-size: 22px;
   margin: 0 0px 0 5px;
+  border-radius: 4px;
 }
 
 input {
@@ -146,7 +158,6 @@ input {
   border: 1px solid gray;
   border-radius: 4px;
   box-sizing: border-box;
-  /* box-shadow: 10px 10px 5px 0px rgba(237,237,237,1); */
 }
 
 h4 {

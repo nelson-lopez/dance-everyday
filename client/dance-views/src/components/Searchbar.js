@@ -25,25 +25,13 @@ const Searchbar = ({ handleOnSubmit, handleOnSelect }) => {
 
   return (
     <div className="search-bar">
-      <div className="filter-image">
-        {' '}
-        <button onClick={handleOnDisplay} className="filter-button"></button>
-      </div>
-
+        <button onClick={handleOnDisplay} className="filter-button" name="Filter by">Filter by</button>
+   
       {display ? (
         <div>
-          <button name="organizers" onClick={handleSelect}>
-            {' '}
-            Organizers{' '}
-          </button>
-          <button name="venues" onClick={handleSelect}>
-            {' '}
-            Venue{' '}
-          </button>
-          <button name="date" onClick={handleSelect}>
-            {' '}
-            Date{' '}
-          </button>
+          <button name="Organizers" onClick={handleSelect}>Organizers</button>
+          <button name="Venues" onClick={handleSelect}>Venue</button>
+          <button name="Date" onClick={handleSelect}>Date</button>
         </div>
       ) : (
         <div> </div>
