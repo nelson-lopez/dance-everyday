@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import Nav from './Nav';
 import CreateEventHeader from './CreateEventHeader'
+import Footer from './Footer'
 
 const CreateEvents = ({ handleOnCreate, redirect }) => {
   const [currentInfo, setCurrentInfo] = useState({
@@ -28,32 +29,36 @@ const CreateEvents = ({ handleOnCreate, redirect }) => {
     <div>
       <CreateEventHeader />
       <Nav />
-      
-      <form>
+
+      <form className="create-event-form">
         <label>
-          Create new event:
-          <input
+          <h2>Create new event </h2>
+            <input
             type="text"
             name="name"
             placeholder={currentInfo.name}
             onChange={handleOnInput}
           />
-          <input
+          <br />
+          <h2>Date </h2><input
             type="text"
             name="date"
             placeholder={currentInfo.date}
             onChange={handleOnInput}
           />
-          <input
-            type="text"
+          <br />
+          <h2>Description </h2><textarea rows="10" cols="60" id="create-event-desc"
             name="description"
             placeholder={currentInfo.description}
             onChange={handleOnInput}
           />
         </label>
-        <input type="submit" value="Submit" onClick={onSubmit} />
+        <br/>
+        <input id="create-event-button" type="submit" value="Create Event" onClick={onSubmit} />
       </form>
-
+      <div id="create-event-footer">
+        <Footer />
+      </div>
     </div>
   );
 };

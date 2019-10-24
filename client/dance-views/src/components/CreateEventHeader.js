@@ -4,7 +4,7 @@ function CreateEventHeader() {
   return (
     <div className="create-event-header">
       <h1>Create Event</h1>
-      <h2>Share your dance events with the world</h2>
+      <h2>List your dance events and share with the world</h2>
 
     </div>
   );

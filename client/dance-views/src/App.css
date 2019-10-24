@@ -262,14 +262,93 @@ h4 {
 }
 
 /* CREATE EVENTS PAGE */
-/* <div id="create-event-image">
-        <img
-          src={
-            'https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg'
-          }
-          alt="party"
-        />
- */
+.create-event-header {
+  background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg');
+  padding: 500px 0 0 0;
+  opacity: 1;
+  display: block;
+  background-size: cover;
+  background-position: center;
+}
+
+.create-event-header h1 {
+  background: black;
+  opacity: 0.7;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  font-size: 48px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  margin: 0 auto;
+  left: 10px;
+  right: 10px;
+  top: 23%;
+  text-align: center;
+}
+
+.create-event-header h2 {
+  opacity: 0.7;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  font-size: 24px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  font-style: italic;
+  font-weight: bold;
+  margin: 0 auto;
+  left: 10px;
+  right: 10px;
+  top: 23%;
+  text-align: center;
+}
+
+.create-event-form {
+  background-color: white;
+  opacity: 0.7;
+  border-radius: 5px;
+  margin: 40px 10%;
+  border: rgb(106, 106, 106) 0.1px solid;
+  box-shadow: 2px 2px 2px 0px gray;
+  padding: 40px;
+  text-align: center;
+}
+
+.create-event-form h2 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.create-event-form input {
+  margin-bottom: 20px;
+  width: 500px;
+}
+
+#create-event-desc {
+  height: 300px;
+}
+
+#create-event-button {
+  margin-top: 40px;
+  width: 200px;
+}
+
+#create-event-footer {
+  text-align: center;
+  font-size: 18px;
+  background-color: white;
+  padding: 1px 0;
+  box-shadow: 2px 2px 2px 2px gray;
+  position: sticky;
+  bottom: 0em;
+}
 
 
 /* Smartphones (portrait and landscape) ----------- */
