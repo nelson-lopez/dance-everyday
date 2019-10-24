@@ -174,14 +174,34 @@ h4 {
 }
 
 
-/* EDIT FORM */
+/* BACK OF CARD / EDIT FORM */
 .edit-form {
-  background-color: white;
+  height: 275px;
+  width: 250px;
+  border: rgb(106, 106, 106) 0.1px solid;
+  box-shadow: 2px 2px 2px 0px gray;
+  margin: 15px;
+  text-align: center;
+  border-radius: 0px 0px 0px 20px;
+  color: dark-gray;
+  background-color: #d1a080;
+  opacity: 0.85;
+  padding-top: 125px;
   font-size: 22px;
-  width: 350px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: bold;
 }
 
+#event-name {
+ 
+}
+
+#event-date {
+
+}
+
+#event-desc {
+
+}
 
 
 
