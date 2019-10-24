@@ -332,12 +332,22 @@ h4 {
 }
 
 #create-event-desc {
-  height: 300px;
+  font-family: sans-serif;
+  width: 500px;
+  font-size: 18px;
 }
 
 #create-event-button {
   margin-top: 40px;
-  width: 200px;
+  width: 250px;
+  padding: 10px;
+  background-color: #36454f;
+  color: #d6ac91;
+}
+
+#create-event-button:hover {
+  background-color: black;
+  color: #d6ac91;
 }
 
 #create-event-footer {
