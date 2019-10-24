@@ -181,6 +181,14 @@ h4 {
   width: 124px;
 }
 
+.front-buttons:hover {
+  background-color: black;
+  box-shadow: 0.5px 0.5px 0.5px 0px gray;
+  color: #d1a080;
+  border: rgb(106, 106, 106) 0.1px solid;
+  width: 124px;
+}
+
 
 /* BACK OF CARD / EDIT FORM */
 .edit-form {
@@ -215,8 +223,9 @@ h4 {
 }
 
 #edit-submit-button {
-  background-color: white;
-  font-size: 22px;
+  background-color: #36454f;
+  color: #d6ac91;
+  font-size: 18px;
   margin: 0 0px 0 5px;
   padding: 0 20px;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -225,7 +234,7 @@ h4 {
 #edit-submit-button:hover {
   background-color: black;
   color: #d6ac91;
-  font-size: 22px;
+  font-size: 18px;
   margin: 0 0px 0 5px;
 }
 

@@ -42,7 +42,7 @@ export default function EditCard({ name, date, description, handleFlip, id }) {
             id="event-name"
             type="text"
             name="name"
-            placeholder={name}
+            defaultValue={name}
             onChange={handleOnChange}
           />
           <br/>
@@ -52,8 +52,9 @@ export default function EditCard({ name, date, description, handleFlip, id }) {
             id="event-date"
             type="text"
             name="date"
-            placeholder={date}
+            defaultValue={date}
             onChange={handleOnChange}
+
           />
           <br/>
           Description:
@@ -62,12 +63,12 @@ export default function EditCard({ name, date, description, handleFlip, id }) {
             id="event-desc"
             type="text"
             name="description"
-            placeholder={description}
+            defaultValue={description}
             onChange={handleOnChange}
           />
         </label>
          <br/>
-        <input id="edit-submit-button" type="submit" value="Submit" onClick={handleOnSubmit} />
+        <input id="edit-submit-button" type="submit" value="Update" onClick={handleOnSubmit} />
       </form>
     </div>
   );
