@@ -81,14 +81,14 @@ export default function EditCard({
         <input
           id="edit-submit-button"
           type="submit"
-          value="Update"
-          onClick={handleOnSubmit}
+          value="Back"
+          onClick={handleOnReturn}
         />
         <input
           id="edit-submit-button"
           type="submit"
-          value="Back"
-          onClick={handleOnReturn}
+          value="Update"
+          onClick={handleOnSubmit}
         />
       </form>
     </div>
