@@ -188,12 +188,6 @@ body {
   border-radius: 4px;
 }
 
-#mag {
-  height: 25px;
-  width: 25px;
-  padding-left: 10px;
-}
-
 input {
   font-size: 18px;
   border: 1px solid gray;
@@ -436,18 +430,38 @@ h4 {
 /* Smartphones (portrait and landscape) ----------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  .header {
-    /* background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg'); */
-    /* background-image: url('https://www.dance.nyc/images/users/13092/MarcandKirievent_image.jpg'); */
-    background-image: url('https://cdn.pixabay.com/photo/2016/11/10/07/43/tango-1813691_1280.jpg');
-    color: white;
-    padding: 400px 0 0 0;
-    opacity: 1;
-    background-size: cover;
+  /* SEARCH BAR */
+  .search-bar {
+    background-color: #7d7b74;
+    font-size: 22px;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 2px 2px 2px 0px gray;
+    z-index: 998;
+    position: sticky;
+    top: 3em;
+    display: block;
   }
+
+  #form-input {
+    background-color: white;
+    font-size: 22px;
+    width: 175px;
+    font-family: 'Open Sans Condensed', sans-serif;
+  }
+
+  /* CREATE EVENTS */
+  .create-event-form input {
+    margin-bottom: 20px;
+    width: 200px;
+  }
+
+  #create-event-desc {
+    font-family: sans-serif;
+    width: 200px;
+    font-size: 18px;
+    border: rgb(106, 106, 106) 0.1px solid;
+  }
+  
 }
-
-/* Background images */
-
-/* background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg'); */
-/* background-image: url('https://www.dance.nyc/images/users/13092/MarcandKirievent_image.jpg'); */
