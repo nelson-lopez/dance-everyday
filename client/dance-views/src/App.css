@@ -310,6 +310,106 @@ h4 {
   bottom: 0em;
 }
 
+/* CREATE EVENTS PAGE */
+.create-event-header {
+  background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg');
+  padding: 500px 0 0 0;
+  opacity: 1;
+  display: block;
+  background-size: cover;
+  background-position: center;
+}
+
+.create-event-header h1 {
+  background: black;
+  opacity: 0.7;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  font-size: 48px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  margin: 0 auto;
+  left: 10px;
+  right: 10px;
+  top: 23%;
+  text-align: center;
+}
+
+.create-event-header h2 {
+  opacity: 0.7;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  font-size: 24px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  font-style: italic;
+  font-weight: bold;
+  margin: 0 auto;
+  left: 10px;
+  right: 10px;
+  top: 23%;
+  text-align: center;
+}
+
+.create-event-form {
+  background-color: white;
+  opacity: 0.7;
+  border-radius: 5px;
+  margin: 40px 10%;
+  border: rgb(106, 106, 106) 0.1px solid;
+  box-shadow: 2px 2px 2px 0px gray;
+  padding: 40px;
+  text-align: center;
+}
+
+.create-event-form h2 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.create-event-form input {
+  margin-bottom: 20px;
+  width: 500px;
+}
+
+#create-event-desc {
+  font-family: sans-serif;
+  width: 500px;
+  font-size: 18px;
+}
+
+#create-event-button {
+  margin-top: 40px;
+  width: 250px;
+  padding: 10px;
+  background-color: #36454f;
+  color: #d6ac91;
+}
+
+#create-event-button:hover {
+  background-color: black;
+  color: #d6ac91;
+}
+
+#create-event-footer {
+  text-align: center;
+  font-size: 18px;
+  background-color: white;
+  padding: 1px 0;
+  box-shadow: 2px 2px 2px 2px gray;
+  position: sticky;
+  bottom: 0em;
+}
+
+
 /* Smartphones (portrait and landscape) ----------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -325,6 +425,6 @@ h4 {
 }
 
 /* Background images */
-/* background-image: url('https://image.shutterstock.com/image-photo/shot-young-woman-dancing-nightclub-600w-763642693.jpg');   */
+
 /* background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg'); */
 /* background-image: url('https://www.dance.nyc/images/users/13092/MarcandKirievent_image.jpg'); */
