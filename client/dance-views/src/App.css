@@ -1,9 +1,7 @@
-/* @import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap"); */
 @import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Open+Sans+Condensed:300&display=swap');
 
 body {
   margin: 0px;
-  /* font-family: 'Ubuntu', sans-serif; */
   font-family: 'Open Sans Condensed', sans-serif;
   background-color: white;
   background-image: url('https://cdn.pixabay.com/photo/2016/10/17/14/31/background-1747781_1280.jpg');
@@ -109,14 +107,61 @@ body {
   top: 3em;
   display: flex;
   flex-direction: row;
+  padding-left: 30%;
 }
 
-.filter-image {
-  background: url('./styling-assets/menu-icon-2.jpg');
-  background-size: cover;
-  background-position: center;
-  max-height: 34px;
-  min-width: 40px;
+.filter-button {
+  background-color: #333333;
+  color: #d6ac91;
+  font-size: 18px;
+  padding: 0 50px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border-radius: 4px;
+  margin-right:3px;
+  border-color: #7d7b74;
+}
+
+.filter-button:hover {
+  background-color: black;
+  color: #d6ac91;
+  font-size: 18px;
+  padding: 0 50px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border-radius: 4px;
+  margin-right:3px;
+  border-color: #7d7b74;
+}
+
+.filter-by-options {
+  background-color: #333333;
+  color: #d6ac91;
+  font-size: 18px;
+  padding: 0 5px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border-radius: 4px;
+  margin-right:3px;
+  border-color: #7d7b74;
+}
+
+.filter-by-options:hover {
+  background-color: black;
+  color: #d6ac91;
+  font-size: 18px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border-radius: 4px;
+  margin-right:3px;
+  border-color: #7d7b74;
+}
+
+.filter-by-options:focus {
+  background-color: black;
+  color: #d6ac91;
+  font-size: 18px;
+  padding: 0 5px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  border-radius: 4px;
+  margin-right:3px;
+  border-color: #7d7b74;
 }
 
 #form-input {
@@ -132,6 +177,7 @@ body {
   margin: 0 0px 0 5px;
   padding: 0 20px;
   font-family: 'Open Sans Condensed', sans-serif;
+  border-radius: 4px;
 }
 
 #form-submit:hover {
@@ -139,6 +185,13 @@ body {
   color: #d6ac91;
   font-size: 22px;
   margin: 0 0px 0 5px;
+  border-radius: 4px;
+}
+
+#mag {
+  height: 25px;
+  width: 25px;
+  padding-left: 10px;
 }
 
 input {
@@ -146,7 +199,6 @@ input {
   border: 1px solid gray;
   border-radius: 4px;
   box-sizing: border-box;
-  /* box-shadow: 10px 10px 5px 0px rgba(237,237,237,1); */
 }
 
 h4 {
@@ -154,33 +206,9 @@ h4 {
 }
 
 /* ABOUT STYLE */
-
 .about-container {
   margin: 0 auto;
-}
-
-.grid-card {
-  margin-left: 10px;
-  margin-right: 10px;
-  position: relative;
-  max-width: 1180px;
-}
-
-.about-welcome {
-  
-}
-
-.about-catch-phrase {
-
-}
-
-.header-img {
-
-}
-
-.met-your-dev {
-  display: flex;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
 .profile {
@@ -189,18 +217,17 @@ h4 {
   border-radius: 20%;
 }
 
-.dev {
- 
+.about-container p {
+  font-size: 22px;
+  margin: 0 20%;
+  padding-bottom: 50px;
 }
 
-.dev-name {
-  flex-flow: row-reverse;
-  font-size: 40px;
+.about-container h2 {
+  font-weight: bold;
 }
 
-.dev-about {
-  font-size: 20px;
-}
+
 
 /* CARD STYLE */
 .card {
