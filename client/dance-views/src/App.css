@@ -156,6 +156,55 @@ h4 {
   color: white;
 }
 
+/* ABOUT STYLE */
+
+.about-container {
+  margin: 0 auto;
+}
+
+.grid-card {
+  margin-left: 10px;
+  margin-right: 10px;
+  position: relative;
+  max-width: 1180px;
+}
+
+.about-welcome {
+  
+}
+
+.about-catch-phrase {
+
+}
+
+.header-img {
+
+}
+
+.met-your-dev {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile {
+  width: 400px;
+  height: 350px;
+  border-radius: 20%;
+}
+
+.dev {
+ 
+}
+
+.dev-name {
+  flex-flow: row-reverse;
+  font-size: 40px;
+}
+
+.dev-about {
+  font-size: 20px;
+}
+
 /* CARD STYLE */
 .card {
   height: 400px;
