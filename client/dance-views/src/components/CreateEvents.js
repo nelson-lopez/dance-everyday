@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import Nav from './Nav';
+import CreateEventHeader from './CreateEventHeader'
 
 const CreateEvents = ({ handleOnCreate, redirect }) => {
   const [currentInfo, setCurrentInfo] = useState({
@@ -25,7 +26,9 @@ const CreateEvents = ({ handleOnCreate, redirect }) => {
   if (redirect) return <Redirect to="/" />;
   return (
     <div>
+      <CreateEventHeader />
       <Nav />
+      
       <form>
         <label>
           Create new event:
