@@ -37,6 +37,7 @@ export default function EditCard({ name, date, description, handleFlip, id }) {
       <form>
         <label>
           Edit new card:
+          <br/>
           <input
             id="event-name"
             type="text"
@@ -46,6 +47,7 @@ export default function EditCard({ name, date, description, handleFlip, id }) {
           />
           <br/>
           Date:
+          <br/>
           <input
             id="event-date"
             type="text"
@@ -55,6 +57,7 @@ export default function EditCard({ name, date, description, handleFlip, id }) {
           />
           <br/>
           Description:
+          <br/>
           <input
             id="event-desc"
             type="text"
@@ -64,7 +67,7 @@ export default function EditCard({ name, date, description, handleFlip, id }) {
           />
         </label>
          <br/>
-        <input type="submit" value="Submit" onClick={handleOnSubmit} />
+        <input id="edit-submit-button" type="submit" value="Submit" onClick={handleOnSubmit} />
       </form>
     </div>
   );
