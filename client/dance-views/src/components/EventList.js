@@ -3,7 +3,7 @@ import apiDelete from './api/apiDelete';
 import axios from 'axios';
 import EventCard from './EventCard';
 
-const EventList = ({ newEvent }) => {
+const EventList = ({ newEvent, newSearchList }) => {
   const [eventInfo, setEventInfo] = useState(null);
 
   useEffect(() => {
@@ -31,7 +31,24 @@ const EventList = ({ newEvent }) => {
     apiDelete(id);
     setEventInfo(eventInfo.filter(obj => obj.id !== id));
   };
-
+  if (newSearchList) {
+    return (
+      <div className="flex-container">
+        {newSearchList.map(obj => {
+          return (
+            <EventCard
+              name={obj.name}
+              key={obj.id}
+              date={obj.date}
+              description={obj.description}
+              id={obj.id}
+              handleDelete={handleDelete}
+            />
+          );
+        })}
+      </div>
+    );
+  }
   if (eventInfo) {
     return (
       <div className="flex-container">
