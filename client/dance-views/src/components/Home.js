@@ -35,14 +35,30 @@ const Home = ({ newEvent }) => {
 
   useEffect(() => {
     if (searchInput && selected) {
-      axios
-        .get(`http://localhost:9876/api/${selected}`)
-        .then(res => {
-          const result = res.data.data.filter(obj => obj.name === searchInput);
-          const { events } = result[0];
-          setValue(events);
-        })
-        .catch(err => console.log(err));
+      if (selected === 'venues') {
+        axios
+          .get(`http://localhost:9876/api/${selected}`)
+          .then(res => {
+            const result = res.data.data.filter(
+              obj => obj.name.toLowerCase() === searchInput.toLowerCase()
+            );
+            const { events } = result[0];
+            setValue(events);
+          })
+          .catch(err => console.log(err));
+      }
+      if (selected === 'organizers') {
+        axios
+          .get(`http://localhost:9876/api/${selected}`)
+          .then(res => {
+            const result = res.data.data.filter(
+              obj => obj.name.toLowerCase() === searchInput.toLowerCase()
+            );
+            const { events } = result[0];
+            setValue(events);
+          })
+          .catch(err => console.log(err));
+      }
     }
   }, [searchInput, selected]);
 
