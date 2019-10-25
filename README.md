@@ -108,18 +108,18 @@ Diagram of the Database:
 
 ---
 
-| ( **Anna** ) Frontend Engineer & Styler | Priority | Estimated Time | Time Invetsted | Actual Time |
+| ( **Anna** ) Frontend Engineer & Styler | Priority | Estimated Time | Time Invested | Actual Time |
 | --------------------------------------- | :------: | :------------: | :------------: | :---------: |
-| Fill Seed Data                          |    H     |      3hrs      |                |             |
-| Header                                  |    H     |      4hrs      |                |             |
-| Navigation Bar                          |    H     |      3hrs      |                |             |
-| About                                   |    H     |      3hrs      |                |             |
-| Footer                                  |    H     |      1hrs      |                |             |
-| Output cards                            |    H     |      5hrs      |                |             |
-| Search bar styles                       |    H     |      1hrs      |                |             |
-| Media queries                           |    H     |      4hrs      |                |             |
-| Finishing touches                       |    H     |      6hrs      |                |             |
-| Total                                   |    H     |     30hrs      |                |             |
+| Fill Seed Data                          |    H     |      3hrs      |        1hrs        |    1hrs     |
+| Header                                  |    H     |      4hrs      |        2hrs        |    2hrs     |
+| Navigation Bar                          |    H     |      3hrs      |        4hrs        |    4hrs     |
+| About                                   |    H     |      3hrs      |        2hrs        |    2hrs     |
+| Footer                                  |    H     |      1hrs      |        1/2hr       |    1/2hr    |
+| Output cards                            |    H     |      5hrs      |        5hrs        |    5hrs     |
+| Search bar styles                       |    H     |      1hrs      |        4hrs        |    4hrs     |
+| Media queries                           |    H     |      4hrs      |        4hrs        |    4hrs     |
+| Finishing touches                       |    H     |      6hrs      |        6hrs        |    6hrs     |
+| Total                                   |    H     |     30hrs      |        28.5hrs     |    28.5hrs  |
 
 ## Additional Libraries
 
