@@ -92,15 +92,15 @@ Diagram of the Database:
 
 | ( **Nelson** ) Frontend Engineer | Priority | Estimated Time | Time Invested | Actual Time |
 | -------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| Fill Seed Data                   |    H     |      1hrs      |               |             |
-| Scaffolding Components           |    H     |      1hrs      |               |             |
-| Connect front-end to Api         |    H     |      3hrs      |               |             |
-| Create Output cards              |    H     |      4hrs      |               |             |
-| Functioning SearchBar            |    H     |      8hrs      |               |             |
-| Add editing re-rendering         |    H     |      6hrs      |               |             |
-| Add deletion re-rendering        |    H     |      3hrs      |               |             |
-| Add creating re-rendering        |    H     |      4hrs      |               |             |
-| Total                            |    H     |     30hrs      |               |             |
+| Fill Seed Data                   |    H     |      1hrs      |       1       |      1      |
+| Scaffolding Components           |    H     |      1hrs      |       1       |      1      |
+| Connect front-end to Api         |    H     |      3hrs      |       4       |      4      |
+| Create Output cards              |    H     |      4hrs      |       3       |      3      |
+| Functioning SearchBar            |    H     |      8hrs      |      10       |     10      |
+| Add editing re-rendering         |    H     |      6hrs      |       4       |      4      |
+| Add deletion re-rendering        |    H     |      3hrs      |       1       |      1      |
+| Add creating re-rendering        |    H     |      4hrs      |       5       |      5      |
+| Total                            |    H     |     30hrs      |      29       |     29      |
 
 ---
 
