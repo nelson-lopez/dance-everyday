@@ -30,7 +30,6 @@ const Searchbar = ({ handleOnSubmit, handleOnSelect }) => {
         <div>
           <button className="filter-by-options" name="organizers" onClick={handleSelect}>Organizers</button>
           <button className="filter-by-options" name="venues" onClick={handleSelect}>Venue</button>
-          {/* <button className="filter-by-options" name="date" onClick={handleSelect}>Date</button> */}
         </div>
       ) : (
           <div/>
@@ -52,8 +51,6 @@ const Searchbar = ({ handleOnSubmit, handleOnSelect }) => {
           id="form-submit"
         />
       </form>
-      {/* Magnifying glass icon */}
-      {/* <img src='https://cdn.pixabay.com/photo/2016/03/31/19/14/magnifying-glass-1294834_1280.png' id="mag" alt="search" onClick={handleSubmit} /> */}
     </div>
   );
 };
