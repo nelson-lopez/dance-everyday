@@ -57,8 +57,6 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
         <h2>{cardState.date}</h2>
         <p>{cardState.description}</p>
 
-        {/* <button className="front-buttons" onClick={handleOnEdit}>Edit</button>
-        <button className="front-buttons" onClick={handleOnDelete}>Delete</button> */}
       </div>
     );
   else
