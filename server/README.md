@@ -1,138 +1,75 @@
-# Dance Everyday!
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+</p>
 
-![gif](https://media.giphy.com/media/Ymhz7H7Ye0gX3xuk59/giphy.gif)
+[travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
+[travis-url]: https://travis-ci.org/nestjs/nest
+[linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
+[linux-url]: https://travis-ci.org/nestjs/nest
+  
+  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
+<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
+<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
+<a href="https://gitter.im/nestjs/nestjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/nestjs/nestjs.svg" alt="Gitter" /></a>
+<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
+  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Project Description
+## Description
 
-https://agile-inlet-95999.herokuapp.com/
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-Dance Everyday is a website in which dance venues will display their events by dance, location, and time.With Dance Everyday organizers will be able to create,modify and list all dance events.
+## Installation
 
-## Wireframes
-
-This is the drafted design for the landing page in desktop view:
-
-![](https://i.imgur.com/x00gjfJ.png)
-
-and the design for mobile:
-
-![](https://i.imgur.com/BYik3If.png)
-
-#### MVP
-
-- Build out the database to represent the relation between venue and events per menu.
-- Render 2 filter views of available events in the city: by dance, by venue.
-- Set up routes for the home, event list, edit, event, create.
-- Mobile first design
-
-#### PostMVP EXAMPLE
-
-- Add user auth with favorites and add venue
-- Friend Finder
-- Food near venue
-- Add another filter view for dance style
-
-## ERD Diagram
-
-Diagram of the Database:
-
-![](https://i.imgur.com/kGkkfvv.jpg)
-
-## React Component Hierarchy
-
-![](https://i.imgur.com/sbOngZL.png)
-
-## Priority Matrix
-
-![](https://i.imgur.com/BvQ42ur.jpg)
-
-## Components List
-
-| Component                                                                                                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| App                                                                                                                                                                                        |
-| Houses all component routes and feeds the Home component initial fetch data                                                                                                                |
-| Home                                                                                                                                                                                       |
-| Home houses a Nav component and renders on initial load through the '/' route as well as rendering a searchbar and event results list                                                      |
-| EventResults                                                                                                                                                                               |
-| Event results consumes inital fetch data as well search data and rerenders on fetch. Also serves as a styling container for EventList                                                      |
-| EventList                                                                                                                                                                                  |
-| Conditionally renders event cards based on the props provided from EventList as well as rerenders on Create Event                                                                          |
-| EventCard                                                                                                                                                                                  |
-| Conditionally renders based on wether or not the edit button is clicked. Displays information from events such as location, time, and style. As well as provides an edit and delete button |
-| SearchBar                                                                                                                                                                                  |
-| Fetches a new list based on search filters by dance and by venue                                                                                                                           |
-| About/Footer                                                                                                                                                                               |
-| Displays dummy data about the contributors of this project as well as contact information                                                                                                  |
-
----
-
----
-
----
-
-| ( **Jaabel** ) Backend Engineer | Priority | Estimated Time | Time Invetsted | Actual Time |
-| ------------------------------- | :------: | :------------: | :------------: | :---------: |
-| Setup files                     |    H     |      1hrs      |                |             |
-| Setup models                    |    H     |      1hrs      |                |             |
-| Create Database                 |    H     |      1hrs      |                |             |
-| Create Tables                   |    H     |      1hrs      |                |             |
-| Create and fill seed data       |    H     |      3hrs      |                |             |
-| Fill Seed Data                  |    H     |      3hrs      |                |             |
-| Migrate / Test / debug          |    H     |      3hrs      |                |             |
-| Create routes                   |    H     |      3hrs      |                |             |
-| Test routes / debug             |    H     |      3hrs      |                |             |
-| Create api Docs                 |    H     |      6hrs      |                |             |
-| Providing Support to Frontend   |    H     |      5hrs      |                |             |
-| Total                           |    H     |     30hrs      |                |             |
-
----
-
----
-
----
-
-| ( **Nelson** ) Frontend Engineer | Priority | Estimated Time | Time Invested | Actual Time |
-| -------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| Fill Seed Data                   |    H     |      1hrs      |       1       |      1      |
-| Scaffolding Components           |    H     |      1hrs      |       1       |      1      |
-| Connect front-end to Api         |    H     |      3hrs      |       4       |      4      |
-| Create Output cards              |    H     |      4hrs      |       3       |      3      |
-| Functioning SearchBar            |    H     |      8hrs      |      10       |     10      |
-| Add editing re-rendering         |    H     |      6hrs      |       4       |      4      |
-| Add deletion re-rendering        |    H     |      3hrs      |       1       |      1      |
-| Add creating re-rendering        |    H     |      4hrs      |       5       |      5      |
-| Total                            |    H     |     30hrs      |      29       |     29      |
-
----
-
----
-
----
-
-| ( **Anna** ) Frontend Engineer & Styler | Priority | Estimated Time | Time Invested | Actual Time |
-| --------------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| Fill Seed Data                          |    H     |      3hrs      |     1hrs      |    1hrs     |
-| Header                                  |    H     |      4hrs      |     2hrs      |    2hrs     |
-| Navigation Bar                          |    H     |      3hrs      |     4hrs      |    4hrs     |
-| About                                   |    H     |      3hrs      |     2hrs      |    2hrs     |
-| Footer                                  |    H     |      1hrs      |     1/2hr     |    1/2hr    |
-| Output cards                            |    H     |      5hrs      |     5hrs      |    5hrs     |
-| Search bar styles                       |    H     |      1hrs      |     4hrs      |    4hrs     |
-| Media queries                           |    H     |      4hrs      |     4hrs      |    4hrs     |
-| Finishing touches                       |    H     |      6hrs      |     6hrs      |    6hrs     |
-| Total                                   |    H     |     30hrs      |    28.5hrs    |   28.5hrs   |
-
-## Additional Libraries
-
-React-router, axios
-
-## Code Snippet
-
-```
-function Nothing(Written) {
-	return( something soon... )
-}
+```bash
+$ npm install
 ```
 
-## Issues and Resolutions
+## Running the app
+
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+```
+
+## Test
+
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+  Nest is [MIT licensed](LICENSE).

@@ -1,56 +1,71 @@
 {
-  "name": "dance-everyday",
-  "version": "1.0.0",
-  "description": "Dance Everyday is a website in which dance venues will display their events by dance, location, and time.With Dance Everyday organizers will be able to create,modify and list all dance events.",
-  "main": "commands-init.js",
-  "repository": {
-    "type": "git",
-    "url": "https://git.generalassemb.ly/iJaabel/Dance-Everyday.git"
-  },
-  "keywords": [
-    "Dance",
-    "Everyday",
-    "Zouk",
-    "West",
-    "Coast",
-    "Swing",
-    "Lambada",
-    "Events"
-  ],
-  "author": "Jaabel Lopez && Nelson Lopez && Anna Moser",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.6.4",
-    "@babel/node": "^7.6.3",
-    "@babel/preset-env": "^7.6.3",
-    "babel-watch": "^7.0.0"
+  "name": "server",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "morgan": "^1.9.1",
-    "pg": "^7.12.1",
-    "sequelize": "^5.21.1"
+    "@nestjs/common": "^6.7.2",
+    "@nestjs/core": "^6.7.2",
+    "@nestjs/platform-express": "^6.7.2",
+    "@nestjs/swagger": "^3.1.0",
+    "@nestjs/typeorm": "^6.2.0",
+    "cache-manager": "^2.10.1",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.11.0",
+    "compression": "^1.7.4",
+    "config": "^3.2.4",
+    "pg": "^7.14.0",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.0",
+    "rxjs": "^6.5.3",
+    "typeorm": "^0.2.20"
   },
-  "scripts": {
-    "start": "npm run server",
-    "babel-server": "babel-node ./server.js",
-    "server": "babel-watch ./server.js",
-    "resetdb": "babel-node ./resetDb.js",
-    "seed": "babel-node ./seed.js",
-    "createdevdb": "createdb -U postgres -W ",
-    "rebuild-database": "npm run resetdb && npm run seed"
-},
-  "babel": {
-    "presets": [
-      [
-        "@babel/env",
-        {
-          "targets": {
-            "node": "current"
-          }
-        }
-      ]
-    ]
+  "devDependencies": {
+    "@nestjs/cli": "^6.9.0",
+    "@nestjs/schematics": "^6.7.0",
+    "@nestjs/testing": "^6.7.1",
+    "@types/express": "^4.17.2",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.12.14",
+    "@types/supertest": "^2.0.8",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.1.0",
+    "ts-loader": "^6.1.1",
+    "ts-node": "^8.4.1",
+    "tsconfig-paths": "^3.9.0",
+    "tslint": "^5.20.0",
+    "typescript": "^3.7.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node"
   }
 }
