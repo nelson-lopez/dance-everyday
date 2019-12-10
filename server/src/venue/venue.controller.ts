@@ -5,6 +5,7 @@ import {
   Body,
   Param,
   ParseIntPipe,
+  Delete,
 } from '@nestjs/common';
 import { VenueService } from './venue.service';
 import CreateVenueDto from './dto/venue.dto';
@@ -27,5 +28,10 @@ export class VenueController {
   @Post('/create')
   createNewVenue(@Body() createVenueDto: CreateVenueDto): Promise<Venue> {
     return this.venueService.createVenue(createVenueDto);
+  }
+
+  @Delete('/:id')
+  deleteVenue(@Param('id', ParseIntPipe) id: number): Promise<void> {
+    return this.venueService.deleteVenue(id);
   }
 }
