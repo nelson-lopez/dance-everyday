@@ -1,4 +1,11 @@
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  BaseEntity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+} from 'typeorm';
+import { Event } from 'src/event/event.entity';
 
 @Entity()
 export default class Venue extends BaseEntity {
@@ -10,4 +17,10 @@ export default class Venue extends BaseEntity {
   location: string;
   @Column()
   contact: string;
+
+  @OneToMany(
+    type => Event,
+    events => events.venue,
+  )
+  events: Event[];
 }
