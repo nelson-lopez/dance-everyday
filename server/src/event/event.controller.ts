@@ -8,6 +8,8 @@ import {
   Patch,
   Delete,
   Query,
+  UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 import { EventService } from './event.service';
 import { CreateEventDto } from './dto/event.dto';
@@ -29,13 +31,19 @@ export class EventController {
   }
 
   @Post('/create')
-  createEvent(@Body() createEventDto: CreateEventDto): Promise<Event> {
+  createEvent(
+    @UsePipes(ValidationPipe)
+    @Body()
+    createEventDto: CreateEventDto,
+  ): Promise<Event> {
     return this.eventService.createEvent(createEventDto);
   }
 
   @Patch('/:id/update')
   updateEvent(
-    @Body() createEventDto: CreateEventDto,
+    @UsePipes(ValidationPipe)
+    @Body()
+    createEventDto: CreateEventDto,
     @Param('id', ParseIntPipe) id: number,
   ): Promise<Event> {
     return this.eventService.updateEvent(createEventDto, id);

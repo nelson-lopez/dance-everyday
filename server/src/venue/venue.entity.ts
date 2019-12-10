@@ -21,6 +21,9 @@ export default class Venue extends BaseEntity {
   @OneToMany(
     type => Event,
     events => events.venue,
+    {
+      eager: true,
+    },
   )
   events: Event[];
 }

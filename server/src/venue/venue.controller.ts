@@ -6,6 +6,8 @@ import {
   Param,
   ParseIntPipe,
   Delete,
+  UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 import { VenueService } from './venue.service';
 import CreateVenueDto from './dto/venue.dto';
@@ -26,7 +28,11 @@ export class VenueController {
   }
 
   @Post('/create')
-  createNewVenue(@Body() createVenueDto: CreateVenueDto): Promise<Venue> {
+  createNewVenue(
+    @UsePipes(ValidationPipe)
+    @Body()
+    createVenueDto: CreateVenueDto,
+  ): Promise<Venue> {
     return this.venueService.createVenue(createVenueDto);
   }
 
