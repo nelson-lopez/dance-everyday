@@ -28,8 +28,8 @@ export class VenueController {
   }
 
   @Post('/create')
+  @UsePipes(ValidationPipe)
   createNewVenue(
-    @UsePipes(ValidationPipe)
     @Body()
     createVenueDto: CreateVenueDto,
   ): Promise<Venue> {

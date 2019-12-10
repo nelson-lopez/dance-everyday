@@ -31,8 +31,8 @@ export class EventController {
   }
 
   @Post('/create')
+  @UsePipes(ValidationPipe)
   createEvent(
-    @UsePipes(ValidationPipe)
     @Body()
     createEventDto: CreateEventDto,
   ): Promise<Event> {
@@ -40,8 +40,8 @@ export class EventController {
   }
 
   @Patch('/:id/update')
+  @UsePipes(ValidationPipe)
   updateEvent(
-    @UsePipes(ValidationPipe)
     @Body()
     createEventDto: CreateEventDto,
     @Param('id', ParseIntPipe) id: number,
