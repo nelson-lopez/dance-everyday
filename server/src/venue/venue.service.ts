@@ -15,6 +15,10 @@ export class VenueService {
     return this.venueRepository.getAllVenues();
   }
 
+  getVenueById(id: number): Promise<Venue> {
+    return this.venueRepository.getVenueById(id);
+  }
+
   createVenue(createVenueDto: CreateVenueDto): Promise<Venue> {
     return this.venueRepository.createNewVenue(createVenueDto);
   }

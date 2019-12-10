@@ -1,4 +1,11 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  ParseIntPipe,
+} from '@nestjs/common';
 import { VenueService } from './venue.service';
 import CreateVenueDto from './dto/venue.dto';
 import Venue from './venue.entity';
@@ -10,6 +17,11 @@ export class VenueController {
   @Get()
   getAllVenues(): Promise<Venue[]> {
     return this.venueService.getAllVenus();
+  }
+
+  @Get('/:id')
+  getVenueById(@Param('id', ParseIntPipe) id: number): Promise<Venue> {
+    return this.venueService.getVenueById(id);
   }
 
   @Post('/create')
