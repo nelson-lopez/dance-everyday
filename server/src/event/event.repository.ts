@@ -12,6 +12,12 @@ export class EventRepository extends Repository<Event> {
 
     const venue = await venueRepository.getVenueByName(venueName);
 
+    if (!venue) {
+      throw new NotAcceptableException(
+        `Venue with name ${venueName} does not exist`,
+      );
+    }
+
     const event = new Event();
 
     event.name = name;
