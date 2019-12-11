@@ -12,6 +12,14 @@ export default class VenueRepository extends Repository<Venue> {
     return venues;
   }
 
+  async getVenueByName(venueName: string): Promise<Venue> {
+    const venue = await this.findOne({
+      name: venueName,
+    });
+
+    return venue;
+  }
+
   async createNewVenue({
     name,
     location,

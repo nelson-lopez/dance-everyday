@@ -6,4 +6,7 @@ export class CreateEventDto {
 
   @IsNotEmpty()
   date: string;
+
+  @IsNotEmpty()
+  venueName: string;
 }

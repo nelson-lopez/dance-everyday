@@ -1,18 +1,26 @@
-import { EntityRepository, Repository } from 'typeorm';
+import { EntityRepository, Repository, getCustomRepository } from 'typeorm';
 import { Event } from './event.entity';
 import { CreateEventDto } from './dto/event.dto';
 import { NotAcceptableException, NotFoundException } from '@nestjs/common';
 import { FilterEventDto } from './dto/filter-event.dto';
+import VenueRepository from 'src/venue/venue.repository';
 
 @EntityRepository(Event)
 export class EventRepository extends Repository<Event> {
-  async createEvent({ name, date }: CreateEventDto): Promise<Event> {
+  async createEvent({ name, date, venueName }: CreateEventDto): Promise<Event> {
+    const venueRepository = getCustomRepository(VenueRepository);
+
+    const venue = await venueRepository.getVenueByName(venueName);
+
     const event = new Event();
 
     event.name = name;
     event.date = date;
 
     await event.save();
+    await venue.events.push(event);
+    await venue.save();
+
     return event;
   }
 
