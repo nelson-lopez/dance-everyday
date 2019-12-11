@@ -12,6 +12,12 @@ async function bootstrap() {
 
   const port = process.env.PORT || serverConfig.port;
 
+  app.enableCors({
+    origin: true,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELTE,OPTIONS',
+    credentials: true,
+  });
+
   app.use(compression());
   await app.listen(port);
 
