@@ -14,6 +14,7 @@ export class EventService {
   ) {}
 
   createEvent(createEventDto: CreateEventDto): Promise<Event> {
+    //TODO Add filtering for Date
     return this.eventRepository.createEvent(createEventDto);
   }
 

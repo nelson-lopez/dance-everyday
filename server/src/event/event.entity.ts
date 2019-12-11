@@ -20,5 +20,5 @@ export class Event extends BaseEntity {
     type => Venue,
     venue => venue.events,
   )
-  venue: Venue;
+  venue: number;
 }
