@@ -10,6 +10,7 @@ import {
   Query,
   UsePipes,
   ValidationPipe,
+  Logger,
 } from '@nestjs/common';
 import { EventService } from './event.service';
 import { CreateEventDto } from './dto/event.dto';
@@ -18,6 +19,8 @@ import { FilterEventDto } from './dto/filter-event.dto';
 
 @Controller('events')
 export class EventController {
+  private logger = new Logger('EventController');
+
   constructor(private eventService: EventService) {}
 
   @Get()
@@ -36,6 +39,7 @@ export class EventController {
     @Body()
     createEventDto: CreateEventDto,
   ): Promise<Event> {
+    this.logger.verbose(`Event created for venue ${createEventDto.venueName}`);
     return this.eventService.createEvent(createEventDto);
   }
 
@@ -46,11 +50,13 @@ export class EventController {
     createEventDto: CreateEventDto,
     @Param('id', ParseIntPipe) id: number,
   ): Promise<Event> {
+    this.logger.verbose(`Event updated for event ${createEventDto.name}`);
     return this.eventService.updateEvent(createEventDto, id);
   }
 
   @Delete('/:id')
   deleteEvent(@Param('id', ParseIntPipe) id: number): void {
+    this.logger.verbose(`Event with ${id} deleted`);
     this.eventService.deleteEvent(id);
   }
 }
