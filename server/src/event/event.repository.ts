@@ -1,13 +1,18 @@
 import { EntityRepository, Repository, getCustomRepository } from 'typeorm';
 import { Event } from './event.entity';
-import { CreateEventDto } from './dto/event.dto';
+import { CreateEventDto } from './dto/createevent.dto';
 import { NotAcceptableException, NotFoundException } from '@nestjs/common';
 import { FilterEventDto } from './dto/filter-event.dto';
 import VenueRepository from 'src/venue/venue.repository';
+import { UpdateEventDto } from './dto/updatevent.dto';
 
 @EntityRepository(Event)
 export class EventRepository extends Repository<Event> {
-  async createEvent({ name, date, venueName }: CreateEventDto): Promise<Event> {
+  async createEvent(
+    { venueName, description }: CreateEventDto,
+    name: string,
+    date: string,
+  ): Promise<Event> {
     const venueRepository = getCustomRepository(VenueRepository);
 
     const venue = await venueRepository.getVenueByName(venueName);
@@ -21,6 +26,7 @@ export class EventRepository extends Repository<Event> {
     const event = new Event();
 
     event.name = name;
+    event.description = description;
     event.date = date;
 
     await event.save();
@@ -44,8 +50,10 @@ export class EventRepository extends Repository<Event> {
   }
 
   async updateEvent(
-    { name, date }: CreateEventDto,
+    { description }: UpdateEventDto,
     id: number,
+    name: string,
+    date: string,
   ): Promise<Event> {
     const event = await this.findOne(id);
 
@@ -55,6 +63,7 @@ export class EventRepository extends Repository<Event> {
 
     event.name = name;
     event.date = date;
+    event.description = description;
 
     event.save();
     return event;

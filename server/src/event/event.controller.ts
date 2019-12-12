@@ -13,9 +13,12 @@ import {
   Logger,
 } from '@nestjs/common';
 import { EventService } from './event.service';
-import { CreateEventDto } from './dto/event.dto';
+import { CreateEventDto } from './dto/createevent.dto';
 import { Event } from './event.entity';
 import { FilterEventDto } from './dto/filter-event.dto';
+import { UpperCasePipe } from './pipes/uppercase.pipe';
+import { ConvertDatePipe } from './pipes/convertdate.pipe';
+import { UpdateEventDto } from './dto/updatevent.dto';
 
 @Controller('events')
 export class EventController {
@@ -38,20 +41,30 @@ export class EventController {
   createEvent(
     @Body()
     createEventDto: CreateEventDto,
+    @Body('name', UpperCasePipe)
+    name: string,
+    @Body('date', ConvertDatePipe)
+    date: string,
   ): Promise<Event> {
-    this.logger.verbose(`Event created for venue ${createEventDto.venueName}`);
-    return this.eventService.createEvent(createEventDto);
+    this.logger.verbose(
+      `${name} on ${date} created for venue ${createEventDto.venueName}`,
+    );
+    return this.eventService.createEvent(createEventDto, name, date);
   }
 
   @Patch('/:id/update')
   @UsePipes(ValidationPipe)
   updateEvent(
     @Body()
-    createEventDto: CreateEventDto,
+    updateEventDto: UpdateEventDto,
     @Param('id', ParseIntPipe) id: number,
+    @Body('name', UpperCasePipe)
+    name: string,
+    @Body('date', ConvertDatePipe)
+    date: string,
   ): Promise<Event> {
-    this.logger.verbose(`Event updated for event ${createEventDto.name}`);
-    return this.eventService.updateEvent(createEventDto, id);
+    this.logger.verbose(`Event updated for event ${updateEventDto.name}`);
+    return this.eventService.updateEvent(updateEventDto, id, name, date);
   }
 
   @Delete('/:id')

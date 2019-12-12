@@ -13,6 +13,13 @@ export class Event extends BaseEntity {
   id: number;
   @Column()
   name: string;
+
+  @Column({
+    type: 'varchar',
+    length: 750,
+  })
+  description: string;
+
   @Column()
   date: string;
 
