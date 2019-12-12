@@ -4,6 +4,7 @@ import {
   PrimaryGeneratedColumn,
   Column,
   OneToMany,
+  CreateDateColumn,
 } from 'typeorm';
 import { Event } from 'src/event/event.entity';
 
@@ -17,6 +18,9 @@ export default class Venue extends BaseEntity {
   location: string;
   @Column()
   contact: string;
+
+  @CreateDateColumn()
+  createdAt: Date;
 
   @OneToMany(
     type => Event,

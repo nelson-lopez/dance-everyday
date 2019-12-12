@@ -4,6 +4,7 @@ import {
   PrimaryGeneratedColumn,
   Column,
   ManyToOne,
+  CreateDateColumn,
 } from 'typeorm';
 import Venue from 'src/venue/venue.entity';
 
@@ -22,6 +23,9 @@ export class Event extends BaseEntity {
 
   @Column()
   date: string;
+
+  @CreateDateColumn()
+  createdAt: Date;
 
   @ManyToOne(
     type => Venue,
