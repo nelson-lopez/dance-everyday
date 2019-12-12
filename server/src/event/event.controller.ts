@@ -16,6 +16,8 @@ import { EventService } from './event.service';
 import { CreateEventDto } from './dto/event.dto';
 import { Event } from './event.entity';
 import { FilterEventDto } from './dto/filter-event.dto';
+import { UpperCasePipe } from './pipes/uppercase.pipe';
+import { ConvertDatePipe } from './pipes/convertdate.pipe';
 
 @Controller('events')
 export class EventController {
@@ -38,9 +40,15 @@ export class EventController {
   createEvent(
     @Body()
     createEventDto: CreateEventDto,
+    @Body('name', UpperCasePipe)
+    name: string,
+    @Body('date', ConvertDatePipe)
+    date: string,
   ): Promise<Event> {
-    this.logger.verbose(`Event created for venue ${createEventDto.venueName}`);
-    return this.eventService.createEvent(createEventDto);
+    this.logger.verbose(
+      `${name} on ${date} created for venue ${createEventDto.venueName}`,
+    );
+    return this.eventService.createEvent(createEventDto, name);
   }
 
   @Patch('/:id/update')
