@@ -17,7 +17,10 @@ export default class Venue extends BaseEntity {
   @Column()
   location: string;
   @Column()
-  contact: string;
+  phone: string;
+
+  @Column()
+  email: string;
 
   @CreateDateColumn()
   createdAt: Date;
