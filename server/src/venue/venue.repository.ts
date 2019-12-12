@@ -20,11 +20,10 @@ export default class VenueRepository extends Repository<Venue> {
     return venue;
   }
 
-  async createNewVenue({
-    name,
-    location,
-    contact,
-  }: CreateVenueDto): Promise<Venue> {
+  async createNewVenue(
+    { location, contact }: CreateVenueDto,
+    name: string,
+  ): Promise<Venue> {
     const newVenue = new Venue();
     newVenue.name = name;
     newVenue.location = location;
