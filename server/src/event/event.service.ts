@@ -8,13 +8,11 @@ import { FilterEventDto } from './dto/filter-event.dto';
 @Injectable()
 export class EventService {
   constructor(
-    // Import TypeOrm Repository to be injected for service
     @InjectRepository(EventRepository)
     private eventRepository: EventRepository,
   ) {}
 
   createEvent(createEventDto: CreateEventDto, name: string): Promise<Event> {
-    //TODO Add filtering for Date
     return this.eventRepository.createEvent(createEventDto, name);
   }
 

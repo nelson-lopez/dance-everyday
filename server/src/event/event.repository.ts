@@ -8,7 +8,7 @@ import VenueRepository from 'src/venue/venue.repository';
 @EntityRepository(Event)
 export class EventRepository extends Repository<Event> {
   async createEvent(
-    { date, venueName }: CreateEventDto,
+    { date, venueName, description }: CreateEventDto,
     name: string,
   ): Promise<Event> {
     const venueRepository = getCustomRepository(VenueRepository);
@@ -24,6 +24,7 @@ export class EventRepository extends Repository<Event> {
     const event = new Event();
 
     event.name = name;
+    event.description = description;
     event.date = date;
 
     await event.save();
@@ -47,7 +48,7 @@ export class EventRepository extends Repository<Event> {
   }
 
   async updateEvent(
-    { name, date }: CreateEventDto,
+    { name, date, description }: CreateEventDto,
     id: number,
   ): Promise<Event> {
     const event = await this.findOne(id);
@@ -58,6 +59,7 @@ export class EventRepository extends Repository<Event> {
 
     event.name = name;
     event.date = date;
+    event.description = description;
 
     event.save();
     return event;
