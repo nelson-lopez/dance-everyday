@@ -45,11 +45,11 @@ export class EventController {
     name: string,
     @Body('date', ConvertDatePipe)
     date: string,
+    @Body('venueName', EventUpperCasePipe)
+    venueName: string,
   ): Promise<Event> {
-    this.logger.verbose(
-      `${name} on ${date} created for venue ${createEventDto.venueName}`,
-    );
-    return this.eventService.createEvent(createEventDto, name, date);
+    this.logger.verbose(`${name} on ${date} created for venue ${venueName}`);
+    return this.eventService.createEvent(createEventDto, name, date, venueName);
   }
 
   @Patch('/:id/update')

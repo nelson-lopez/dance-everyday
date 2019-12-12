@@ -1,10 +1,4 @@
-import {
-  IsNotEmpty,
-  IsString,
-  IsEmail,
-  IsPhoneNumber,
-  IsOptional,
-} from 'class-validator';
+import { IsNotEmpty, IsString, IsEmail, IsOptional } from 'class-validator';
 
 export default class CreateVenueDto {
   @IsNotEmpty()
@@ -20,6 +14,5 @@ export default class CreateVenueDto {
   email: string;
 
   @IsOptional()
-  @IsPhoneNumber('1')
   phone: string;
 }

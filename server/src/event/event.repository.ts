@@ -9,9 +9,10 @@ import { UpdateEventDto } from './dto/updatevent.dto';
 @EntityRepository(Event)
 export class EventRepository extends Repository<Event> {
   async createEvent(
-    { venueName, description }: CreateEventDto,
+    { description }: CreateEventDto,
     name: string,
     date: string,
+    venueName: string,
   ): Promise<Event> {
     const venueRepository = getCustomRepository(VenueRepository);
 
