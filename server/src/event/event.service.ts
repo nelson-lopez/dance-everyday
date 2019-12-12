@@ -2,8 +2,9 @@ import { Injectable, NotAcceptableException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { EventRepository } from './event.repository';
 import { Event } from './event.entity';
-import { CreateEventDto } from './dto/event.dto';
+import { CreateEventDto } from './dto/createevent.dto';
 import { FilterEventDto } from './dto/filter-event.dto';
+import { UpdateEventDto } from './dto/updatevent.dto';
 
 @Injectable()
 export class EventService {
@@ -33,8 +34,13 @@ export class EventService {
     return event;
   }
 
-  updateEvent(createEventDto: CreateEventDto, id: number): Promise<Event> {
-    return this.eventRepository.updateEvent(createEventDto, id);
+  updateEvent(
+    updateEventDto: UpdateEventDto,
+    id: number,
+    name: string,
+    date: string,
+  ): Promise<Event> {
+    return this.eventRepository.updateEvent(updateEventDto, id, name, date);
   }
 
   deleteEvent(id: number): void {

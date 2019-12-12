@@ -1,9 +1,10 @@
 import { EntityRepository, Repository, getCustomRepository } from 'typeorm';
 import { Event } from './event.entity';
-import { CreateEventDto } from './dto/event.dto';
+import { CreateEventDto } from './dto/createevent.dto';
 import { NotAcceptableException, NotFoundException } from '@nestjs/common';
 import { FilterEventDto } from './dto/filter-event.dto';
 import VenueRepository from 'src/venue/venue.repository';
+import { UpdateEventDto } from './dto/updatevent.dto';
 
 @EntityRepository(Event)
 export class EventRepository extends Repository<Event> {
@@ -49,8 +50,10 @@ export class EventRepository extends Repository<Event> {
   }
 
   async updateEvent(
-    { name, date, description }: CreateEventDto,
+    { description }: UpdateEventDto,
     id: number,
+    name: string,
+    date: string,
   ): Promise<Event> {
     const event = await this.findOne(id);
 
