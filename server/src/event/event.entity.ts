@@ -17,7 +17,6 @@ export class Event extends BaseEntity {
   @Column({
     type: 'varchar',
     length: 750,
-    unique: true,
   })
   description: string;
 

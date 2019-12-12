@@ -8,8 +8,9 @@ import VenueRepository from 'src/venue/venue.repository';
 @EntityRepository(Event)
 export class EventRepository extends Repository<Event> {
   async createEvent(
-    { date, venueName, description }: CreateEventDto,
+    { venueName, description }: CreateEventDto,
     name: string,
+    date: string,
   ): Promise<Event> {
     const venueRepository = getCustomRepository(VenueRepository);
 

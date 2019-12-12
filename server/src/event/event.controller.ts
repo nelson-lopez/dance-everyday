@@ -48,7 +48,7 @@ export class EventController {
     this.logger.verbose(
       `${name} on ${date} created for venue ${createEventDto.venueName}`,
     );
-    return this.eventService.createEvent(createEventDto, name);
+    return this.eventService.createEvent(createEventDto, name, date);
   }
 
   @Patch('/:id/update')

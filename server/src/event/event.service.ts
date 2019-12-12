@@ -12,8 +12,12 @@ export class EventService {
     private eventRepository: EventRepository,
   ) {}
 
-  createEvent(createEventDto: CreateEventDto, name: string): Promise<Event> {
-    return this.eventRepository.createEvent(createEventDto, name);
+  createEvent(
+    createEventDto: CreateEventDto,
+    name: string,
+    date: string,
+  ): Promise<Event> {
+    return this.eventRepository.createEvent(createEventDto, name, date);
   }
 
   getEvents(filterEventDto: FilterEventDto): Promise<Event[]> {
