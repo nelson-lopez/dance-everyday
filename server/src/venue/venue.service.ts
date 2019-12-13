@@ -29,8 +29,8 @@ export class VenueService {
     return venue;
   }
 
-  createVenue(createVenueDto: CreateVenueDto): Promise<Venue> {
-    return this.venueRepository.createNewVenue(createVenueDto);
+  createVenue(createVenueDto: CreateVenueDto, name: string): Promise<Venue> {
+    return this.venueRepository.createNewVenue(createVenueDto, name);
   }
 
   async deleteVenue(id: number): Promise<void> {

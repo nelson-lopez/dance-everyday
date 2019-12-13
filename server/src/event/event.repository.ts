@@ -9,9 +9,10 @@ import { UpdateEventDto } from './dto/updatevent.dto';
 @EntityRepository(Event)
 export class EventRepository extends Repository<Event> {
   async createEvent(
-    { venueName, description }: CreateEventDto,
+    { description }: CreateEventDto,
     name: string,
     date: string,
+    venueName: string,
   ): Promise<Event> {
     const venueRepository = getCustomRepository(VenueRepository);
 
@@ -37,7 +38,7 @@ export class EventRepository extends Repository<Event> {
   }
 
   async getEvents(filterEventDto: FilterEventDto): Promise<Event[]> {
-    const query = this.createQueryBuilder('event');
+    const query = this.createQueryBuilder('event').orderBy('id', 'ASC');
     const search = filterEventDto.search;
     if (search) {
       query.where('(event.name LIKE :search)', {

@@ -13,6 +13,7 @@ import {
 import { VenueService } from './venue.service';
 import CreateVenueDto from './dto/venue.dto';
 import Venue from './venue.entity';
+import { VenueUpperCasePipe } from './pipes/venue-uppercase.pipe';
 
 @Controller('venues')
 export class VenueController {
@@ -36,11 +37,12 @@ export class VenueController {
   createNewVenue(
     @Body()
     createVenueDto: CreateVenueDto,
+    @Body('name', VenueUpperCasePipe) name: string,
   ): Promise<Venue> {
     this.logger.verbose(
-      `Created venue with the name of ${createVenueDto.name} and contact information of ${createVenueDto.contact}`,
+      `Created venue with the name of ${name} and contact information of ${createVenueDto.phone}  ${createVenueDto.email}`,
     );
-    return this.venueService.createVenue(createVenueDto);
+    return this.venueService.createVenue(createVenueDto, name);
   }
 
   @Delete('/:id')
