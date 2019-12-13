@@ -12,7 +12,9 @@ import { Event } from 'src/event/event.entity';
 export default class Venue extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
-  @Column()
+  @Column({
+    unique: true,
+  })
   name: string;
   @Column()
   location: string;

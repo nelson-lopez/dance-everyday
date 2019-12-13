@@ -1,6 +1,10 @@
 import { EntityRepository, Repository } from 'typeorm';
 import Venue from './venue.entity';
 import CreateVenueDto from './dto/venue.dto';
+import {
+  ConflictException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 
 @EntityRepository(Venue)
 export default class VenueRepository extends Repository<Venue> {
@@ -30,8 +34,15 @@ export default class VenueRepository extends Repository<Venue> {
     newVenue.phone = phone;
     newVenue.email = email;
 
-    await newVenue.save();
-
+    try {
+      await newVenue.save();
+    } catch (error) {
+      if (error.code === '23505') {
+        throw new ConflictException(`Venue name ${name} already exist`);
+      } else {
+        throw new InternalServerErrorException();
+      }
+    }
     return newVenue;
   }
 }
