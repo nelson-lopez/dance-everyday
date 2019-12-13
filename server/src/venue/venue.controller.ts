@@ -27,7 +27,14 @@ export class VenueController {
   }
 
   @Get('/:id')
-  getVenueById(@Param('id', ParseIntPipe) id: number): Promise<Venue> {
+  getVenueById(
+    /**
+     * * We have to run a built in Nest ParseIntPipe to insure that our we receive
+     * * a number back from our controller before it's passed down to service
+     */
+    @Param('id', ParseIntPipe)
+    id: number,
+  ): Promise<Venue> {
     this.logger.verbose(`Fetching venue by the id of ${id}`);
     return this.venueService.getVenueById(id);
   }
@@ -37,6 +44,11 @@ export class VenueController {
   createNewVenue(
     @Body()
     createVenueDto: CreateVenueDto,
+    /**
+     * * Using the custom built UpperCasePipe we can safely sanitize the name value
+     * * in our request body and confidently pass it's value down to our Repository/Data layer
+     *  */
+
     @Body('name', VenueUpperCasePipe) name: string,
   ): Promise<Venue> {
     this.logger.verbose(

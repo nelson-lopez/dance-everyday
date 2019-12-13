@@ -12,7 +12,12 @@ export default class CreateVenueDto {
   @IsOptional()
   @IsEmail()
   email: string;
-
+  /**
+   *
+   * TODO: Properly implement @IsPhoneNumber decorator
+   * * US phone numbers are still not being accepted as valid when creating venue.
+   * * For now we'll only validate phone numbers as strings.
+   */
   @IsOptional()
   phone: string;
 }

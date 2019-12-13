@@ -8,17 +8,26 @@ import * as rateLimit from 'express-rate-limit';
 
 async function bootstrap() {
   const serverConfig = config.get('server');
-
-  const logger = new Logger('bootstrap');
   const app = await NestFactory.create(AppModule);
 
   const port = process.env.PORT || serverConfig.port;
 
+  const logger = new Logger('bootstrap');
+
+  /**
+   * TODO: Properly configure CORS once app is redeployed with new changes to only accept request from front end
+   */
   app.enableCors({
     origin: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELTE,OPTIONS',
     credentials: true,
   });
+
+  /**
+   *  * App Middleware we're using for logging, security, and compression
+   *
+   */
+
   app.use(compression());
   app.use(helmet());
   app.use(
