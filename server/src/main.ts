@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import * as config from 'config';
 import { Logger } from '@nestjs/common';
 import * as compression from 'compression';
+import * as helmet from 'helmet';
 
 async function bootstrap() {
   const serverConfig = config.get('server');
@@ -17,8 +18,9 @@ async function bootstrap() {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELTE,OPTIONS',
     credentials: true,
   });
-
   app.use(compression());
+  app.use(helmet());
+
   await app.listen(port);
 
   logger.log(`Application listening on port ${port}`);
