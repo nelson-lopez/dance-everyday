@@ -5,7 +5,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import VenueRepository from './venue.repository';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([VenueRepository])],
+  imports: [
+    /**
+     * * Our database  will not be aware of our repository
+     * * if we do not import it here via TypeOrmModule
+     */
+    TypeOrmModule.forFeature([VenueRepository]),
+  ],
   controllers: [VenueController],
   providers: [VenueService],
 })

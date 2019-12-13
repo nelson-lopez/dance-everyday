@@ -7,6 +7,12 @@ import {
 } from '@nestjs/common';
 
 @EntityRepository(Venue)
+/**
+ * * This layer is for interacting with our Database
+ * * By extending Repository we are granting our Venue entity TypeORM's methods
+ *
+ * ! This layer should only be concerned with the database
+ */
 export default class VenueRepository extends Repository<Venue> {
   async getAllVenues(): Promise<Venue[]> {
     const query = this.createQueryBuilder('venue').orderBy('id', 'ASC');
@@ -16,6 +22,11 @@ export default class VenueRepository extends Repository<Venue> {
     return venues;
   }
 
+  /**
+   * * We need this venue by name method to properly match events to venues during event creation
+   *
+   * ! this method is not designed to be used inside of the Venue module
+   */
   async getVenueByName(venueName: string): Promise<Venue> {
     const venue = await this.findOne({
       name: venueName,
@@ -23,6 +34,12 @@ export default class VenueRepository extends Repository<Venue> {
 
     return venue;
   }
+
+  /**
+   *
+   * @param name
+   * * We chose to pass in name separately because we run a custom pipe through this value in the controller layer
+   */
 
   async createNewVenue(
     { location, phone, email }: CreateVenueDto,
@@ -34,6 +51,9 @@ export default class VenueRepository extends Repository<Venue> {
     newVenue.phone = phone;
     newVenue.email = email;
 
+    /**
+     * TODO: Possibly move this logic over to service layer.
+     */
     try {
       await newVenue.save();
     } catch (error) {
