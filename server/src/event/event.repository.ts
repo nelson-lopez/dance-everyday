@@ -38,7 +38,7 @@ export class EventRepository extends Repository<Event> {
   }
 
   async getEvents(filterEventDto: FilterEventDto): Promise<Event[]> {
-    const query = this.createQueryBuilder('event');
+    const query = this.createQueryBuilder('event').orderBy('id', 'ASC');
     const search = filterEventDto.search;
     if (search) {
       query.where('(event.name LIKE :search)', {

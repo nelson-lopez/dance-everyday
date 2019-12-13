@@ -9,7 +9,7 @@ import {
 @EntityRepository(Venue)
 export default class VenueRepository extends Repository<Venue> {
   async getAllVenues(): Promise<Venue[]> {
-    const query = this.createQueryBuilder('venue');
+    const query = this.createQueryBuilder('venue').orderBy('id', 'ASC');
 
     const venues = await query.getMany();
 
