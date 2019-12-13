@@ -7,6 +7,9 @@ import { FilterEventDto } from './dto/filter-event.dto';
 import { UpdateEventDto } from './dto/updatevent.dto';
 
 @Injectable()
+/**
+ * TODO: Consider passing more business logic to this service layer
+ */
 export class EventService {
   constructor(
     @InjectRepository(EventRepository)

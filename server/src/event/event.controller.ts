@@ -38,6 +38,16 @@ export class EventController {
 
   @Post('/create')
   @UsePipes(ValidationPipe)
+  /**
+   * * As it stands ValidationPipe handles our generic CreateEventDto validation
+   * * and wraps itself around the entire method.
+   *
+   * * Specific request body parameters are transformed to
+   * * sanitized values for the database to receive with more specific Pipes
+   * * (EventUpperCasePipe, ConvertDatePipe...).
+   *
+   * TODO: Feels overly verbose, considering condensing pipes to create cleaner controller
+   */
   createEvent(
     @Body()
     createEventDto: CreateEventDto,
@@ -52,6 +62,9 @@ export class EventController {
     return this.eventService.createEvent(createEventDto, name, date, venueName);
   }
 
+  /**
+   * TODO: Possible refactor along the same lines as createEvent method above
+   */
   @Patch('/:id/update')
   @UsePipes(ValidationPipe)
   updateEvent(
