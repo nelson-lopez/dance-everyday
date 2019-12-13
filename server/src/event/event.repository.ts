@@ -8,6 +8,18 @@ import { UpdateEventDto } from './dto/updatevent.dto';
 
 @EntityRepository(Event)
 export class EventRepository extends Repository<Event> {
+  /**
+   *
+   *
+   * @param name  filtered through EventUpperCasePipe
+   * @param date  ran separately through ConvertDatePipe
+   * @param venueName this argument is needed for calling getVenueByName so we can secure the new events relation
+   *  to it's belonging venue.
+   *
+   * TODO: Consider making less specific pipes and combining filters
+   * * As it stands CreateEventDto is only used for our generic Validator Pipe,
+   * * possible refactor in the future.
+   */
   async createEvent(
     { description }: CreateEventDto,
     name: string,

@@ -16,12 +16,12 @@ export class VenueUpperCasePipe implements PipeTransform {
     const capitalizedWords: string[] = [];
 
     for (let word of wordsArray) {
-      capitalizedWords.push(
-        /**
-         * * Once we slice the rest of the word we have to set the remaining letters to lower case
-         * * this helps us keep a sanitized venue name to be saved into the database
-         */
+      /**
+       * * Once we slice the rest of the word we have to set the remaining letters to lower case
+       * * this helps us keep a sanitized venue name to be saved into the database
+       */
 
+      capitalizedWords.push(
         word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(),
       );
     }

@@ -10,7 +10,7 @@ import { Event } from 'src/event/event.entity';
 
 @Entity()
 /**
- * * Venue Entity/Model
+ * * Venue Entity/Model definition
  *
  */
 export default class Venue extends BaseEntity {

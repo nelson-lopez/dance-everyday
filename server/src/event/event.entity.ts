@@ -9,6 +9,9 @@ import {
 import Venue from 'src/venue/venue.entity';
 
 @Entity()
+/**
+ * * Event Model Definition
+ */
 export class Event extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
