@@ -17,11 +17,15 @@ async function bootstrap() {
   /**
    * TODO: Properly configure CORS once app is redeployed with new changes to only accept request from front end
    */
-  app.enableCors({
-    origin: true,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    credentials: true,
-  });
+
+  if (process.env.NODE_ENV === 'development') {
+    app.enableCors();
+  } else {
+    app.enableCors({
+      origin: serverConfig.origin,
+    });
+    logger.log(`Accepting request from origin ${serverConfig.origin}`);
+  }
 
   /**
    *  * App Middleware we're using for logging, security, and compression
