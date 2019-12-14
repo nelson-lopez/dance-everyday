@@ -1,0 +1,5 @@
+server:
+  origin: "https://agile-inlet-95999.herokuapp.com/"
+
+db:
+  synchronize: false
