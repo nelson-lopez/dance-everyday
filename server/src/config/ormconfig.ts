@@ -3,7 +3,7 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 const dbConfig = config.get('db');
 
-export const typeOrmConfig: TypeOrmModuleOptions = {
+export const ormconfig: TypeOrmModuleOptions = {
   type: dbConfig.type,
   host: dbConfig.host,
   port: dbConfig.port,

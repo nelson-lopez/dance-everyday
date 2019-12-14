@@ -11,7 +11,7 @@ echo "echo stop & remove old docker [$SERVER] and starting new fresh instance of
   docker run --name $SERVER -e POSTGRES_PASSWORD=$PW \
   -e PGPASSWORD=$PW \
   -p 54320:5432 \
-  -d postgres
+  -d postgres:11.5
 
 # wait for pg to start
 echo "sleep wait for pg-server [$SERVER] to start";
