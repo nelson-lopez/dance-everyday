@@ -3,6 +3,6 @@ server:
 
 db:
   type: "postgres"
-  port: 5432
+  port: 54320
   database: dance_db
-  logging: ["error", "query", "warn"]
+  logging: true
