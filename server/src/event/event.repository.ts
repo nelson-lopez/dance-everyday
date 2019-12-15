@@ -82,12 +82,4 @@ export class EventRepository extends Repository<Event> {
     event.save();
     return event;
   }
-
-  async deleteEvent(id: number): Promise<void> {
-    const result = await this.delete(id);
-
-    if (result.affected === 0) {
-      throw new NotFoundException(`This event with id ${id} does not exist!`);
-    }
-  }
 }
