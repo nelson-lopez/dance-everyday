@@ -6,7 +6,7 @@ import {
   OneToMany,
   CreateDateColumn,
 } from 'typeorm';
-import { Event } from 'src/event/event.entity';
+import { Event } from '../event/event.entity';
 
 @Entity()
 /**

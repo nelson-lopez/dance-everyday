@@ -3,8 +3,9 @@ import { Event } from './event.entity';
 import { CreateEventDto } from './dto/createevent.dto';
 import { NotAcceptableException, NotFoundException } from '@nestjs/common';
 import { FilterEventDto } from './dto/filter-event.dto';
-import VenueRepository from 'src/venue/venue.repository';
 import { UpdateEventDto } from './dto/updatevent.dto';
+import Venue from 'src/venue/venue.entity';
+import VenueRepository from '../venue/venue.repository';
 
 @EntityRepository(Event)
 export class EventRepository extends Repository<Event> {
@@ -28,7 +29,7 @@ export class EventRepository extends Repository<Event> {
   ): Promise<Event> {
     const venueRepository = getCustomRepository(VenueRepository);
 
-    const venue = await venueRepository.getVenueByName(venueName);
+    const venue: Venue = await venueRepository.getVenueByName(venueName);
 
     if (!venue) {
       throw new NotAcceptableException(
