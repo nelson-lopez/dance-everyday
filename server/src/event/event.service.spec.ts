@@ -2,10 +2,14 @@ import { Test } from '@nestjs/testing';
 import { EventService } from './event.service';
 import { EventRepository } from './event.repository';
 import { FilterEventDto } from './dto/filter-event.dto';
+import { NotAcceptableException } from '@nestjs/common';
 
 const mockEventRepository = () => ({
   getEvents: jest.fn(),
   getEventById: jest.fn(),
+  createEvent: jest.fn(),
+  findOne: jest.fn(),
+  delete: jest.fn(),
 });
 
 describe('EventService', () => {
@@ -36,12 +40,78 @@ describe('EventService', () => {
     });
   });
 
-  //TODO: Finish test for entire service
-  // TODO: Define a findOne method
-
   describe('getEventsById', () => {
-    it('gets a specific event from eventRepository', async () => {});
+    it('gets a specific event from eventRepository', async () => {
+      const mockEvent = {
+        id: 2,
+        name: 'test name',
+        description: 'test description',
+        date: '12/12/12',
+        createdAt: 'some date',
+      };
+      eventRepository.findOne.mockResolvedValue(mockEvent);
 
-    it('Throws an error if id is unspecified', async () => {});
+      const result = await eventService.getEventById(1);
+      expect(result).toEqual(mockEvent);
+
+      expect(eventRepository.findOne).toHaveBeenCalledWith(1);
+    });
+
+    it('Throws an error if id is unspecified', () => {
+      eventRepository.findOne.mockResolvedValue(null);
+
+      expect(eventService.getEventById(1)).rejects.toThrow();
+    });
+  });
+
+  describe('createEvent', () => {
+    it('Should return a new event with the specified properties', async () => {
+      expect(eventRepository.createEvent).not.toHaveBeenCalled();
+      const mockEventDto = {
+        id: 1,
+        name: 'test name',
+        date: '12/12/12',
+        description: 'test description',
+        createdAt: 'some date',
+      };
+
+      const name = mockEventDto.name;
+      const date = mockEventDto.date;
+      const venueName = 'Test Venue';
+
+      eventRepository.createEvent.mockResolvedValue(mockEventDto);
+
+      const newEvent = await eventService.createEvent(
+        mockEventDto,
+        name,
+        date,
+        venueName,
+      );
+      expect(eventRepository.createEvent).toHaveBeenCalledWith(
+        mockEventDto,
+        name,
+        date,
+        venueName,
+      );
+      expect(newEvent).toEqual(mockEventDto);
+    });
+  });
+
+  describe('deleteEvent', () => {
+    it('should delete a event by a given ID and return void', async () => {
+      eventRepository.delete.mockResolvedValue({ affected: 1 });
+      expect(eventRepository.delete).not.toHaveBeenCalled();
+      await eventService.deleteEvent(1);
+      expect(eventRepository.delete).toHaveBeenCalled();
+    });
+
+    it('should throw a not found exception if ID is invalid', () => {
+      eventRepository.delete.mockResolvedValue({ affected: 0 });
+      expect(eventService.deleteEvent(1)).rejects.toThrow();
+    });
+  });
+
+  describe('updateEvent', () => {
+    it('should return a new updated event', () => {});
   });
 });
