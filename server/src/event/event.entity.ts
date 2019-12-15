@@ -6,7 +6,7 @@ import {
   ManyToOne,
   CreateDateColumn,
 } from 'typeorm';
-import Venue from 'src/venue/venue.entity';
+import Venue from '../venue/venue.entity';
 
 @Entity()
 /**
