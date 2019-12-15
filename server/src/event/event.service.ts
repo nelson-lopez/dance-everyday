@@ -16,6 +16,10 @@ export class EventService {
     private eventRepository: EventRepository,
   ) {}
 
+  getEvents(filterEventDto: FilterEventDto): Promise<Event[]> {
+    return this.eventRepository.getEvents(filterEventDto);
+  }
+
   createEvent(
     createEventDto: CreateEventDto,
     name: string,
@@ -28,10 +32,6 @@ export class EventService {
       date,
       venueName,
     );
-  }
-
-  getEvents(filterEventDto: FilterEventDto): Promise<Event[]> {
-    return this.eventRepository.getEvents(filterEventDto);
   }
 
   getEventById(id: number): Promise<Event> {
