@@ -9,7 +9,7 @@ services:
     environment:
       POSTGRES_PASSWORD: "postgres"
     volumes:
-      - database_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
 volumes:
   database_data:
