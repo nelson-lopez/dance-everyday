@@ -3,7 +3,6 @@ import { EventService } from './event.service';
 import { EventRepository } from './event.repository';
 import { FilterEventDto } from './dto/filter-event.dto';
 import { NotAcceptableException } from '@nestjs/common';
-import { Event } from './event.entity';
 
 const mockEventRepository = () => ({
   getEvents: jest.fn(),
