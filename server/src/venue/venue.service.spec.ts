@@ -5,6 +5,7 @@ import VenueRepository from './venue.repository';
 const mockVenueRepository = () => ({
   getVenueById: jest.fn(),
   getAllVenues: jest.fn(),
+  findOne: jest.fn(),
 });
 
 describe('VenueService', () => {
@@ -33,5 +34,24 @@ describe('VenueService', () => {
       expect(venueRepository.getAllVenues).toHaveBeenCalled();
       expect(venues).toEqual('Some value');
     });
+  });
+  describe('getVenueById', () => {
+    it('should return a specific venue by its ID', async () => {
+      const mockVenue = {
+        id: 1,
+        name: 'test name',
+        location: 'test location',
+        phone: 'test phone',
+        createdAt: Date,
+        events: [],
+      };
+      venueRepository.findOne.mockResolvedValue(mockVenue);
+
+      const result = await venueService.getVenueById(1);
+      expect(result).toEqual(mockVenue);
+      expect(venueRepository.findOne).toHaveBeenCalledWith(1);
+    });
+
+    it('should should throw a NotAcceptableException when the ID is false', () => {});
   });
 });
