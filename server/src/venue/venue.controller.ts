@@ -23,7 +23,7 @@ export class VenueController {
 
   @Get()
   getAllVenues(): Promise<Venue[]> {
-    return this.venueService.getAllVenus();
+    return this.venueService.getAllVenues();
   }
 
   @Get('/:id')

@@ -28,7 +28,7 @@ export class VenueService {
     private venueRepository: VenueRepository,
   ) {}
 
-  getAllVenus(): Promise<Venue[]> {
+  getAllVenues(): Promise<Venue[]> {
     return this.venueRepository.getAllVenues();
   }
 
