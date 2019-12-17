@@ -5,6 +5,7 @@ import { Logger } from '@nestjs/common';
 import * as compression from 'compression';
 import * as helmet from 'helmet';
 import * as rateLimit from 'express-rate-limit';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const serverConfig = config.get('server');
@@ -28,9 +29,18 @@ async function bootstrap() {
   }
 
   /**
-   *  * App Middleware we're using for logging, security, and compression
+   *  * App Middleware we're using for logging, security,documentation, and compression
    *
    */
+  const options = new DocumentBuilder()
+    .setTitle('Dance Event Database')
+    .setDescription('Feel free to browse the API')
+    .addTag('venues', 'events')
+    .build();
+
+  const document = SwaggerModule.createDocument(app, options);
+
+  SwaggerModule.setup('api', app, document);
 
   app.use(compression());
   app.use(helmet());
