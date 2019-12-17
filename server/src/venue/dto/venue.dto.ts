@@ -8,10 +8,6 @@ export default class CreateVenueDto {
   @IsNotEmpty()
   @IsString()
   location: string;
-
-  @IsOptional()
-  @IsEmail()
-  email: string;
   /**
    *
    * TODO: Properly implement @IsPhoneNumber decorator

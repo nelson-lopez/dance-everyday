@@ -52,7 +52,7 @@ export class VenueController {
     @Body('name', VenueUpperCasePipe) name: string,
   ): Promise<Venue> {
     this.logger.verbose(
-      `Created venue with the name of ${name} and contact information of ${createVenueDto.phone}  ${createVenueDto.email}`,
+      `Created venue with the name of ${name} and contact information of ${createVenueDto.phone}`,
     );
     return this.venueService.createVenue(createVenueDto, name);
   }

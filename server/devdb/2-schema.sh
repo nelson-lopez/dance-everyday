@@ -7,7 +7,6 @@ create table public.venue (
   "name" character varying NOT NULL,
   "location" character varying NOT NULL,
   "phone" character varying NOT NULL,
-  "email" character varying NOT NULL,
   "createdAt" TIMESTAMP NOT NULL DEFAULT now(),
   CONSTRAINT UQ_824a52c2599d374feff4fd67e93 UNIQUE ("name"),
   CONSTRAINT PK_c53deb6d1bcb088f9d459e7dbc0 PRIMARY KEY ("id")

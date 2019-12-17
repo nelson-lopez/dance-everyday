@@ -9,8 +9,9 @@ services:
     environment:
       POSTGRES_PASSWORD: "postgres"
     volumes:
-      - ./1-init.sql:/docker-entrypoint-initdb.d/1-init.sql
-      - ./2-schema.sh:/docker-entrypoint-initdb.d/2-schema.sh
+      - ./devdb/1-init.sql:/docker-entrypoint-initdb.d/1-init.sql
+      - ./devdb/2-schema.sh:/docker-entrypoint-initdb.d/2-schema.sh
+      - ./devdb/3-seed.sh:/docker-entrypoint-initdb.d/3-seed.sh
 
 volumes:
   database_data:
