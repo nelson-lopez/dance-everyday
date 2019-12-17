@@ -1,0 +1,1 @@
+CREATE DATABASE "dance_db";
