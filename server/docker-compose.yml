@@ -15,11 +15,6 @@ services:
       - ./devdb/2-schema.sh:/docker-entrypoint-initdb.d/2-schema.sh
       - ./devdb/3-seed.sh:/docker-entrypoint-initdb.d/3-seed.sh
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
   api:
     container_name: server
     build: .
