@@ -69,7 +69,7 @@ export class EventRepository extends Repository<Event> {
     name: string,
     date: string,
   ): Promise<Event> {
-    const event = await this.findOne(id);
+    const event: Event = await this.findOne(id);
 
     if (!event) {
       throw new NotAcceptableException(`Event with ${id} is invalid`);

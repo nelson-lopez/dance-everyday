@@ -7,6 +7,7 @@ import { NotAcceptableException } from '@nestjs/common';
 const mockEventRepository = () => ({
   getEvents: jest.fn(),
   getEventById: jest.fn(),
+  updateEvent: jest.fn(),
   createEvent: jest.fn(),
   findOne: jest.fn(),
   delete: jest.fn(),
@@ -112,6 +113,40 @@ describe('EventService', () => {
   });
 
   describe('updateEvent', () => {
-    it('should return a new updated event', () => {});
+    it('should return a new updated event', async () => {
+      expect(eventRepository.updateEvent).not.toHaveBeenCalled();
+      const mockUpdateEventDto = {
+        name: 'test name',
+        date: '12/12/12',
+        description: 'test description',
+        venueName: 'test venue',
+      };
+
+      const id = 1;
+      const name = 'something';
+      const date = 'date string';
+
+      const event = await eventService.updateEvent(
+        mockUpdateEventDto,
+        id,
+        name,
+        date,
+      );
+      const updatedEvent = await eventRepository.updateEvent(
+        mockUpdateEventDto,
+        id,
+        name,
+        date,
+      );
+
+      expect(event).toEqual(updatedEvent);
+    });
+
+    it('should throw an exception when an event is not found', () => {
+      eventRepository.findOne.mockResolvedValue(null);
+      expect(eventService.getEventById(1)).rejects.toThrow(
+        NotAcceptableException,
+      );
+    });
   });
 });
