@@ -1,6 +1,7 @@
 import { Test } from '@nestjs/testing';
 import { VenueService } from './venue.service';
 import VenueRepository from './venue.repository';
+import { NotFoundException } from '@nestjs/common';
 
 const mockVenueRepository = () => ({
   getVenueById: jest.fn(),
@@ -8,6 +9,7 @@ const mockVenueRepository = () => ({
   createVenue: jest.fn(),
   createNewVenue: jest.fn(),
   findOne: jest.fn(),
+  delete: jest.fn(),
 });
 
 describe('VenueService', () => {
@@ -76,6 +78,20 @@ describe('VenueService', () => {
       );
 
       expect(newVenue).toEqual(mockCreateVenueDto);
+    });
+
+    describe('deleteVenue', () => {
+      it('should delete a venue once it is called', async () => {
+        venueRepository.delete.mockResolvedValue({ affected: 1 });
+        expect(venueRepository.delete).not.toHaveBeenCalled();
+        await venueService.deleteVenue(1);
+        expect(venueRepository.delete).toHaveBeenCalled();
+      });
+
+      it('should return a NotFoundException if value for ', () => {
+        venueRepository.delete.mockResolvedValue({ affected: 0 });
+        expect(venueService.deleteVenue(1)).rejects.toThrow(NotFoundException);
+      });
     });
   });
 });
