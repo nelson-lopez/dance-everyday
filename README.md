@@ -6,11 +6,11 @@ Dance Everyday is a website in which dance venues and events will display in New
 
 ## Project Structure
 
-Each folder is a fully functional piece of this project. All you need to do after cloning the repository is to move into the folder, install the dependencies, and play/test/build! Or you can inside of the root folder simply type `docker-compose up` in your terminal to have a dev version of this website running on your system.
+Each folder is a fully functional piece of this project. All you need to do after cloning the repository is to move into the folder, install the dependencies, and play/test/build! Or you can, inside of the root folder, simply type `docker-compose up` in your terminal to have a dev version of this website running on your system.
 
 ## Motivation
 
-This repo started as a collaborative project between [Jaabel Lopez](https://github.com/iJaabel), [Anna Moser](https://github.com/annamgithub), and [Nelson Lopez](https://nelson-lopez.now.sh/) during the winter cohort at General Assembly `19. Hopefully with a community driven repository we can offer a potent tool for dance enthusiast.
+This repo started as a collaborative project between [Jaabel Lopez](https://github.com/iJaabel), [Anna Moser](https://github.com/annamgithub), and [Nelson Lopez](https://nelson-lopez.now.sh/) during the winter cohort at General Assembly 2019. Hopefully with a community driven repository we can offer a potent tool for any dance enthusiast.
 
 ## Please Note
 
