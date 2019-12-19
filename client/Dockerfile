@@ -1,10 +1,11 @@
-FROM node:10-alpine
+FROM node:alpine
+
 WORKDIR /usr/src/app
 
 COPY . .
+
 RUN npm install
 
 EXPOSE 3001
 
-CMD ["npm", "run", "start:dev"]
-
+CMD [ "npm","run", "start" ]
