@@ -1,28 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import apiDelete from './api/apiDelete';
-import axios from 'axios';
-import EventCard from './EventCard';
+import React, { useState, useEffect } from "react";
+import apiDelete from "./api/apiDelete";
+import axios from "axios";
+import EventCard from "./EventCard";
 
 const EventList = ({ newEvent, newSearchList }) => {
   const [eventInfo, setEventInfo] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:9876/api/events').then(res => {
-      setEventInfo(res.data.data);
+    axios.get("http://localhost:3001/events").then(res => {
+      setEventInfo(res.data);
     });
   }, []);
 
   useEffect(() => {
     if (newEvent) {
       axios
-        .post('http://localhost:9876/api/events', {
+        .post("http://localhost:3001/events", {
           name: newEvent.name,
           date: newEvent.date,
           description: newEvent.description
         })
         .then(res => console.log(res));
-      axios.get('http://localhost:9876/api/events').then(res => {
-        setEventInfo(res.data.data);
+      axios.get("http://localhost:3001/events").then(res => {
+        console.log(res.data);
+        setEventInfo(res.data);
       });
     }
   }, [newEvent]);
