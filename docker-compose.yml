@@ -19,7 +19,7 @@ services:
     container_name: server
     build: ./server/.
     ports:
-      - 3000:3000
+      - 3001:3001
     networks:
       - dance-network
 
@@ -32,6 +32,14 @@ services:
       - "5050:80"
     depends_on:
       - db
+    networks:
+      - dance-network
+
+  client:
+    container_name: front-end
+    build: ./client/.
+    ports:
+      - 3000:3000
     networks:
       - dance-network
 
