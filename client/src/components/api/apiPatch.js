@@ -1,11 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
 
 const apiPut = (id, name, date, description) => {
   axios
-    .put(`http://localhost:9876/api/events/${id}`, {
+    .patch(`http://localhost:3001/events/${id}/update`, {
       name: name,
       date: date,
-      discription: description
+      description: description
     })
     .then(res => console.log(res))
     .catch(res => console.log(res));

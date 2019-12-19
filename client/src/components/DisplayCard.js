@@ -1,6 +1,6 @@
-import React, { useState, useCallback } from 'react';
-import apiPut from './api/apiPut';
-import EditCard from './EditCard';
+import React, { useState, useCallback } from "react";
+import apiPut from "./api/apiPatch";
+import EditCard from "./EditCard";
 
 const DisplayCard = ({ date, description, handleDelete, id, name }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -17,7 +17,7 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
   };
 
   const handleFlip = (date, description, name, id) => {
-    /// Set state causing rerender on edit submission
+    /// Set state causing re render on edit submission
     setCardState(prevState => ({
       ...prevState,
       name: name,
@@ -42,7 +42,7 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
       <div className="card">
         <img
           src={
-            'https://images.pexels.com/photos/270837/pexels-photo-270837.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+            "https://images.pexels.com/photos/270837/pexels-photo-270837.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
           }
           alt="test"
         />
@@ -56,7 +56,6 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
         <h2>{cardState.name}</h2>
         <h2>{cardState.date}</h2>
         <p>{cardState.description}</p>
-
       </div>
     );
   else
