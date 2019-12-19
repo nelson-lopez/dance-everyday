@@ -1,9 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
 const apiDelete = id => {
   axios
-    .delete(`http://localhost:9876/api/events/${id}`)
-    .then(res => console.log(res));
+    .delete(`http://localhost:3001/events/${id}`)
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
 };
 
 export default apiDelete;
