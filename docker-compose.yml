@@ -39,7 +39,7 @@ services:
     container_name: front-end
     build: ./client/.
     ports:
-      - 3000:3000
+      - 8080:3000
     networks:
       - dance-network
 

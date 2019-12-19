@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Home from './Home';
-import About from './About';
-import CreateEvent from './CreateEvents';
-import NotFound from './NotFound';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import '../App.css';
+import React, { useState, useEffect } from "react";
+import Home from "./Home";
+import CreateEvent from "./CreateEvents";
+import NotFound from "./NotFound";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "../App.css";
 
 const App = () => {
   const [newEvent, setNewEvent] = useState(null);
@@ -28,7 +27,6 @@ const App = () => {
     <div>
       <Switch>
         <Route exact path="/" component={() => <Home newEvent={newEvent} />} />
-        <Route exact path="/about" component={About} />
         <Route
           exact
           path="/create-event"
