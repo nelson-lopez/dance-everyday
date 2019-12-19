@@ -14,13 +14,16 @@ const EventList = ({ newEvent, newSearchList }) => {
 
   useEffect(() => {
     if (newEvent) {
+      console.log(newEvent);
       axios
-        .post("http://localhost:3001/events", {
+        .post("http://localhost:3001/events/create", {
           name: newEvent.name,
           date: newEvent.date,
-          description: newEvent.description
+          description: newEvent.description,
+          venueName: newEvent.venueName
         })
-        .then(res => console.log(res));
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
       axios.get("http://localhost:3001/events").then(res => {
         console.log(res.data);
         setEventInfo(res.data);

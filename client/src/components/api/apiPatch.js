@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiPut = (id, name, date, description) => {
   axios
-    .put(`http://localhost:9876/events/${id}`, {
+    .patch(`http://localhost:3001/events/${id}/update`, {
       name: name,
       date: date,
       description: description

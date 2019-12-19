@@ -14,7 +14,8 @@ const App = () => {
       ...prevState,
       name: value.name,
       date: value.date,
-      description: value.description
+      description: value.description,
+      venueName: value.venueName
     }));
     setRedirect(!redirect);
   };
