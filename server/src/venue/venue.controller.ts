@@ -13,7 +13,6 @@ import {
 import { VenueService } from './venue.service';
 import CreateVenueDto from './dto/venue.dto';
 import Venue from './venue.entity';
-import { VenueUpperCasePipe } from './pipes/venue-uppercase.pipe';
 
 @Controller('venues')
 export class VenueController {
@@ -49,7 +48,7 @@ export class VenueController {
      * * in our request body and confidently pass it's value down to our Repository/Data layer
      *  */
 
-    @Body('name', VenueUpperCasePipe) name: string,
+    @Body('name') name: string,
   ): Promise<Venue> {
     this.logger.verbose(
       `Created venue with the name of ${name} and contact information of ${createVenueDto.phone}`,

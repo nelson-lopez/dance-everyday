@@ -26,6 +26,7 @@ export default class VenueRepository extends Repository<Venue> {
    * * We need this venue by name method to properly match events to venues during event creation
    *
    * ! this method is not designed to be used inside of the Venue module
+   * TODO Make a more accurate algorithm for fetching the right venue
    */
   async getVenueByName(venueName: string): Promise<Venue> {
     const venue = await this.findOne({
