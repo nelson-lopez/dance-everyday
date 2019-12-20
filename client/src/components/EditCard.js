@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 /**
  *
- * TODO add functionality for venue editing within formData and handleOnChange
+ * TODO add functionality for venueName editing within formData and handleOnChange
  */
 
 export default function EditCard({
