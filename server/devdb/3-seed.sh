@@ -14,7 +14,7 @@ VALUES
 
 INSERT INTO "venue"("name", "location", "phone", "createdAt") 
 VALUES 
-  ('DanceSport','230 W 39th St, New York, NY 10018','212-307-1111','12/16/2019');
+  ('Dance Sport','230 W 39th St, New York, NY 10018','212-307-1111','12/16/2019');
 
 
 
@@ -48,7 +48,7 @@ VALUES
 
 INSERT INTO "event"("name", "description", "date", "createdAt","venueId") 
 VALUES 
-  ('Zouk at DanceSport','DanceSport - Zouk Class & Social @Las Chicas Locas on Nov 10','11/10/2019','12/16/2019',4);
+  ('Zouk at DanceSport','Zouk Class & Social @Las Chicas Locas on Nov 10','11/10/2019','12/16/2019',2);
 
 INSERT INTO "event"("name", "description", "date", "createdAt","venueId") 
 VALUES 
@@ -60,7 +60,7 @@ VALUES
 
 INSERT INTO "event"("name", "description", "date", "createdAt","venueId") 
 VALUES 
-  ('Zouk Class and Social dance floor','Zouk Class & Social @Las Chicas Locas','11/19/2019','12/16/2019',4);
+  ('Zouk Class and Social dance floor','Zouk Class & Social @Las Chicas Locas','11/19/2019','12/16/2019',2);
 
 INSERT INTO "event"("name", "description", "date", "createdAt","venueId") 
 VALUES 
