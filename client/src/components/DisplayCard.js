@@ -1,9 +1,18 @@
 import React, { useState, useCallback } from "react";
-import apiPut from "./api/apiPatch";
+import apiPatch from "./api/apiPatch";
 import EditCard from "./EditCard";
 
+/**
+ * * Chose to handle card flipping re-rendering logic inside of our Card component in order to
+ * * decouple some of our logic and prevent it from getting out of hand in EventList component
+ */
 const DisplayCard = ({ date, description, handleDelete, id, name }) => {
   const [isClicked, setIsClicked] = useState(false);
+
+  /**
+   * * Here we pass down card state that we get from our API upon initial page load.
+   * * Once rendered we have to listen to edits that our handled in EditCard if flipped
+   */
   const [cardState, setCardState] = useState({
     date: date,
     description: description,
@@ -13,11 +22,15 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
 
   const handleOnEdit = () => {
     setIsClicked(!isClicked);
-    console.log(isClicked);
   };
 
+  /**
+   *
+   * * handleFlip deals with triggering edit/un-edit interactions
+   * * Each toggle calls a PATCH to our API once flipped over
+   * *
+   */
   const handleFlip = (date, description, name, id) => {
-    /// Set state causing re render on edit submission
     setCardState(prevState => ({
       ...prevState,
       name: name,
@@ -25,7 +38,8 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
       description: description
     }));
     setIsClicked(!isClicked);
-    apiPut(id, name, date, description);
+
+    apiPatch(id, name, date, description);
   };
 
   const handleReturn = () => {
@@ -36,7 +50,6 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
     handleDelete(id);
   }, [handleDelete, id]);
 
-  //// Conditionally render if edit has been clicked or not
   if (!isClicked)
     return (
       <div className="card">

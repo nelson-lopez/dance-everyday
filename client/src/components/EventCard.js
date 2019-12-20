@@ -1,5 +1,9 @@
-import React from 'react';
-import DisplayCard from './DisplayCard';
+import React from "react";
+import DisplayCard from "./DisplayCard";
+
+/**
+ * TODO Find a way to remove obsolete EventCard component while keeping css intact
+ */
 
 const EventCard = ({ date, description, handleDelete, id, name }) => {
   return (

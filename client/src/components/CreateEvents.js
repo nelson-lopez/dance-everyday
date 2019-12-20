@@ -17,6 +17,11 @@ const CreateEvents = ({ handleOnCreate, redirect }) => {
     handleOnCreate(currentInfo);
   };
 
+  /**
+   *
+   * * We destructure the HTML Element in order to grab the correct input and feed it to the component state
+   * TODO delegate a POST hook to finish the job and redirect our user after submit
+   */
   const handleOnInput = e => {
     const element = e.target;
     const { name, value } = element;

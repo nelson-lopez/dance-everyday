@@ -1,4 +1,9 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from "react";
+
+/**
+ *
+ * TODO add functionality for venue editing within formData and handleOnChange
+ */
 
 export default function EditCard({
   name,
@@ -15,29 +20,22 @@ export default function EditCard({
     id: id
   });
 
+  /**
+   * * This component employs several event listeners to handle input/change to shoot back up
+   */
+
   const handleOnChange = e => {
     const element = e.target;
     const { name, value } = element;
-    ///Grab current element values on change and feed them to current state while spreading previous state
     setFormData(prevState => ({
       ...prevState,
       [name]: value
     }));
-
-    console.log(formData);
   };
 
-  const handleOnSubmit = useCallback(() => {
-    /// Lift up state through submit
-    /// Apply usecallback hook to avoid rerenders
+  const handleOnSubmit = () => {
     handleFlip(formData.date, formData.description, formData.name, formData.id);
-  }, [
-    formData.date,
-    formData.description,
-    formData.id,
-    formData.name,
-    handleFlip
-  ]);
+  };
 
   const handleOnReturn = () => {
     handleReturn();
