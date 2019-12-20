@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Searchbar = ({ handleOnSubmit, handleOnSelect }) => {
+const Searchbar = ({ handleOnSubmit }) => {
   const [formInput, setInput] = useState("");
 
   const handleOnInput = e => {
@@ -11,10 +11,6 @@ const Searchbar = ({ handleOnSubmit, handleOnSelect }) => {
     e.preventDefault();
     handleOnSubmit(formInput);
   };
-
-  /**
-   * TODO Remove filter by type button all together once venue page is created
-   */
   return (
     <div className="search-bar">
       <form>
