@@ -11,6 +11,11 @@ const EventList = ({ newEvent, newSearchList }) => {
   const [eventInfo, setEventInfo] = useState(null);
   const [newEventList, setNewEventList] = useState(false);
 
+  /**
+   * TODO Refactor logic here and implement helper hooks to handle CRUD
+   */
+
+  // GET
   useEffect(() => {
     axios.get("http://localhost:3001/events").then(res => {
       setEventInfo(res.data);
@@ -23,6 +28,7 @@ const EventList = ({ newEvent, newSearchList }) => {
     }
   }, [newEventList]);
 
+  // POST
   useEffect(() => {
     if (newEvent) {
       console.log(newEvent);
@@ -39,6 +45,7 @@ const EventList = ({ newEvent, newSearchList }) => {
     }
   }, [newEvent]);
 
+  // DELETE
   const handleDelete = id => {
     apiDelete(id);
     setEventInfo(eventInfo.filter(obj => obj.id !== id));

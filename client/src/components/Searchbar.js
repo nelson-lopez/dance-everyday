@@ -24,7 +24,7 @@ const Searchbar = ({ handleOnSubmit, handleOnSelect }) => {
   };
 
   /**
-   * TODO Remove filter button all together once venue page is created
+   * TODO Remove filter by type button all together once venue page is created
    */
   return (
     <div className="search-bar">
