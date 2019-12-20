@@ -6,6 +6,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "../App.css";
 
 const App = () => {
+  /**
+   * * App is in charge of holding New Event creation as well as redirecting the user to the root page
+   * TODO Change the redirecting from being handled in App to CreateEvents component
+   * TODO Remove Event creation from App completely and let App only handle rendering routes.
+   */
   const [newEvent, setNewEvent] = useState(null);
   const [redirect, setRedirect] = useState(false);
 

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Searchbar = ({ handleOnSubmit, handleOnSelect }) => {
-  const [formInput, setInput] = useState('');
+  const [formInput, setInput] = useState("");
   const [display, setDisplay] = useState(false);
 
   const handleOnInput = e => {
@@ -23,17 +23,38 @@ const Searchbar = ({ handleOnSubmit, handleOnSelect }) => {
     handleOnSelect(name);
   };
 
+  /**
+   * TODO Remove filter button all together once venue page is created
+   */
   return (
     <div className="search-bar">
-      <button onClick={handleOnDisplay} className="filter-button" name="Filter by">Filter by</button>
+      <button
+        onClick={handleOnDisplay}
+        className="filter-button"
+        name="Filter by"
+      >
+        Filter by
+      </button>
       {display ? (
         <div>
-          <button className="filter-by-options" name="organizers" onClick={handleSelect}>Organizers</button>
-          <button className="filter-by-options" name="venues" onClick={handleSelect}>Venue</button>
+          <button
+            className="filter-by-options"
+            name="organizers"
+            onClick={handleSelect}
+          >
+            Organizers
+          </button>
+          <button
+            className="filter-by-options"
+            name="venues"
+            onClick={handleSelect}
+          >
+            Venue
+          </button>
         </div>
       ) : (
-          <div/>
-        )}
+        <div />
+      )}
       <form>
         <label>
           <input
