@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import apiDelete from "./api/apiDelete";
 import axios from "axios";
-import EventCard from "./EventCard";
+import DisplayCard from "./DisplayCard";
 
 /**
  *
@@ -55,7 +55,7 @@ const EventList = ({ newEvent, newSearchList }) => {
       <div className="flex-container">
         {newSearchList.map(obj => {
           return (
-            <EventCard
+            <DisplayCard
               name={obj.name}
               key={obj.id}
               date={obj.date}
@@ -73,7 +73,7 @@ const EventList = ({ newEvent, newSearchList }) => {
       <div className="flex-container">
         {eventInfo.map(obj => {
           return (
-            <EventCard
+            <DisplayCard
               name={obj.name}
               key={obj.id}
               date={obj.date}
