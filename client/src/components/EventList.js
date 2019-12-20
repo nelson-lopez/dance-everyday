@@ -3,14 +3,25 @@ import apiDelete from "./api/apiDelete";
 import axios from "axios";
 import EventCard from "./EventCard";
 
+/**
+ *
+ * * Event info is designed to trigger our CRUD operations and distribute results across the view
+ */
 const EventList = ({ newEvent, newSearchList }) => {
   const [eventInfo, setEventInfo] = useState(null);
+  const [newEventList, setNewEventList] = useState(false);
 
   useEffect(() => {
     axios.get("http://localhost:3001/events").then(res => {
       setEventInfo(res.data);
     });
-  }, []);
+    if (newEventList) {
+      axios.get("http://localhost:3001/events").then(res => {
+        setEventInfo(res.data);
+        setNewEventList(false);
+      });
+    }
+  }, [newEventList]);
 
   useEffect(() => {
     if (newEvent) {
@@ -24,10 +35,7 @@ const EventList = ({ newEvent, newSearchList }) => {
         })
         .then(res => console.log(res))
         .catch(err => console.log(err));
-      axios.get("http://localhost:3001/events").then(res => {
-        console.log(res.data);
-        setEventInfo(res.data);
-      });
+      setNewEventList(true);
     }
   }, [newEvent]);
 
