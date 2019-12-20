@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+/**
+ *
+ * TODO Temporarily useless hook, must implement to Event List
+ */
 const useGetEvent = isChanged => {
   const [data, setData] = useState(null);
 
