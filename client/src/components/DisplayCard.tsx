@@ -1,12 +1,13 @@
 import React, { useState, useCallback } from "react";
 import apiPatch from "./api/apiPatch";
 import EditCard from "./EditCard";
+import CardPropsInterface from "./interfaces/card-props.interface";
 
 /**
  * * Chose to handle card flipping re-rendering logic inside of our Card component in order to
  * * decouple some of our logic and prevent it from getting out of hand in EventList component
  */
-const DisplayCard = ({ date, description, handleDelete, id, name }) => {
+const DisplayCard = (props: CardPropsInterface) => {
   const [isClicked, setIsClicked] = useState(false);
 
   /**
@@ -14,10 +15,10 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
    * * Once rendered we have to listen to edits that our handled in EditCard if flipped
    */
   const [cardState, setCardState] = useState({
-    date: date,
-    description: description,
-    name: name,
-    id: id
+    date: props.date,
+    description: props.description,
+    name: props.name,
+    id: props.id
   });
 
   const handleOnEdit = () => {
@@ -30,7 +31,12 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
    * * Each toggle calls a PATCH to our API once flipped over
    * *
    */
-  const handleFlip = (date, description, name, id) => {
+  const handleFlip = (
+    date: string,
+    description: string,
+    name: string,
+    id: number
+  ) => {
     setCardState(prevState => ({
       ...prevState,
       name: name,
@@ -47,8 +53,8 @@ const DisplayCard = ({ date, description, handleDelete, id, name }) => {
   };
 
   const handleOnDelete = useCallback(() => {
-    handleDelete(id);
-  }, [handleDelete, id]);
+    props.handleDelete(props.id);
+  }, [props.handleDelete, props.id]);
 
   if (!isClicked)
     return (
