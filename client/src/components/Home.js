@@ -10,7 +10,7 @@ import { useFilterSearch } from "./api/useFilterSearch";
  *
  * TODO Refactor search filter / No longer need a helper function to filter through Events
  */
-const Home = ({ newEvent }) => {
+const Home = () => {
   const [searchInput, setSearch] = useState(null);
 
   const handleOnSubmit = value => {
@@ -19,16 +19,15 @@ const Home = ({ newEvent }) => {
 
   const data = useFilterSearch(searchInput);
 
-  console.log(data);
   return (
     <div>
       <Header />
       <Nav />
       <SearchBar handleOnSubmit={handleOnSubmit} />
       {data ? (
-        <EventList newEvent={newEvent} newSearchList={data} />
+        <EventList newSearchList={data} />
       ) : (
-        <EventList newEvent={newEvent} newSearchList={null} />
+        <EventList newSearchList={null} />
       )}
       <Footer />
     </div>
