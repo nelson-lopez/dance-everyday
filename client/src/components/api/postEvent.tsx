@@ -1,5 +1,5 @@
 import Axios from "axios";
-import { PostData } from "../interfaces/post.interface";
+import { PostData } from "../types/post.interface";
 
 export const postEvent = (data: PostData) => {
   const url = `http://localhost:3001/events/create`;

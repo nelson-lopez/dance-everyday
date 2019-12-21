@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import apiDelete from "./api/apiDelete";
 import axios from "axios";
 import DisplayCard from "./DisplayCard";
+import EventListProps from "./types/event-list.interface";
 
 /**
  *
  * * Event info is designed to trigger our CRUD operations and distribute results across the view
  */
-const EventList = ({ newEvent, newSearchList }) => {
-  const [eventInfo, setEventInfo] = useState(null);
+const EventList = (props: EventListProps) => {
+  const [eventInfo, setEventInfo] = useState(props.newSearchList);
   const [newEventList, setNewEventList] = useState(false);
 
   /**
@@ -30,30 +31,30 @@ const EventList = ({ newEvent, newSearchList }) => {
 
   // POST
   useEffect(() => {
-    if (newEvent) {
-      console.log(newEvent);
+    if (props.newEvent) {
+      console.log(props.newEvent);
       axios
         .post("http://localhost:3001/events/create", {
-          name: newEvent.name,
-          date: newEvent.date,
-          description: newEvent.description,
-          venueName: newEvent.venueName
+          name: props.newEvent.name,
+          date: props.newEvent.date,
+          description: props.newEvent.description,
+          venueName: props.newEvent.venueName
         })
         .then(res => console.log(res))
         .catch(err => console.log(err));
       setNewEventList(true);
     }
-  }, [newEvent]);
+  }, [props.newEvent]);
 
   // DELETE
   const handleDelete = (id: number): void => {
     apiDelete(id);
     setEventInfo(eventInfo.filter(obj => obj.id !== id));
   };
-  if (newSearchList) {
+  if (props.newSearchList) {
     return (
       <div className="flex-container">
-        {newSearchList.map(obj => {
+        {props.newSearchList.map(obj => {
           return (
             <DisplayCard
               name={obj.name}
