@@ -46,7 +46,7 @@ const EventList = ({ newEvent, newSearchList }) => {
   }, [newEvent]);
 
   // DELETE
-  const handleDelete = id => {
+  const handleDelete = (id: number): void => {
     apiDelete(id);
     setEventInfo(eventInfo.filter(obj => obj.id !== id));
   };

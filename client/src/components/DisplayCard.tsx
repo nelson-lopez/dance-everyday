@@ -48,12 +48,12 @@ const DisplayCard = (props: CardPropsInterface) => {
     apiPatch(id, name, date, description);
   };
 
-  const handleReturn = () => {
+  const handleReturn = (): void => {
     setIsClicked(!isClicked);
   };
 
   const handleOnDelete = useCallback(() => {
-    props.handleDelete(props.id);
+    if (props.handleDelete) props.handleDelete(props.id);
   }, [props.handleDelete, props.id]);
 
   if (!isClicked)
