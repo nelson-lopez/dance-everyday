@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import { CreateEventSchema } from "./Form Schemas/EventSchema";
+import { Redirect } from "react-router-dom";
 import Axios from "axios";
 
 const EventForm = ({ onSubmit }) => {
+  const [submit, setSubmit] = useState(false);
+
+  const setRedirect = () => {
+    setSubmit(true);
+  };
+
+  if (submit) return <Redirect to="/" />;
+
+  /**
+   * TODO Make figure out a way to get proper page re-render and decouple this component
+   */
   return (
     <Formik
       initialValues={{
@@ -15,7 +27,7 @@ const EventForm = ({ onSubmit }) => {
       }}
       validationSchema={CreateEventSchema}
       onSubmit={(values, { setSubmitting }) => {
-        onSubmit(values);
+        setRedirect(values);
         console.log(values);
         Axios.post("http://localhost:3001/events/create", {
           name: values.name,
