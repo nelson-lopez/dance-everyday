@@ -19,9 +19,10 @@ export default function EditCard(props: CardProps) {
    * * This component employs several event listeners to handle input/change to shoot back up
    */
 
-  const handleOnChange = e => {
-    const element = e.target;
-    const { key, value } = element;
+  const handleOnChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const key = e.currentTarget.id;
+    const value = e.currentTarget.value;
+
     setFormData(prevState => ({
       ...prevState,
       [key]: value
