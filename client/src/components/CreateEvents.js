@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { Formik, Form, Field } from "formik";
 import Nav from "./Nav";
 import CreateEventHeader from "./CreateEventHeader";
 import Footer from "./Footer";
-import { CreateEventSchema } from "./Form Schemas/EventSchema";
 import EventForm from "./EventForm";
 
 const CreateEvents = () => {
   const [submit, setSubmit] = useState(false);
 
-  const onSubmit = values => {
+  const onSubmit = () => {
     setSubmit(true);
   };
 
@@ -25,7 +23,7 @@ const CreateEvents = () => {
     <div>
       <CreateEventHeader />
       <Nav />
-      <EventForm />
+      <EventForm onSubmit={onSubmit} />
       <div id="create-event-footer">
         <Footer />
       </div>
