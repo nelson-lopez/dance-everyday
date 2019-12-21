@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Home from "./Home";
 import CreateEvent from "./CreateEvents";
 import NotFound from "./NotFound";
@@ -11,35 +11,12 @@ const App = () => {
    * TODO Change the redirecting from being handled in App to CreateEvents component
    * TODO Remove Event creation from App completely and let App only handle rendering routes.
    */
-  const [newEvent, setNewEvent] = useState(null);
-  const [redirect, setRedirect] = useState(false);
-
-  const handleOnCreate = value => {
-    setNewEvent(prevState => ({
-      ...prevState,
-      name: value.name,
-      date: value.date,
-      description: value.description,
-      venueName: value.venueName
-    }));
-    setRedirect(!redirect);
-  };
-
-  useEffect(() => {
-    setRedirect(false);
-  }, [newEvent]);
 
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={() => <Home newEvent={newEvent} />} />
-        <Route
-          exact
-          path="/create-event"
-          component={() => (
-            <CreateEvent handleOnCreate={handleOnCreate} redirect={redirect} />
-          )}
-        />
+        <Route exact path="/" component={() => <Home />} />
+        <Route exact path="/create-event" component={() => <CreateEvent />} />
         <Route>
           <NotFound />
         </Route>
