@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import { CreateEventSchema } from "./Form Schemas/EventSchema";
 import { Redirect } from "react-router-dom";
-import Axios from "axios";
+import { postEvent } from "./api/postEvent";
 
-const EventForm = ({ onSubmit }) => {
+const EventForm = () => {
   const [submit, setSubmit] = useState(false);
 
   const setRedirect = () => {
@@ -27,16 +27,8 @@ const EventForm = ({ onSubmit }) => {
       }}
       validationSchema={CreateEventSchema}
       onSubmit={(values, { setSubmitting }) => {
-        setRedirect(values);
-        console.log(values);
-        Axios.post("http://localhost:3001/events/create", {
-          name: values.name,
-          date: values.eventDate,
-          description: values.description,
-          venueName: values.venueName
-        })
-          .then(res => console.log(res))
-          .catch(err => console.log(err));
+        setRedirect();
+        postEvent(values);
         setTimeout(() => {
           setSubmitting(false);
         }, 400);
