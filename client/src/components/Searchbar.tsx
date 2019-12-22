@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SearchProps } from "./types/search-bar.interface";
+import { SearchProps } from "./types/event-methods.interface";
 
 const Searchbar = (props: SearchProps) => {
   const [formInput, setInput] = useState("");

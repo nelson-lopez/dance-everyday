@@ -3,18 +3,21 @@ import { Formik, Form, Field } from "formik";
 import { CreateEventSchema } from "./Form Schemas/EventSchema";
 import { Redirect } from "react-router-dom";
 import { postEvent } from "./api/postEvent";
+import { AppProps } from "./types/event-methods.interface";
 
-const EventForm = () => {
+const EventForm = ({ handleCreate }: AppProps) => {
   const [submit, setSubmit] = useState(false);
 
   const setRedirect = () => {
+    // handleCreate();
     setSubmit(true);
   };
 
   if (submit) return <Redirect to="/" />;
 
   /**
-   * TODO Make figure out a way to get proper page re-render and decouple this component
+   * ! Formik issue with callbacks causing a bug where we lose redirect to root page after adding handleCreate to onSubmit
+   * TODO Figure out a way to extract value from form or possibly find a different library for validation
    */
   return (
     <Formik
