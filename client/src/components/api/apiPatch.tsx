@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiPut = (
+const apiPatch = (
   id: number,
   name: string,
   date: string,
@@ -13,7 +13,7 @@ const apiPut = (
       description: description
     })
     .then(res => console.log(res))
-    .catch(res => console.log(res));
+    .catch(err => console.log(err));
 };
 
-export default apiPut;
+export default apiPatch;
