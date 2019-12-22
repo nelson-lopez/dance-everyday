@@ -10,9 +10,7 @@ import { EventListProps } from "./types/event.interfaces";
  */
 const EventList = ({ newSearchList }: EventListProps) => {
   const [eventInfo, setEventInfo] = useState(newSearchList);
-  const [newEventList, setNewEventList] = useState(false);
 
-  console.log(eventInfo);
   /**
    * TODO Refactor logic here and implement helper hooks to handle CRUD
    */

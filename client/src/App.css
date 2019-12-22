@@ -240,7 +240,6 @@ h4 {
   width: 249px;
   border: #333 1px solid;
   position: center;
-  border: rgb(106, 106, 106) 1px solid;
   border-radius: 0px 0px;
 }
 
@@ -382,7 +381,6 @@ h4 {
   border: rgb(106, 106, 106) 0.1px solid;
   box-shadow: 2px 2px 2px 0px gray;
   padding: 40px;
-  text-align: center;
   text-align: center;
   display: flex;
   flex-direction: column;
