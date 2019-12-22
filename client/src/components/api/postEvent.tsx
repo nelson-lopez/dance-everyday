@@ -1,7 +1,7 @@
 import Axios from "axios";
-import { PostData } from "../types/post.interface";
+import { PostEvent } from "../types/event.interfaces";
 
-export const postEvent = (data: PostData) => {
+export const postEvent = (data: PostEvent) => {
   const url = `http://localhost:3001/events/create`;
 
   if (data) {

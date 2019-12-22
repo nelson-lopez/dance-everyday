@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import apiDelete from "./api/apiDelete";
 import axios from "axios";
 import DisplayCard from "./DisplayCard";
-import EventListProps from "./types/event-list.interface";
+import { EventListProps } from "./types/event.interfaces";
 
 /**
  *
  * * Event info is designed to trigger our CRUD operations and distribute results across the view
  */
-const EventList = (props: EventListProps) => {
-  const [eventInfo, setEventInfo] = useState(props.newSearchList);
+const EventList = ({ newSearchList }: EventListProps) => {
+  const [eventInfo, setEventInfo] = useState(newSearchList);
   const [newEventList, setNewEventList] = useState(false);
 
   console.log(eventInfo);
@@ -31,10 +31,10 @@ const EventList = (props: EventListProps) => {
       setEventInfo(eventInfo.filter(obj => obj.id !== id));
     }
   };
-  if (props.newSearchList) {
+  if (newSearchList) {
     return (
       <div className="flex-container">
-        {props.newSearchList.map(obj => {
+        {newSearchList.map(obj => {
           return (
             <DisplayCard
               name={obj.name}
