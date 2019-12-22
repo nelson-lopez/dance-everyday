@@ -13,7 +13,7 @@ import { useFilterSearch } from "./api/useFilterSearch";
 const Home = () => {
   const [searchInput, setSearch] = useState("");
 
-  const handleOnSubmit = (value: string) => {
+  const handleOnSubmit = (value: string): void => {
     setSearch(value);
   };
 
