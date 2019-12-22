@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import apiDelete from "./api/apiDelete";
-import axios from "axios";
 import DisplayCard from "./DisplayCard";
 import { EventListProps } from "./types/event.interfaces";
-import { EventInterface } from "./types/event.interfaces";
+import { apiGet } from "./api/apiGet";
 
 /**
  *
@@ -13,23 +12,14 @@ const EventList = ({ newSearchList, newList }: EventListProps) => {
   const [eventInfo, setEventInfo] = useState(newSearchList);
   const [events, setEvents] = useState(newSearchList);
 
-  /**
-   * TODO Refactor logic here and implement helper hooks to handle CRUD
-   */
   // GET
   useEffect(() => {
-    axios.get("http://localhost:3001/events").then(res => {
-      setEventInfo(res.data);
-    });
+    apiGet(setEventInfo);
   }, []);
 
   useEffect(() => {
     if (newList === true) {
-      console.log(newList);
-      axios.get("http://localhost:3001/events").then(res => {
-        console.log(res);
-        setEvents(res.data);
-      });
+      apiGet(setEvents);
     }
   }, [newList]);
 
