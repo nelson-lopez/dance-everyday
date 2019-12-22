@@ -1,46 +1,47 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from "react";
 
-export default function EditCard({
-  name,
-  date,
-  description,
-  handleFlip,
-  id,
-  handleReturn
-}) {
+import CardProps from "./types/card-props.interface";
+
+/**
+ *
+ * TODO add functionality for venueName editing within formData and handleOnChange
+ */
+
+export default function EditCard(props: CardProps) {
   const [formData, setFormData] = useState({
-    date: date,
-    description: description,
-    name: name,
-    id: id
+    date: props.date,
+    description: props.description,
+    name: props.name,
+    id: props.id
   });
 
-  const handleOnChange = e => {
-    const element = e.target;
-    const { name, value } = element;
-    ///Grab current element values on change and feed them to current state while spreading previous state
+  /**
+   * * This component employs several event listeners to handle input/change to shoot back up
+   */
+
+  const handleOnChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const key = e.currentTarget.name;
+    const value = e.currentTarget.value;
+
     setFormData(prevState => ({
       ...prevState,
-      [name]: value
+      [key]: value
     }));
-
-    console.log(formData);
   };
 
-  const handleOnSubmit = useCallback(() => {
-    /// Lift up state through submit
-    /// Apply usecallback hook to avoid rerenders
-    handleFlip(formData.date, formData.description, formData.name, formData.id);
-  }, [
-    formData.date,
-    formData.description,
-    formData.id,
-    formData.name,
-    handleFlip
-  ]);
+  const handleOnSubmit = () => {
+    if (props.handleFlip) {
+      props.handleFlip(
+        formData.date,
+        formData.description,
+        formData.name,
+        formData.id
+      );
+    }
+  };
 
   const handleOnReturn = () => {
-    handleReturn();
+    if (props.handleReturn) props.handleReturn();
   };
 
   return (
@@ -53,7 +54,7 @@ export default function EditCard({
             id="event-name"
             type="text"
             name="name"
-            defaultValue={name}
+            defaultValue={props.name}
             onChange={handleOnChange}
           />
           <br />
@@ -63,7 +64,7 @@ export default function EditCard({
             id="event-date"
             type="text"
             name="date"
-            defaultValue={date}
+            defaultValue={props.date}
             onChange={handleOnChange}
           />
           <br />
@@ -73,7 +74,7 @@ export default function EditCard({
             id="event-desc"
             type="text"
             name="description"
-            defaultValue={description}
+            defaultValue={props.description}
             onChange={handleOnChange}
           />
         </label>

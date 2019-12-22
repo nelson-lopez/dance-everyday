@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Open+Sans+Condensed:300&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao|Open+Sans+Condensed:300&display=swap");
 
 body {
   margin: 0px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   background-color: white;
-  background-image: url('https://cdn.pixabay.com/photo/2016/10/17/14/31/background-1747781_1280.jpg');
+  background-image: url("https://cdn.pixabay.com/photo/2016/10/17/14/31/background-1747781_1280.jpg");
 }
 
 .header {
-  background-image: url('https://cdn.pixabay.com/photo/2016/11/10/07/43/tango-1813691_1280.jpg');
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/10/07/43/tango-1813691_1280.jpg");
   padding: 500px 0 0 0;
   opacity: 1;
   display: block;
@@ -115,9 +115,9 @@ body {
   color: #d6ac91;
   font-size: 18px;
   padding: 0 50px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   border-radius: 4px;
-  margin-right:3px;
+  margin-right: 3px;
   border-color: #7d7b74;
 }
 
@@ -126,9 +126,9 @@ body {
   color: #d6ac91;
   font-size: 18px;
   padding: 0 50px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   border-radius: 4px;
-  margin-right:3px;
+  margin-right: 3px;
   border-color: #7d7b74;
 }
 
@@ -137,9 +137,9 @@ body {
   color: #d6ac91;
   font-size: 18px;
   padding: 0 5px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   border-radius: 4px;
-  margin-right:3px;
+  margin-right: 3px;
   border-color: #7d7b74;
 }
 
@@ -147,9 +147,9 @@ body {
   background-color: black;
   color: #d6ac91;
   font-size: 18px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   border-radius: 4px;
-  margin-right:3px;
+  margin-right: 3px;
   border-color: #7d7b74;
 }
 
@@ -158,9 +158,9 @@ body {
   color: #d6ac91;
   font-size: 18px;
   padding: 0 5px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   border-radius: 4px;
-  margin-right:3px;
+  margin-right: 3px;
   border-color: #7d7b74;
 }
 
@@ -168,7 +168,7 @@ body {
   background-color: white;
   font-size: 22px;
   width: 350px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
 }
 
 #form-submit {
@@ -176,7 +176,7 @@ body {
   font-size: 22px;
   margin: 0 0px 0 5px;
   padding: 0 20px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   border-radius: 4px;
 }
 
@@ -220,8 +220,6 @@ h4 {
 .about-container h2 {
   font-weight: bold;
 }
-
-
 
 /* CARD STYLE */
 .card {
@@ -306,7 +304,7 @@ h4 {
   font-size: 18px;
   margin: 0 0px 0 5px;
   padding: 0 20px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
 }
 
 #edit-submit-button:hover {
@@ -329,7 +327,7 @@ h4 {
 
 /* CREATE EVENTS PAGE */
 .create-event-header {
-  background-image: url('https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg');
+  background-image: url("https://cdn.pixabay.com/photo/2017/07/21/23/57/concert-2527495_1280.jpg");
   padding: 500px 0 0 0;
   opacity: 1;
   display: block;
@@ -385,6 +383,10 @@ h4 {
   box-shadow: 2px 2px 2px 0px gray;
   padding: 40px;
   text-align: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .create-event-form h2 {
@@ -426,7 +428,6 @@ h4 {
   bottom: 0em;
 }
 
-
 /* Smartphones (portrait and landscape) ----------- */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
@@ -448,7 +449,7 @@ h4 {
     background-color: white;
     font-size: 22px;
     width: 175px;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: "Open Sans Condensed", sans-serif;
   }
 
   /* CREATE EVENTS */
@@ -463,5 +464,4 @@ h4 {
     font-size: 18px;
     border: rgb(106, 106, 106) 0.1px solid;
   }
-  
 }

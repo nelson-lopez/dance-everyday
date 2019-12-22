@@ -1,43 +1,42 @@
 import React, { useState, useEffect } from "react";
 import apiDelete from "./api/apiDelete";
 import axios from "axios";
-import EventCard from "./EventCard";
+import DisplayCard from "./DisplayCard";
+import { EventListProps } from "./types/event.interfaces";
 
-const EventList = ({ newEvent, newSearchList }) => {
-  const [eventInfo, setEventInfo] = useState(null);
+/**
+ *
+ * * Event info is designed to trigger our CRUD operations and distribute results across the view
+ */
+const EventList = ({ newSearchList }: EventListProps) => {
+  const [eventInfo, setEventInfo] = useState(newSearchList);
+  const [newEventList, setNewEventList] = useState(false);
 
+  console.log(eventInfo);
+  /**
+   * TODO Refactor logic here and implement helper hooks to handle CRUD
+   */
+
+  // GET
   useEffect(() => {
     axios.get("http://localhost:3001/events").then(res => {
       setEventInfo(res.data);
     });
   }, []);
 
-  useEffect(() => {
-    if (newEvent) {
-      axios
-        .post("http://localhost:3001/events", {
-          name: newEvent.name,
-          date: newEvent.date,
-          description: newEvent.description
-        })
-        .then(res => console.log(res));
-      axios.get("http://localhost:3001/events").then(res => {
-        console.log(res.data);
-        setEventInfo(res.data);
-      });
-    }
-  }, [newEvent]);
-
-  const handleDelete = id => {
+  // DELETE
+  const handleDelete = (id: number): void => {
     apiDelete(id);
-    setEventInfo(eventInfo.filter(obj => obj.id !== id));
+    if (eventInfo) {
+      setEventInfo(eventInfo.filter(obj => obj.id !== id));
+    }
   };
   if (newSearchList) {
     return (
       <div className="flex-container">
         {newSearchList.map(obj => {
           return (
-            <EventCard
+            <DisplayCard
               name={obj.name}
               key={obj.id}
               date={obj.date}
@@ -55,7 +54,7 @@ const EventList = ({ newEvent, newSearchList }) => {
       <div className="flex-container">
         {eventInfo.map(obj => {
           return (
-            <EventCard
+            <DisplayCard
               name={obj.name}
               key={obj.id}
               date={obj.date}
