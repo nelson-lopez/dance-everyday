@@ -23,7 +23,6 @@ export default function EditCard(props: CardProps) {
     const key = e.currentTarget.name;
     const value = e.currentTarget.value;
 
-    console.log(key);
     setFormData(prevState => ({
       ...prevState,
       [key]: value

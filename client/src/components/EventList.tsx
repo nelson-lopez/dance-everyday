@@ -12,6 +12,7 @@ const EventList = (props: EventListProps) => {
   const [eventInfo, setEventInfo] = useState(props.newSearchList);
   const [newEventList, setNewEventList] = useState(false);
 
+  console.log(eventInfo);
   /**
    * TODO Refactor logic here and implement helper hooks to handle CRUD
    */
@@ -21,30 +22,7 @@ const EventList = (props: EventListProps) => {
     axios.get("http://localhost:3001/events").then(res => {
       setEventInfo(res.data);
     });
-    if (newEventList) {
-      axios.get("http://localhost:3001/events").then(res => {
-        setEventInfo(res.data);
-        setNewEventList(false);
-      });
-    }
-  }, [newEventList]);
-
-  // POST
-  useEffect(() => {
-    if (props.newEvent) {
-      console.log(props.newEvent);
-      axios
-        .post("http://localhost:3001/events/create", {
-          name: props.newEvent.name,
-          date: props.newEvent.date,
-          description: props.newEvent.description,
-          venueName: props.newEvent.venueName
-        })
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
-      setNewEventList(true);
-    }
-  }, [props.newEvent]);
+  }, []);
 
   // DELETE
   const handleDelete = (id: number): void => {
