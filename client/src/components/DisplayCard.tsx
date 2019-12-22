@@ -54,7 +54,7 @@ const DisplayCard = (props: CardPropsInterface) => {
 
   const handleOnDelete = useCallback(() => {
     if (props.handleDelete) props.handleDelete(props.id);
-  }, [props.handleDelete, props.id]);
+  }, [props]);
 
   if (!isClicked)
     return (
