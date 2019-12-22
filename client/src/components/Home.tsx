@@ -5,12 +5,13 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Nav from "./Nav";
 import { useFilterSearch } from "./api/useFilterSearch";
+import { HomeProps } from "./types/event-methods.interface";
 
 /**
  *
  * TODO Refactor search filter / No longer need a helper function to filter through Events
  */
-const Home = () => {
+const Home = (props: HomeProps) => {
   const [searchInput, setSearch] = useState("");
 
   const handleOnSubmit = (value: string): void => {
@@ -25,9 +26,9 @@ const Home = () => {
       <Nav />
       <SearchBar handleOnSubmit={handleOnSubmit} />
       {data ? (
-        <EventList newSearchList={data} />
+        <EventList newSearchList={data} newList={props.newList} />
       ) : (
-        <EventList newSearchList={null} />
+        <EventList newSearchList={null} newList={props.newList} />
       )}
       <Footer />
     </div>

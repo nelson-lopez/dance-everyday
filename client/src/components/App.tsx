@@ -12,7 +12,6 @@ const App = () => {
     setNewList(!newList);
   };
 
-  console.log(newList);
   /**
    * * App is in charge of holding New Event creation as well as redirecting the user to the root page
    * TODO Change the redirecting from being handled in App to CreateEvents component
@@ -22,11 +21,13 @@ const App = () => {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={() => <Home />} />
+        <Route exact path="/" component={() => <Home newList={newList} />} />
         <Route
           exact
           path="/create-event"
-          component={() => <CreateEvent handleCreate={handleCreate} />}
+          component={() => (
+            <CreateEvent handleCreate={handleCreate} newList={newList} />
+          )}
         />
         <Route>
           <NotFound />

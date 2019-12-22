@@ -1,30 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form, Field } from "formik";
-import { CreateEventSchema } from "./Form Utils/EventSchema";
 import { Redirect } from "react-router-dom";
-
 import { AppProps } from "./types/event-methods.interface";
-import { EventValues } from "./Form Utils/EventValues";
+import { EventValues } from "./FormUtils/EventValues";
+import { CreateEventSchema } from "./FormUtils/EventSchema";
+import { OnEventSubmit } from "./FormUtils/EventSubmit";
 
-const EventForm = ({ handleCreate }: AppProps) => {
-  const [submit, setSubmit] = useState(false);
-
-  const setRedirect = () => {
-    setSubmit(true);
-    console.log("clicked");
-  };
-
-  if (submit) return <Redirect to="/" />;
-
+const EventForm = ({ handleCreate, newList }: AppProps) => {
   /**
    * ! Formik issue with callbacks causing a bug where we lose redirect to root page after adding handleCreate to onSubmit
    * TODO configure on submit to handle post and redirect
    */
+
+  if (newList) return <Redirect to="/" />;
+
   return (
     <Formik
       initialValues={EventValues}
       validationSchema={CreateEventSchema}
-      onSubmit={setRedirect}
+      onSubmit={async value => {
+        const statusOk = await OnEventSubmit(value);
+        handleCreate();
+      }}
     >
       {({ errors, touched, handleSubmit, isSubmitting }) => (
         <Form className="create-event-form" onSubmit={handleSubmit}>

@@ -1,5 +1,4 @@
 import React from "react";
-
 import Nav from "./Nav";
 import CreateEventHeader from "./CreateEventHeader";
 import Footer from "./Footer";
@@ -17,7 +16,7 @@ const CreateEvents = (props: AppProps) => {
     <div>
       <CreateEventHeader />
       <Nav />
-      <EventForm handleCreate={props.handleCreate} />
+      <EventForm handleCreate={props.handleCreate} newList={props.newList} />
       <div id="create-event-footer">
         <Footer />
       </div>
