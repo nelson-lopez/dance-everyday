@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiDelete = id => {
+const apiDelete = (id: number) => {
   axios
     .delete(`http://localhost:3001/events/${id}`)
     .then(res => console.log(res))

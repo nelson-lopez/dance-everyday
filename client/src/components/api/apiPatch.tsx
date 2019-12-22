@@ -1,6 +1,11 @@
 import axios from "axios";
 
-const apiPut = (id, name, date, description) => {
+const apiPut = (
+  id: number,
+  name: string,
+  date: string,
+  description: string
+) => {
   axios
     .patch(`http://localhost:3001/events/${id}/update`, {
       name: name,

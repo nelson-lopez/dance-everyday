@@ -1,15 +1,16 @@
 import React, { useState } from "react";
+import { SearchProps } from "./types/search-bar.interface";
 
-const Searchbar = ({ handleOnSubmit }) => {
+const Searchbar = (props: SearchProps) => {
   const [formInput, setInput] = useState("");
 
-  const handleOnInput = e => {
-    setInput(e.target.value);
+  const handleOnInput = (e: React.FormEvent<HTMLInputElement>) => {
+    setInput(e.currentTarget.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
-    handleOnSubmit(formInput);
+    props.handleOnSubmit(formInput);
   };
   return (
     <div className="search-bar">

@@ -11,9 +11,9 @@ import { useFilterSearch } from "./api/useFilterSearch";
  * TODO Refactor search filter / No longer need a helper function to filter through Events
  */
 const Home = () => {
-  const [searchInput, setSearch] = useState(null);
+  const [searchInput, setSearch] = useState("");
 
-  const handleOnSubmit = value => {
+  const handleOnSubmit = (value: string): void => {
     setSearch(value);
   };
 
