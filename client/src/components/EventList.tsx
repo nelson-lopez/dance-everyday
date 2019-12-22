@@ -49,7 +49,9 @@ const EventList = (props: EventListProps) => {
   // DELETE
   const handleDelete = (id: number): void => {
     apiDelete(id);
-    setEventInfo(eventInfo.filter(obj => obj.id !== id));
+    if (eventInfo) {
+      setEventInfo(eventInfo.filter(obj => obj.id !== id));
+    }
   };
   if (props.newSearchList) {
     return (

@@ -6,7 +6,7 @@ export const useFilterSearch = (searchTerm: string) => {
   const url = `http://localhost:3001/events?search=${searchTerm}`;
 
   useEffect(() => {
-    if (searchTerm) {
+    if (searchTerm.length > 2) {
       Axios.get(url).then(res => {
         setData(res.data);
       });
