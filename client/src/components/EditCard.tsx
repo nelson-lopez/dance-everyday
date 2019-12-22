@@ -20,9 +20,10 @@ export default function EditCard(props: CardProps) {
    */
 
   const handleOnChange = (e: React.FormEvent<HTMLInputElement>) => {
-    const key = e.currentTarget.id;
+    const key = e.currentTarget.name;
     const value = e.currentTarget.value;
 
+    console.log(key);
     setFormData(prevState => ({
       ...prevState,
       [key]: value
