@@ -7,11 +7,6 @@ import { CreateEventSchema } from "./FormUtils/EventSchema";
 import { OnEventSubmit } from "./FormUtils/EventSubmit";
 
 const EventForm = ({ handleCreate, newList }: AppProps) => {
-  /**
-   * ! Formik issue with callbacks causing a bug where we lose redirect to root page after adding handleCreate to onSubmit
-   * TODO configure on submit to handle post and redirect
-   */
-
   if (newList) return <Redirect to="/" />;
 
   return (
