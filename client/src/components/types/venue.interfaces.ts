@@ -9,4 +9,4 @@ export interface Venue {
   events: EventInterface[];
 }
 
-export interface VenueProps {}
+export type VenueData = Venue[] | null;

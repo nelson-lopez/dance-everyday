@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import EventCard from "./EventCard";
-import { EventListProps } from "./types/event.interfaces";
+import { EventListProps, EventInterface } from "./types/event.interfaces";
 import { eventsApiGet } from "./api/events/events.apiGet";
 import { eventsApiGetSearch } from "./api/events/events.apiGetSearch";
 import eventsApiDelete from "./api/events/events.apiDelete";
@@ -10,7 +10,7 @@ import eventsApiDelete from "./api/events/events.apiDelete";
  * * Event info is designed to trigger our CRUD operations and distribute results across the view
  */
 const EventList = ({ searchInput, newSearchList }: EventListProps) => {
-  const [eventInfo, setEventInfo] = useState(newSearchList);
+  const [eventInfo, setEventInfo] = useState<EventInterface[] | null>(null);
 
   // GET
   useEffect(() => {

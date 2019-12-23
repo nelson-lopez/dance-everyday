@@ -1,4 +1,4 @@
-import { apiHelper } from "../apiHelper";
+import { eventsApiHelper } from "./events.apiHelper";
 
 const eventsApiPatch = (
   id: number,
@@ -12,7 +12,14 @@ const eventsApiPatch = (
    *! Figure out a way to optionally pass eventInfo without TS errors
    */
   let setEventInfo = undefined;
-  apiHelper(url, (setEventInfo = undefined), method, name, date, description);
+  eventsApiHelper(
+    url,
+    (setEventInfo = undefined),
+    method,
+    name,
+    date,
+    description
+  );
 };
 
 export default eventsApiPatch;

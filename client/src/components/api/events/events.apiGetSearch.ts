@@ -1,5 +1,5 @@
 import { EventInterface } from "../../types/event.interfaces";
-import { apiHelper } from "../apiHelper";
+import { eventsApiHelper } from "./events.apiHelper";
 
 export const eventsApiGetSearch = async (
   searchTerm: string,
@@ -7,5 +7,5 @@ export const eventsApiGetSearch = async (
 ) => {
   const url = `http://localhost:3001/events?search=${searchTerm}`;
 
-  apiHelper(url, setEventInfo);
+  eventsApiHelper(url, setEventInfo);
 };
