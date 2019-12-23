@@ -14,7 +14,6 @@ export interface EventListProps {
   newSearchList: EventInterface[] | null;
   newList?: HomeProps["newList"];
 }
-
 /**
  * TODO Expand PostEvent interface after event schema change
  */
