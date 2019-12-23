@@ -1,4 +1,3 @@
-import axios from "axios";
 import { apiHelper } from "./apiHelper";
 
 const apiPatch = (

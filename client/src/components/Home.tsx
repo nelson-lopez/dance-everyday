@@ -27,9 +27,17 @@ const Home = (props: HomeProps) => {
       <Nav />
       <SearchBar handleOnSubmit={handleOnSubmit} />
       {data ? (
-        <EventList newSearchList={data} searchInput={searchInput} />
+        <EventList
+          newSearchList={data}
+          newList={props.newList}
+          searchInput={searchInput}
+        />
       ) : (
-        <EventList newSearchList={null} searchInput={searchInput} />
+        <EventList
+          newSearchList={null}
+          newList={props.newList}
+          searchInput={searchInput}
+        />
       )}
       <Footer />
     </div>

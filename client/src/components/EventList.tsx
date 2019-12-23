@@ -7,7 +7,7 @@ import { apiGetSearch } from "./api/apiGetSearch";
 
 /**
  *
- * * EventList is designed to trigger our CRUD operations and distribute results across the view
+ * * Event info is designed to trigger our CRUD operations and distribute results across the view
  */
 const EventList = ({ searchInput, newSearchList }: EventListProps) => {
   const [eventInfo, setEventInfo] = useState(newSearchList);

@@ -32,4 +32,11 @@ export const apiHelper = (
         errorLogger(err);
       });
   }
+  if (method === "DELETE") {
+    Axios.delete(url)
+      .then(res => console.log(res))
+      .catch(err => {
+        errorLogger(err);
+      });
+  }
 };
