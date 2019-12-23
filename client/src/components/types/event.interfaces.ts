@@ -10,6 +10,7 @@ export interface EventInterface {
 
 export interface EventListProps {
   newEvent?: EventInterface;
+  searchInput: string;
   newSearchList: EventInterface[] | null;
   newList?: HomeProps["newList"];
 }

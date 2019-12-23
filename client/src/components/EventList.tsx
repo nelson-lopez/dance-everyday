@@ -3,14 +3,14 @@ import apiDelete from "./api/apiDelete";
 import DisplayCard from "./DisplayCard";
 import { EventListProps } from "./types/event.interfaces";
 import { apiGet } from "./api/apiGet";
+import { apiGetSearch } from "./api/apiGetSearch";
 
 /**
  *
- * * Event info is designed to trigger our CRUD operations and distribute results across the view
+ * * EventList is designed to trigger our CRUD operations and distribute results across the view
  */
-const EventList = ({ newSearchList, newList }: EventListProps) => {
+const EventList = ({ searchInput, newSearchList }: EventListProps) => {
   const [eventInfo, setEventInfo] = useState(newSearchList);
-  const [events, setEvents] = useState(newSearchList);
 
   // GET
   useEffect(() => {
@@ -18,10 +18,10 @@ const EventList = ({ newSearchList, newList }: EventListProps) => {
   }, []);
 
   useEffect(() => {
-    if (newList === true) {
-      apiGet(setEvents);
+    if (searchInput.length > 2) {
+      apiGetSearch(searchInput, setEventInfo);
     }
-  }, [newList]);
+  }, [searchInput]);
 
   // DELETE
   const handleDelete = (id: number): void => {
@@ -31,25 +31,7 @@ const EventList = ({ newSearchList, newList }: EventListProps) => {
     }
   };
 
-  if (events !== null) {
-    console.log(events);
-    return (
-      <div className="flex-container">
-        {events.map(obj => {
-          return (
-            <DisplayCard
-              name={obj.name}
-              key={obj.id}
-              date={obj.date}
-              description={obj.description}
-              id={obj.id}
-              handleDelete={handleDelete}
-            />
-          );
-        })}
-      </div>
-    );
-  } else if (newSearchList) {
+  if (newSearchList) {
     return (
       <div className="flex-container">
         {newSearchList.map(obj => {

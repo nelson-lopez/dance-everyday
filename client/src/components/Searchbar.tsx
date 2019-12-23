@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { SearchProps } from "./types/event-methods.interface";
 import { Formik, Field, Form } from "formik";
 import { SearchSchema } from "./FormUtils/SearchSchema";
@@ -13,15 +13,15 @@ const Searchbar = (props: SearchProps) => {
         props.handleOnSubmit(value);
       }}
     >
-      {({ errors, touched, handleSubmit, isSubmitting }) => (
+      {({ errors, touched, handleSubmit }) => (
         <Form className="search-bar" onSubmit={handleSubmit}>
           <Field name="search" placeholder="Enter Search" id="form-input" />
           {errors.search && touched.search ? (
-            <span style={{ color: "red", fontWeight: "bold" }}>
+            <span style={{ color: "white" }}>
               <div>{errors.search}</div>
             </span>
           ) : null}
-          <button id="form-submit" type="submit" disabled={isSubmitting}>
+          <button id="form-submit" type="submit">
             Submit
           </button>
         </Form>
