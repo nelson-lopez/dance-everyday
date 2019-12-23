@@ -1,31 +1,31 @@
 import React, { useState, useEffect } from "react";
-import apiDelete from "./api/apiDelete";
-import DisplayCard from "./DisplayCard";
-import { EventListProps } from "./types/event.interfaces";
-import { apiGet } from "./api/apiGet";
-import { apiGetSearch } from "./api/apiGetSearch";
+import EventCard from "./EventCard";
+import { EventListProps, EventInterface } from "./types/event.interfaces";
+import { eventsApiGet } from "./api/events/events.apiGet";
+import { eventsApiGetSearch } from "./api/events/events.apiGetSearch";
+import eventsApiDelete from "./api/events/events.apiDelete";
 
 /**
  *
  * * Event info is designed to trigger our CRUD operations and distribute results across the view
  */
 const EventList = ({ searchInput, newSearchList }: EventListProps) => {
-  const [eventInfo, setEventInfo] = useState(newSearchList);
+  const [eventInfo, setEventInfo] = useState<EventInterface[] | null>(null);
 
   // GET
   useEffect(() => {
-    apiGet(setEventInfo);
+    eventsApiGet(setEventInfo);
   }, []);
 
   useEffect(() => {
     if (searchInput.length > 2) {
-      apiGetSearch(searchInput, setEventInfo);
+      eventsApiGetSearch(searchInput, setEventInfo);
     }
   }, [searchInput]);
 
   // DELETE
   const handleDelete = (id: number): void => {
-    apiDelete(id);
+    eventsApiDelete(id);
     if (eventInfo) {
       setEventInfo(eventInfo.filter(obj => obj.id !== id));
     }
@@ -36,7 +36,7 @@ const EventList = ({ searchInput, newSearchList }: EventListProps) => {
       <div className="flex-container">
         {newSearchList.map(obj => {
           return (
-            <DisplayCard
+            <EventCard
               name={obj.name}
               key={obj.id}
               date={obj.date}
@@ -53,7 +53,7 @@ const EventList = ({ searchInput, newSearchList }: EventListProps) => {
       <div className="flex-container">
         {eventInfo.map(obj => {
           return (
-            <DisplayCard
+            <EventCard
               name={obj.name}
               key={obj.id}
               date={obj.date}

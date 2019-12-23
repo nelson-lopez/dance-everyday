@@ -15,6 +15,11 @@ const Nav = () => {
             <Link to="/create-event">Create Event</Link>
           </div>
         </li>
+        <li>
+          <div>
+            <Link to="/venues">Venues</Link>
+          </div>
+        </li>
       </ul>
     </div>
   );

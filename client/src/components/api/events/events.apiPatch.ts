@@ -1,6 +1,6 @@
-import { apiHelper } from "./apiHelper";
+import { eventsApiHelper } from "./events.apiHelper";
 
-const apiPatch = (
+const eventsApiPatch = (
   id: number,
   name: string,
   date: string,
@@ -12,7 +12,14 @@ const apiPatch = (
    *! Figure out a way to optionally pass eventInfo without TS errors
    */
   let setEventInfo = undefined;
-  apiHelper(url, (setEventInfo = undefined), method, name, date, description);
+  eventsApiHelper(
+    url,
+    (setEventInfo = undefined),
+    method,
+    name,
+    date,
+    description
+  );
 };
 
-export default apiPatch;
+export default eventsApiPatch;

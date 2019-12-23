@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import apiPatch from "./api/apiPatch";
+import apiPatch from "./api/events/events.apiPatch";
 import EditCard from "./EditCard";
 import CardPropsInterface from "./types/card-props.interface";
 
@@ -7,7 +7,7 @@ import CardPropsInterface from "./types/card-props.interface";
  * * Chose to handle card flipping re-rendering logic inside of our Card component in order to
  * * decouple some of our logic and prevent it from getting out of hand in EventList component
  */
-const DisplayCard = (props: CardPropsInterface) => {
+const EventCard = (props: CardPropsInterface) => {
   const [isClicked, setIsClicked] = useState(false);
 
   /**
@@ -90,4 +90,4 @@ const DisplayCard = (props: CardPropsInterface) => {
     );
 };
 
-export default DisplayCard;
+export default EventCard;

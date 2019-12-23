@@ -4,6 +4,7 @@ import CreateEvent from "./CreateEvents";
 import NotFound from "./NotFound";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "../App.css";
+import VenueList from "./VenueList";
 
 const App: React.FC = () => {
   const [newList, setNewList] = useState(false);
@@ -23,6 +24,7 @@ const App: React.FC = () => {
             <CreateEvent handleCreate={handleCreate} newList={newList} />
           )}
         />
+        <Route exact path="/venues" component={() => <VenueList />} />
         <Route>
           <NotFound />
         </Route>

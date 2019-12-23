@@ -1,8 +1,8 @@
 import Axios from "axios";
-import { EventInterface } from "../types/event.interfaces";
-import { errorLogger } from "./errorLogger";
+import { errorLogger } from "../errorLogger";
+import { EventInterface } from "../../types/event.interfaces";
 
-export const apiHelper = (
+export const eventsApiHelper = (
   url: string,
   setEventInfo?: (data: EventInterface[]) => void,
   method?: string,
