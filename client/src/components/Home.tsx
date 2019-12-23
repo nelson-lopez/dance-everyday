@@ -4,18 +4,13 @@ import EventList from "./EventList";
 import Footer from "./Footer";
 import Header from "./Header";
 import Nav from "./Nav";
-import { useFilterSearch } from "./api/useFilterSearch";
+import { useFilterSearch } from "./api/events/useFilterSearch";
 import { HomeProps, SearchValue } from "./types/event-methods.interface";
 
-/**
- *
- * TODO Refactor search filter / No longer need a helper function to filter through Events
- */
 const Home = (props: HomeProps) => {
   const [searchInput, setSearch] = useState("");
 
   const handleOnSubmit = (value: SearchValue): void => {
-    console.log(value);
     setSearch(value.search);
   };
 

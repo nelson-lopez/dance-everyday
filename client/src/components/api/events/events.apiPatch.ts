@@ -1,6 +1,6 @@
-import { apiHelper } from "./apiHelper";
+import { apiHelper } from "../apiHelper";
 
-const apiPatch = (
+const eventsApiPatch = (
   id: number,
   name: string,
   date: string,
@@ -15,4 +15,4 @@ const apiPatch = (
   apiHelper(url, (setEventInfo = undefined), method, name, date, description);
 };
 
-export default apiPatch;
+export default eventsApiPatch;

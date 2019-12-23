@@ -1,8 +1,7 @@
-import Axios from "axios";
-import { EventInterface } from "../types/event.interfaces";
-import { apiHelper } from "./apiHelper";
+import { EventInterface } from "../../types/event.interfaces";
+import { apiHelper } from "../apiHelper";
 
-export const apiGetSearch = async (
+export const eventsApiGetSearch = async (
   searchTerm: string,
   setEventInfo: (data: EventInterface[]) => void
 ) => {

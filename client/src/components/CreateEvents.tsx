@@ -6,12 +6,6 @@ import EventForm from "./EventForm";
 import { AppProps } from "./types/event-methods.interface";
 
 const CreateEvents = (props: AppProps) => {
-  /**
-   *
-   * * We destructure the HTML Element in order to grab the correct input and feed it to the component state
-   * TODO delegate a POST hook to finish the job and redirect our user after submit
-   */
-
   return (
     <div>
       <CreateEventHeader />
