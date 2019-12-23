@@ -1,5 +1,5 @@
 export interface SearchProps {
-  handleOnSubmit(value: string): void;
+  handleOnSubmit(value: any): void;
 }
 
 export interface AppProps {
@@ -9,4 +9,8 @@ export interface AppProps {
 
 export interface HomeProps {
   newList: boolean;
+}
+
+export interface SearchValue {
+  search: string;
 }

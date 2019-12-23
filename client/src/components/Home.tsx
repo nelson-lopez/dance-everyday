@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Nav from "./Nav";
 import { useFilterSearch } from "./api/useFilterSearch";
-import { HomeProps } from "./types/event-methods.interface";
+import { HomeProps, SearchValue } from "./types/event-methods.interface";
 
 /**
  *
@@ -14,8 +14,9 @@ import { HomeProps } from "./types/event-methods.interface";
 const Home = (props: HomeProps) => {
   const [searchInput, setSearch] = useState("");
 
-  const handleOnSubmit = (value: string): void => {
-    setSearch(value);
+  const handleOnSubmit = (value: SearchValue): void => {
+    console.log(value);
+    setSearch(value.search);
   };
 
   const data = useFilterSearch(searchInput);
