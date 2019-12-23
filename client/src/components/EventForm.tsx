@@ -14,6 +14,9 @@ const EventForm = ({ handleCreate, newList }: AppProps) => {
       initialValues={EventValues}
       validationSchema={CreateEventSchema}
       onSubmit={async value => {
+        /**
+         * ! statusOK should not be necessary, find a more tangible way to  chain these call backs
+         */
         const statusOk = await OnEventSubmit(value);
         handleCreate();
       }}
