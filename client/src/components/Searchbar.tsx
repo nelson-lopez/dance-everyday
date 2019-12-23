@@ -31,23 +31,3 @@ const Searchbar = (props: SearchProps) => {
 };
 
 export default Searchbar;
-
-{
-  /* <form>
-  <label>
-    <input
-      type="text"
-      name="name"
-      onChange={handleOnInput}
-      id="form-input"
-      placeholder="Search dance events"
-    />
-  </label>
-  <input
-    type="submit"
-    value="Submit"
-    onClick={handleSubmit}
-    id="form-submit"
-  />
-</form> */
-}
