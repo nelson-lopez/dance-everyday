@@ -13,7 +13,7 @@ const VenueCard = (props: Venue) => {
 
       <h2>{props.name}</h2>
       <h2>{props.location}</h2>
-      <p>{props.phone}</p>
+      <p>Phone: {props.phone}</p>
     </div>
   );
 };
