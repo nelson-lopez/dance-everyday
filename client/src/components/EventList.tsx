@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from "react";
 import apiDelete from "./api/apiDelete";
-import axios from "axios";
 import DisplayCard from "./DisplayCard";
 import { EventListProps } from "./types/event.interfaces";
+import { apiGet } from "./api/apiGet";
+import { apiGetSearch } from "./api/apiGetSearch";
 
 /**
  *
  * * Event info is designed to trigger our CRUD operations and distribute results across the view
  */
-const EventList = ({ newSearchList }: EventListProps) => {
+const EventList = ({ searchInput, newSearchList }: EventListProps) => {
   const [eventInfo, setEventInfo] = useState(newSearchList);
-
-  /**
-   * TODO Refactor logic here and implement helper hooks to handle CRUD
-   */
 
   // GET
   useEffect(() => {
-    axios.get("http://localhost:3001/events").then(res => {
-      setEventInfo(res.data);
-    });
+    apiGet(setEventInfo);
   }, []);
+
+  useEffect(() => {
+    if (searchInput.length > 2) {
+      apiGetSearch(searchInput, setEventInfo);
+    }
+  }, [searchInput]);
 
   // DELETE
   const handleDelete = (id: number): void => {
@@ -29,6 +30,7 @@ const EventList = ({ newSearchList }: EventListProps) => {
       setEventInfo(eventInfo.filter(obj => obj.id !== id));
     }
   };
+
   if (newSearchList) {
     return (
       <div className="flex-container">
@@ -46,8 +48,7 @@ const EventList = ({ newSearchList }: EventListProps) => {
         })}
       </div>
     );
-  }
-  if (eventInfo) {
+  } else if (eventInfo) {
     return (
       <div className="flex-container">
         {eventInfo.map(obj => {

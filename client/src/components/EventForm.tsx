@@ -1,40 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form, Field } from "formik";
-import { CreateEventSchema } from "./Form Schemas/EventSchema";
 import { Redirect } from "react-router-dom";
-import { postEvent } from "./api/postEvent";
 import { AppProps } from "./types/event-methods.interface";
+import { EventValues } from "./FormUtils/EventValues";
+import { CreateEventSchema } from "./FormUtils/EventSchema";
+import { OnEventSubmit } from "./FormUtils/EventSubmit";
 
-const EventForm = ({ handleCreate }: AppProps) => {
-  const [submit, setSubmit] = useState(false);
+const EventForm = ({ handleCreate, newList }: AppProps) => {
+  if (newList) return <Redirect to="/" />;
 
-  const setRedirect = () => {
-    // handleCreate();
-    setSubmit(true);
-  };
-
-  if (submit) return <Redirect to="/" />;
-
-  /**
-   * ! Formik issue with callbacks causing a bug where we lose redirect to root page after adding handleCreate to onSubmit
-   * TODO Figure out a way to extract value from form or possibly find a different library for validation
-   */
   return (
     <Formik
-      initialValues={{
-        name: "",
-        eventDate: "",
-        venueName: "",
-        description: "",
-        submit: "Submit"
-      }}
+      initialValues={EventValues}
       validationSchema={CreateEventSchema}
-      onSubmit={(values, { setSubmitting }) => {
-        setRedirect();
-        postEvent(values);
-        setTimeout(() => {
-          setSubmitting(false);
-        }, 400);
+      onSubmit={async value => {
+        const statusOk = await OnEventSubmit(value);
+        handleCreate();
       }}
     >
       {({ errors, touched, handleSubmit, isSubmitting }) => (
