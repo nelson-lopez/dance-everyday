@@ -1,3 +1,5 @@
+import { HomeProps } from "./event-methods.interface";
+
 export interface EventInterface {
   name: string;
   description: string;
@@ -8,7 +10,9 @@ export interface EventInterface {
 
 export interface EventListProps {
   newEvent?: EventInterface;
+  searchInput: string;
   newSearchList: EventInterface[] | null;
+  newList?: HomeProps["newList"];
 }
 
 /**
