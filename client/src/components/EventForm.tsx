@@ -25,9 +25,9 @@ const EventForm = ({ handleCreate, newList }: AppProps) => {
         <Form className="create-event-form" onSubmit={handleSubmit}>
           <Field name="name" placeholder="Event" />
 
-          {errors.name && touched.name ? (
+          {errors.eventName && touched.eventName ? (
             <span style={{ color: "red", fontWeight: "bold" }}>
-              <div>{errors.name}</div>
+              <div>{errors.eventName}</div>
             </span>
           ) : null}
 

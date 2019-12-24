@@ -1,14 +1,17 @@
 import Axios from "axios";
 import { errorLogger } from "../errorLogger";
-import { EventInterface } from "../../types/event.interfaces";
+import {
+  EventInterface,
+  PostEvent,
+  PatchEvent
+} from "../../types/event.interfaces";
 
 export const eventsApiHelper = (
   url: string,
   setEventInfo?: (data: EventInterface[]) => void,
   method?: string,
-  name?: string,
-  date?: string,
-  description?: string
+  data?: PatchEvent,
+  values?: PostEvent
 ) => {
   if (method === "GET")
     Axios.get(url)
@@ -23,9 +26,9 @@ export const eventsApiHelper = (
 
   if (method === "PATCH") {
     Axios.patch(url, {
-      name: name,
-      date: date,
-      description: description
+      name: data?.name,
+      date: data?.date,
+      description: data?.description
     })
       .then(res => console.log(res))
       .catch(err => {
@@ -38,5 +41,13 @@ export const eventsApiHelper = (
       .catch(err => {
         errorLogger(err);
       });
+  }
+  if (method === "POST") {
+    Axios.post(url, {
+      name: values?.eventName,
+      date: values?.eventDate,
+      description: values?.description,
+      venueName: values?.venueName
+    }).then(res => console.log(res));
   }
 };

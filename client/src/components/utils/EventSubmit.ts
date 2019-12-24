@@ -1,19 +1,13 @@
 import { PostEvent } from "../types/event.interfaces";
-import Axios from "axios";
-import { errorLogger } from "../api/errorLogger";
+import { eventsApiHelper } from "../api/events/events.apiHelper";
 
 export const OnEventSubmit = async (values: PostEvent): Promise<void> => {
   const url = `http://localhost:3001/events/create`;
-  const data = await Axios.post(url, {
-    name: values.name,
-    date: values.eventDate,
-    description: values.description,
-    venueName: values.venueName
-  })
-    .then(res => console.log(res))
-    .catch(err => {
-      errorLogger(err);
-    });
+  const method = "POST";
 
-  return data;
+  const response = eventsApiHelper(url, undefined, method, undefined, values);
+
+  console.log(response);
+
+  return response;
 };
