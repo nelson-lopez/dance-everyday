@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import CreateEventHeader from "./CreateEventHeader";
 import Footer from "./Footer";
 import EventForm from "./EventForm";
-import { AppProps } from "./types/event-methods.interface";
+import { AppProps } from "../types/event-methods.interface";
 
 const CreateEvents = (props: AppProps) => {
   return (

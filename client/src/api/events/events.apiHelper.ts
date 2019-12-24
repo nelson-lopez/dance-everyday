@@ -2,8 +2,8 @@ import Axios from "axios";
 import { errorLogger } from "../errorLogger";
 import {
   EventInterface,
-  PostEvent,
-  PatchEvent
+  PatchEvent,
+  PostEvent
 } from "../../types/event.interfaces";
 
 export const eventsApiHelper = (

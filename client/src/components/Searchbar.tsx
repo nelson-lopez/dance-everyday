@@ -1,8 +1,8 @@
 import React from "react";
-import { SearchProps } from "./types/event-methods.interface";
+import { SearchProps } from "../types/event-methods.interface";
 import { Formik, Field, Form } from "formik";
-import { SearchValues } from "./utils/SearchValues";
-import { SearchSchema } from "./utils/SearchSchema";
+import { SearchValues } from "../utils/SearchValues";
+import { SearchSchema } from "../utils/SearchSchema";
 
 const Searchbar = (props: SearchProps) => {
   return (

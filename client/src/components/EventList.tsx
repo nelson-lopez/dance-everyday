@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import EventCard from "./EventCard";
-import { EventListProps, EventInterface } from "./types/event.interfaces";
-import { eventsApiGet } from "./api/events/events.apiGet";
-import { eventsApiGetSearch } from "./api/events/events.apiGetSearch";
-import eventsApiDelete from "./api/events/events.apiDelete";
-import { inputValidation } from "./utils/inputValidation";
-import { filterEvents } from "./utils/filterEvents";
+import { EventListProps, EventInterface } from "../types/event.interfaces";
+import { eventsApiGet } from "../api/events/events.apiGet";
+import { eventsApiGetSearch } from "../api/events/events.apiGetSearch";
+import eventsApiDelete from "../api/events/events.apiDelete";
+import { inputValidation } from "../utils/inputValidation";
+import { filterEvents } from "../utils/filterEvents";
 
 /**
  *

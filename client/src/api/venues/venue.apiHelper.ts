@@ -1,5 +1,5 @@
-import { Venue } from "../../types/venue.interfaces";
 import Axios from "axios";
+import { Venue } from "../../types/venue.interfaces";
 
 export const venueApiHelper = (
   url: string,

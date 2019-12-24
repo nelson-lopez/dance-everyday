@@ -1,5 +1,5 @@
-import { EventInterface } from "../../types/event.interfaces";
 import { eventsApiHelper } from "./events.apiHelper";
+import { EventInterface } from "../../types/event.interfaces";
 
 export const eventsApiGet = (
   setEventInfo: (data: EventInterface[]) => void

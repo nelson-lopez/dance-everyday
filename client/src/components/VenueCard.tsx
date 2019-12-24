@@ -1,5 +1,5 @@
 import React from "react";
-import { Venue } from "./types/venue.interfaces";
+import { Venue } from "../types/venue.interfaces";
 
 const VenueCard = (props: Venue) => {
   return (

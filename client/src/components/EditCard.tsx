@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import CardProps from "./types/card-props.interface";
+import CardProps from "../types/card-props.interface";
 
 /**
  *

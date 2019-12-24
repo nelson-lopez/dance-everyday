@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
-import apiPatch from "./api/events/events.apiPatch";
+import apiPatch from "../api/events/events.apiPatch";
 import EditCard from "./EditCard";
-import CardPropsInterface from "./types/card-props.interface";
+import CardPropsInterface from "../types/card-props.interface";
 
 /**
  * * Chose to handle card flipping re-rendering logic inside of our Card component in order to

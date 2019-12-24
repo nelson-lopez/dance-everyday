@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { venueApiGet } from "./api/venues/venue.apiGet";
-import { Venue } from "./types/venue.interfaces";
+import { venueApiGet } from "../api/venues/venue.apiGet";
+import { Venue } from "../types/venue.interfaces";
 import Nav from "./Nav";
 import Header from "./Header";
 import VenueCard from "./VenueCard";
