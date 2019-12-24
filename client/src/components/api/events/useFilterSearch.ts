@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
 import { errorLogger } from "../errorLogger";
+import { inputValidation } from "../../utils/inputValidation";
 
 /**
  *
@@ -9,9 +10,10 @@ import { errorLogger } from "../errorLogger";
 export const useFilterSearch = (searchTerm: string) => {
   const [data, setData] = useState(null);
   const url = `http://localhost:3001/events?search=${searchTerm}`;
+  const minLength: number = 2;
 
   useEffect(() => {
-    if (searchTerm.length > 2) {
+    if (inputValidation(searchTerm, minLength)) {
       Axios.get(url)
         .then(res => {
           setData(res.data);

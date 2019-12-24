@@ -45,7 +45,7 @@ const EventCard = (props: CardPropsInterface) => {
     }));
     setIsClicked(!isClicked);
 
-    apiPatch(id, name, date, description);
+    apiPatch(cardState);
   };
 
   const handleReturn = (): void => {

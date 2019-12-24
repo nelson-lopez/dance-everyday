@@ -2,9 +2,9 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import { Redirect } from "react-router-dom";
 import { AppProps } from "./types/event-methods.interface";
-import { EventValues } from "./FormUtils/EventValues";
-import { CreateEventSchema } from "./FormUtils/EventSchema";
-import { OnEventSubmit } from "./FormUtils/EventSubmit";
+import { EventValues } from "./utils/EventValues";
+import { CreateEventSchema } from "./utils/EventSchema";
+import { OnEventSubmit } from "./utils/EventSubmit";
 
 const EventForm = ({ handleCreate, newList }: AppProps) => {
   if (newList) return <Redirect to="/" />;
@@ -25,9 +25,9 @@ const EventForm = ({ handleCreate, newList }: AppProps) => {
         <Form className="create-event-form" onSubmit={handleSubmit}>
           <Field name="name" placeholder="Event" />
 
-          {errors.name && touched.name ? (
+          {errors.eventName && touched.eventName ? (
             <span style={{ color: "red", fontWeight: "bold" }}>
-              <div>{errors.name}</div>
+              <div>{errors.eventName}</div>
             </span>
           ) : null}
 

@@ -4,6 +4,8 @@ import { EventListProps, EventInterface } from "./types/event.interfaces";
 import { eventsApiGet } from "./api/events/events.apiGet";
 import { eventsApiGetSearch } from "./api/events/events.apiGetSearch";
 import eventsApiDelete from "./api/events/events.apiDelete";
+import { inputValidation } from "./utils/inputValidation";
+import { filterEvents } from "./utils/filterEvents";
 
 /**
  *
@@ -12,13 +14,18 @@ import eventsApiDelete from "./api/events/events.apiDelete";
 const EventList = ({ searchInput, newSearchList }: EventListProps) => {
   const [eventInfo, setEventInfo] = useState<EventInterface[] | null>(null);
 
+  const minInputSize: number = 2;
+
   // GET
   useEffect(() => {
     eventsApiGet(setEventInfo);
   }, []);
 
   useEffect(() => {
-    if (searchInput.length > 2) {
+    /**
+     * * Check if our input is large enough to create a proper query to our API
+     */
+    if (inputValidation(searchInput, minInputSize)) {
       eventsApiGetSearch(searchInput, setEventInfo);
     }
   }, [searchInput]);
@@ -27,7 +34,7 @@ const EventList = ({ searchInput, newSearchList }: EventListProps) => {
   const handleDelete = (id: number): void => {
     eventsApiDelete(id);
     if (eventInfo) {
-      setEventInfo(eventInfo.filter(obj => obj.id !== id));
+      setEventInfo(filterEvents(eventInfo, id));
     }
   };
 
