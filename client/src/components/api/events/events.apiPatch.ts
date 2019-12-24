@@ -6,7 +6,7 @@ const eventsApiPatch = (
   date: string,
   description: string
 ) => {
-  const url = `http://dance-everyday-prod.us-east-1.elasticbeanstalk.com/events/${id}/update`;
+  const url = `https://cors-anywhere.herokuapp.com/http://dance-everyday-prod.us-east-1.elasticbeanstalk.com/events/${id}/update`;
   const method = "PATCH";
   /**
    *! Figure out a way to optionally pass eventInfo without TS errors

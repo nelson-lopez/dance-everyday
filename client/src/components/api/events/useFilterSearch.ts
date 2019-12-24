@@ -8,7 +8,7 @@ import { errorLogger } from "../errorLogger";
  */
 export const useFilterSearch = (searchTerm: string) => {
   const [data, setData] = useState(null);
-  const url = `http://dance-everyday-prod.us-east-1.elasticbeanstalk.com/events?search=${searchTerm}`;
+  const url = `https://cors-anywhere.herokuapp.com/http://dance-everyday-prod.us-east-1.elasticbeanstalk.com/events?search=${searchTerm}`;
 
   useEffect(() => {
     if (searchTerm.length > 2) {
