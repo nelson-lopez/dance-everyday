@@ -5,7 +5,7 @@ export const eventsApiGetSearch = async (
   searchTerm: string,
   setEventInfo: (data: EventInterface[]) => void
 ) => {
-  const url = `http://localhost:3001/events?search=${searchTerm}`;
+  const url = `http://dance-everyday-prod.us-east-1.elasticbeanstalk.com/events?search=${searchTerm}`;
 
   eventsApiHelper(url, setEventInfo);
 };
