@@ -2,9 +2,9 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import { Redirect } from "react-router-dom";
 import { AppProps } from "./types/event-methods.interface";
-import { EventValues } from "./FormUtils/EventValues";
-import { CreateEventSchema } from "./FormUtils/EventSchema";
-import { OnEventSubmit } from "./FormUtils/EventSubmit";
+import { EventValues } from "./utils/EventValues";
+import { CreateEventSchema } from "./utils/EventSchema";
+import { OnEventSubmit } from "./utils/EventSubmit";
 
 const EventForm = ({ handleCreate, newList }: AppProps) => {
   if (newList) return <Redirect to="/" />;
