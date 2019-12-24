@@ -7,7 +7,5 @@ export const OnEventSubmit = async (values: PostEvent): Promise<void> => {
 
   const response = eventsApiHelper(url, undefined, method, undefined, values);
 
-  console.log(response);
-
   return response;
 };
