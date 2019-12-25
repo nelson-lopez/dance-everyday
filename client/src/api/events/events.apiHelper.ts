@@ -6,6 +6,11 @@ import {
   PostEvent
 } from "../../types/event.interfaces";
 
+/**
+ * * With a App that is heavily reliant on CRUD operations I decided to create a helper func
+ * * Here we take in optional parameters and return the desired request
+ * ! Abstract the setEventInfo hook one layer up so that it doesn't run too deep into our helper function
+ */
 export const eventsApiHelper = (
   url: string,
   setEventInfo?: (data: EventInterface[]) => void,

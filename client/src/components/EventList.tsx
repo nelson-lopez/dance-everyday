@@ -41,14 +41,14 @@ const EventList = ({ searchInput, newSearchList }: EventListProps) => {
   if (newSearchList) {
     return (
       <div className="flex-container">
-        {newSearchList.map(obj => {
+        {newSearchList.map(event => {
           return (
             <EventCard
-              name={obj.name}
-              key={obj.id}
-              date={obj.date}
-              description={obj.description}
-              id={obj.id}
+              name={event.name}
+              key={event.id}
+              date={event.date}
+              description={event.description}
+              id={event.id}
               handleDelete={handleDelete}
             />
           );
@@ -58,14 +58,14 @@ const EventList = ({ searchInput, newSearchList }: EventListProps) => {
   } else if (eventInfo) {
     return (
       <div className="flex-container">
-        {eventInfo.map(obj => {
+        {eventInfo.map(event => {
           return (
             <EventCard
-              name={obj.name}
-              key={obj.id}
-              date={obj.date}
-              description={obj.description}
-              id={obj.id}
+              name={event.name}
+              key={event.id}
+              date={event.date}
+              description={event.description}
+              id={event.id}
               handleDelete={handleDelete}
             />
           );

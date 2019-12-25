@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import apiPatch from "../api/events/events.apiPatch";
 import EditCard from "./EditCard";
 import CardPropsInterface from "../types/card-props.interface";
@@ -31,12 +31,7 @@ const EventCard = (props: CardPropsInterface) => {
    * * Each toggle calls a PATCH to our API once flipped over
    * *
    */
-  const handleFlip = (
-    date: string,
-    description: string,
-    name: string,
-    id: number
-  ) => {
+  const handleFlip = (date: string, description: string, name: string) => {
     setCardState(prevState => ({
       ...prevState,
       name: name,
@@ -52,42 +47,43 @@ const EventCard = (props: CardPropsInterface) => {
     setIsClicked(!isClicked);
   };
 
-  const handleOnDelete = useCallback(() => {
+  const handleOnDelete = () => {
     if (props.handleDelete) props.handleDelete(props.id);
-  }, [props]);
+  };
 
-  if (!isClicked)
-    return (
-      <div className="card">
-        <img
-          src={
-            "https://images.pexels.com/photos/270837/pexels-photo-270837.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-          }
-          alt="test"
+  return (
+    <React.Fragment>
+      {!isClicked ? (
+        <div className="card">
+          <img
+            src={
+              "https://images.pexels.com/photos/270837/pexels-photo-270837.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            }
+            alt="test"
+          />
+          <button className="front-buttons" onClick={handleOnEdit}>
+            Edit
+          </button>
+          <button className="front-buttons" onClick={handleOnDelete}>
+            Delete
+          </button>
+
+          <h2>{cardState.name}</h2>
+          <h2>{cardState.date}</h2>
+          <p>{cardState.description}</p>
+        </div>
+      ) : (
+        <EditCard
+          date={cardState.date}
+          name={cardState.name}
+          description={cardState.description}
+          id={cardState.id}
+          handleFlip={handleFlip}
+          handleReturn={handleReturn}
         />
-        <button className="front-buttons" onClick={handleOnEdit}>
-          Edit
-        </button>
-        <button className="front-buttons" onClick={handleOnDelete}>
-          Delete
-        </button>
-
-        <h2>{cardState.name}</h2>
-        <h2>{cardState.date}</h2>
-        <p>{cardState.description}</p>
-      </div>
-    );
-  else
-    return (
-      <EditCard
-        date={cardState.date}
-        name={cardState.name}
-        description={cardState.description}
-        id={cardState.id}
-        handleFlip={handleFlip}
-        handleReturn={handleReturn}
-      />
-    );
+      )}
+    </React.Fragment>
+  );
 };
 
 export default EventCard;
