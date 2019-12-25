@@ -4,8 +4,8 @@ import EventList from "./EventList";
 import Footer from "./Footer";
 import Header from "./Header";
 import Nav from "./Nav";
-import { useFilterSearch } from "./api/events/useFilterSearch";
-import { HomeProps, SearchValue } from "./types/event-methods.interface";
+import { useFilterSearch } from "../api/events/useFilterSearch";
+import { HomeProps, SearchValue } from "../types/event-methods.interface";
 
 const Home = (props: HomeProps) => {
   const [searchInput, setSearch] = useState("");
